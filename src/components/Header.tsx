@@ -72,9 +72,9 @@ export const Header = () => {
           position: "fixed",
         }}
       >
-        <Row paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
+        {/* <Row paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
           {display.location && <Row s={{ hide: true }}>{person.location}</Row>}
-        </Row>
+        </Row> */}
         <Row fillWidth horizontal="center">
           <Row
             background="page"
@@ -85,7 +85,7 @@ export const Header = () => {
             horizontal="center"
             zIndex={1}
           >
-            <Row gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
+            <Row gap="s" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
               {routes["/"] && (
                 <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"} />
               )}
@@ -128,7 +128,7 @@ export const Header = () => {
                   </Row>
                 </>
               )}
-              {routes["/blog"] && (
+              {/* {routes["/blog"] && (
                 <>
                   <Row s={{ hide: true }}>
                     <ToggleButton
@@ -146,7 +146,7 @@ export const Header = () => {
                     />
                   </Row>
                 </>
-              )}
+              )} */}
               {routes["/gallery"] && (
                 <>
                   <Row s={{ hide: true }}>
@@ -175,7 +175,7 @@ export const Header = () => {
             </Row>
           </Row>
         </Row>
-        <Flex fillWidth horizontal="end" vertical="center">
+        {/* <Flex fillWidth horizontal="end" vertical="center">
           <Flex
             paddingRight="12"
             horizontal="end"
@@ -187,7 +187,7 @@ export const Header = () => {
               {display.time && <TimeDisplay timeZone={person.location} />}
             </Flex>
           </Flex>
-        </Flex>
+        </Flex> */}
       </Row>
     </>
   );

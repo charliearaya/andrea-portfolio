@@ -13,6 +13,7 @@ import {
 } from "@/types";
 import { home } from "./index";
 
+// TODO: Update the baseURL to your own domain address
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
 const baseURL: string = "https://demo.magic-portfolio.com";
 
@@ -184,6 +185,7 @@ const mailchimp: MailchimpConfig = {
   },
 };
 
+// TODO: Change
 // default schema data
 const schema: SchemaConfig = {
   logo: "",
@@ -195,9 +197,9 @@ const schema: SchemaConfig = {
 
 // social links
 const sameAs: SameAsConfig = {
-  threads: "https://www.threads.com/@once_ui",
+  // threads: "https://www.threads.com/@once_ui",
   linkedin: "https://www.linkedin.com/company/once-ui/",
-  discord: "https://discord.com/invite/5EyAQ4eNdS",
+  // discord: "https://discord.com/invite/5EyAQ4eNdS",
 };
 
 // social sharing configuration for blog posts

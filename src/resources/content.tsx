@@ -1,15 +1,15 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
+import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work as Projects } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Andrea",
+  lastName: "Schulz",
+  name: `Andrea Schulz`,
+  role: "UX/UI Designer",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "andrea.isabelle.schulz@gmail.com",
+  location: "Europe/Stockholm",
+  languages: ["English", "German", "Swedish"],
 };
 
 const newsletter: Newsletter = {
@@ -22,30 +22,30 @@ const social: Social = [
   // Links are automatically displayed.
   // Import new icons in /once-ui/icons.ts
   // Set essentials: true for links you want to show on the about page
-  {
-    name: "GitHub",
-    icon: "github",
-    link: "https://github.com/once-ui-system",
-    essential: true,
-  },
+  // {
+  //   name: "GitHub",
+  //   icon: "github",
+  //   link: "https://github.com/once-ui-system",
+  //   essential: true,
+  // },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/andrea-schulz-designs-stockholm-a2z/",
     essential: true,
   },
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
-    essential: true,
-  },
+  // {
+  //   name: "Instagram",
+  //   icon: "instagram",
+  //   link: "https://www.instagram.com/once_ui/",
+  //   essential: false,
+  // },
+  // {
+  //   name: "Threads",
+  //   icon: "threads",
+  //   link: "https://www.threads.com/@once_ui",
+  //   essential: true,
+  // },
   {
     name: "Email",
     icon: "email",
@@ -76,8 +76,8 @@ const home: Home = {
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+      I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
+    </>
   ),
 };
 
@@ -102,9 +102,10 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Andrea is a UX/UI designer with a strong foundation in graphic design and marketing, and experience that spans across IT, branding, HR, tourism, and start-ups.
+        Andrea has worked in various team setups - from solo projects to cross-functional collaboration alongside Product owners and developers.
+        <br />
+        {/* In recent years UI design has become my strongest focus and passion. I bring structure, curiosity, analytical thinking, and an entrepreneurial mindset to every project -and I’m ready to support a team of driven, innovative creatives. */}
       </>
     ),
   },
@@ -113,44 +114,58 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
+        company: "Scandinavian Airlines (SAS)",
         timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
-        achievements: [
-          <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
-          </>,
-          <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
-          </>,
-        ],
+        role: "UI Designer",
+        description: "Designed and evolved user interfaces across SAS’s digital products, focusing on usability, accessibility, visual consistency, and brand alignment. Contributed to building and maintaining a design system, including reusable UI components and documentation. Collaborating closely with commercial, UX, and engineering teams on revenue-critical areas, balancing business goals with clear and trust-building user experiences.",
+        achievements: [],
         images: [
           // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
+          // {
+          //   src: "/images/projects/project-01/cover-01.jpg",
+          //   alt: "Once UI Project",
+          //   width: 16,
+          //   height: 9,
+          // },
+          // {
+          //   src: "/images/projects/project-01/cover-01.jpg",
+          //   alt: "Once UI Project",
+          //   width: 16,
+          //   height: 9,
+          // },
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
-        achievements: [
-          <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
-          </>,
-          <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
-          </>,
-        ],
+        company: "VNTRS",
+        timeframe: "2022 - 2023",
+        role: "UX/UI Designer",
+        achievements: [],
         images: [],
+        description: "Delivered UX/UI projects for multiple clients through the consultancy, and assigned in-house to a client team on a long-term project."
+      },
+      {
+        company: "NewGlue",
+        timeframe: "2020 - 2022",
+        role: "UX Designer",
+        achievements: [],
+        images: [],
+        description: "Worked on improving the website sales funnel through user research, data-driven UX, and growth-focused design. Optimized the core product’s usability and interface, while also managing client projects in branding, graphic design, and web design."
+      },
+      {
+        company: "PotentialPark",
+        timeframe: "2020 - 2020",
+        role: "UX/UI Consultant (Project-based)",
+        achievements: [],
+        images: [],
+        description: "Project-based consultant for the revamp of Potentialpark’s client interface. Collaborated closely with the internal team to redesign key user flows, enhance navigation through improved information architecture, and deliver a new dashboard. Developed foundational design system components, including layout structure, visual hierarchy, color system, typography styles, and branded UI elements."
+      },
+      {
+        company: "Netigate",
+        timeframe: "2018 - 2020",
+        role: "Graphic Designer",
+        achievements: [],
+        images: [],
+        description: "Designed digital and print marketing materials, developed brand guidelines, and collaborated closely with the UX/UI team to align branding across departments."
       },
     ],
   },
@@ -159,23 +174,27 @@ const about: About = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "IxDF - The Interaction Design Foundation",
+        description: <>UX/UI Design, 2020 - 2021</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Faber-Castell Akademie",
+        description: <>Graphic Design B.A., 2017 - 2020</>,
+      },
+      {
+        name: "IST University of Applied Sciences",
+        description: <>Bachelor Professional of Tourism, 2013 - 2015</>,
       },
     ],
   },
   technical: {
     display: true, // set to false to hide this section
-    title: "Technical skills",
+    title: "Skills",
     skills: [
       {
-        title: "Figma",
+        title: "Design & Prototyping",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>Figma, UI design, prototyping, responsive design</>
         ),
         tags: [
           {
@@ -185,48 +204,49 @@ const about: About = {
         ],
         // optional: leave the array empty if you don't want to display images
         images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
+          // {
+          //   src: "/images/projects/project-01/cover-02.jpg",
+          //   alt: "Project image",
+          //   width: 16,
+          //   height: 9,
+          // },
+          // {
+          //   src: "/images/projects/project-01/cover-03.jpg",
+          //   alt: "Project image",
+          //   width: 16,
+          //   height: 9,
+          // },
         ],
       },
       {
-        title: "Next.js",
+        title: "Design Systems & Product UI",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>Zeroheight, component libraries, design tokens, scalability, inclusive design</>
         ),
-        tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+      },
+      {
+        title: "UX Research & Analytics",
+        description: (
+          <>Hotjar, Google Analytics, Mixpanel, Maze, Lookback, A/B testing, conversion funnel analytics</>
+        ),
+      },
+      {
+        title: "Workflow & Collaboration",
+        description: (
+          <>Agile workflows, Jira, cross-functional collaboration, stakeholder collaboration</>
+        ),
+      },
+      {
+        title: "Visual & Brand Design (prior experience)",
+        description: (
+          <>Adobe Creative Suite (Photoshop, Illustrator, InDesign, Lightroom)</>
+        ),
+      },
+      {
+        title: "Supporting Skills",
+        description: (
+          <>Basic motion and video editing (After Effects, Premiere Pro)</>
+        ),
       },
     ],
   },
@@ -241,11 +261,11 @@ const blog: Blog = {
   // All posts will be listed on the /blog route
 };
 
-const work: Work = {
-  path: "/work",
-  label: "Work",
+const projects: Projects = {
+  path: "/projects",
+  label: "Projects",
   title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
+  description: `Design projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
@@ -301,4 +321,4 @@ const gallery: Gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, home, about, blog, projects as work, gallery };
