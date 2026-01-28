@@ -1,4 +1,4 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work as Projects } from "@/types";
+import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work as Work } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
@@ -6,7 +6,7 @@ const person: Person = {
   lastName: "Schulz",
   name: `Andrea Schulz`,
   role: "UX/UI Designer",
-  avatar: "/images/avatar.jpg",
+  avatar: "/images/avatar_01.png",
   email: "andrea.isabelle.schulz@gmail.com",
   location: "Europe/Stockholm",
   languages: ["English", "German", "Swedish"],
@@ -60,7 +60,7 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Designing products through every stage</>,
   featured: {
     display: true,
     title: (
@@ -76,7 +76,7 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
+      I'm Andrea, a Product Designer working end-to-end across design systems and key user journeys – balancing user needs, business goals, and tech constraints.
     </>
   ),
 };
@@ -261,10 +261,10 @@ const blog: Blog = {
   // All posts will be listed on the /blog route
 };
 
-const projects: Projects = {
-  path: "/projects",
-  label: "Projects",
-  title: `Projects – ${person.name}`,
+const projects: Work = {
+  path: "/work",
+  label: "Work",
+  title: `Projects`,
   description: `Design projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes

@@ -34,7 +34,7 @@ const display: DisplayConfig = {
 // Enable password protection on selected routes
 // Set password in the .env file, refer to .env.example
 const protectedRoutes: ProtectedRoutesConfig = {
-  "/work/automate-design-handovers-with-a-figma-to-code-pipeline": true,
+  // "/work/automate-design-handovers-with-a-figma-to-code-pipeline": true,
 };
 
 // Import and set font for each variant
@@ -136,8 +136,9 @@ const effects: EffectsConfig = {
     opacity: 100,
     color: "neutral-alpha-weak",
     size: "16",
-    thickness: 1,
+    thickness: 5,
     angle: 45,
+    cursor: true,
   },
 };
 
@@ -179,7 +180,7 @@ const mailchimp: MailchimpConfig = {
       opacity: 100,
       color: "neutral-alpha-medium",
       size: "16",
-      thickness: 1,
+      thickness: 2,
       angle: 90,
     },
   },
@@ -197,7 +198,7 @@ const schema: SchemaConfig = {
 
 // social links
 const sameAs: SameAsConfig = {
-  linkedin: "https://www.linkedin.com/company/once-ui/",
+  linkedin: "https://www.linkedin.com/in/andrea-schulz-designs-stockholm-a2z",
 };
 
 // social sharing configuration for blog posts

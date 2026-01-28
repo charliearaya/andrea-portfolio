@@ -33,6 +33,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <Column fillWidth gap="m">
       <Carousel
+        indicator="line"
         sizes="(max-width: 960px) 100vw, 960px"
         items={images.map((image) => ({
           slide: image,
@@ -56,9 +57,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         )}
         {(avatars?.length > 0 || description?.trim() || content?.trim()) && (
           <Column flex={7} gap="16">
-            {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}
             {description?.trim() && (
-              <Text wrap="balance" variant="body-default-s" onBackground="neutral-weak">
+              <Text wrap="balance" variant="body-default-m" onBackground="neutral-weak">
                 {description}
               </Text>
             )}
@@ -69,7 +69,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   style={{ margin: "0", width: "fit-content" }}
                   href={href}
                 >
-                  <Text variant="body-default-s">Read case study</Text>
+                  <Text variant="body-default-m">Read case study</Text>
                 </SmartLink>
               )}
               {link && (
@@ -78,7 +78,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   style={{ margin: "0", width: "fit-content" }}
                   href={link}
                 >
-                  <Text variant="body-default-s">View project</Text>
+                  <Text variant="body-default-m">View project</Text>
                 </SmartLink>
               )}
             </Flex>

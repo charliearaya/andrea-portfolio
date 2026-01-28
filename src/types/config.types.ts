@@ -116,6 +116,7 @@ export type EffectsConfig = {
     size: string;
     thickness: number;
     angle: number;
+    cursor?: boolean;
   };
 };
 
