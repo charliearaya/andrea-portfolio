@@ -14,8 +14,8 @@ const person: Person = {
 
 const newsletter: Newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  title: <>Want to build something great together?</>,
+  description: <>I'm open to new opportunities and happy to connect!</>,
 };
 
 const social: Social = [
@@ -53,6 +53,11 @@ const social: Social = [
     essential: true,
   },
 ];
+
+const socialLinks: Record<string, string> = social.reduce<Record<string, string>>((acc, item) => {
+  acc[item.name] = item.link;
+  return acc;
+}, {});
 
 const home: Home = {
   path: "/",
@@ -321,4 +326,4 @@ const gallery: Gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, projects as work, gallery };
+export { person, social, socialLinks, newsletter, home, about, blog, projects as work, gallery };
