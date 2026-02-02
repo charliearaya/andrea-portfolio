@@ -93,15 +93,15 @@ export default async function Project({
         }}
       />
       <Column maxWidth="s" gap="16" horizontal="center" align="center">
-        <SmartLink href="/work">
+        {/* <SmartLink href="/work">
           <Text variant="label-strong-m">Projects</Text>
-        </SmartLink>
-        <Text variant="body-default-xs" onBackground="neutral-weak" marginBottom="12">
-          {post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
-        </Text>
+        </SmartLink> */}
         <Heading variant="display-strong-m">{post.metadata.title}</Heading>
+        <Text variant="body-default-xs" onBackground="neutral-weak" marginBottom="12">
+          {post.metadata.subheading}
+        </Text>
       </Column>
-      <Row marginBottom="32" horizontal="center">
+      {/* <Row marginBottom="32" horizontal="center">
         <Row gap="16" vertical="center">
           {post.metadata.team && <AvatarGroup reverse avatars={avatars} size="s" />}
           <Text variant="label-default-m" onBackground="brand-weak">
@@ -117,7 +117,7 @@ export default async function Project({
             ))}
           </Text>
         </Row>
-      </Row>
+      </Row> */}
       {post.metadata.images.length > 0 && (
         <Media priority aspectRatio="16 / 9" radius="m" alt="image" src={post.metadata.images[0]} />
       )}

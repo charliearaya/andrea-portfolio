@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  AvatarGroup,
   Carousel,
   Column,
   Flex,
@@ -17,7 +16,6 @@ interface ProjectCardProps {
   title: string;
   content: string;
   description: string;
-  avatars: { src: string }[];
   link: string;
 }
 
@@ -27,12 +25,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   content,
   description,
-  avatars,
   link,
 }) => {
   return (
     <Column fillWidth gap="m">
       <Carousel
+        aspectRatio="16/9"
         indicator="line"
         sizes="(max-width: 960px) 100vw, 960px"
         items={images.map((image) => ({
@@ -55,7 +53,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             </Heading>
           </Flex>
         )}
-        {(avatars?.length > 0 || description?.trim() || content?.trim()) && (
+        {(description?.trim() || content?.trim()) && (
           <Column flex={7} gap="16">
             {description?.trim() && (
               <Text wrap="balance" variant="body-default-m" onBackground="neutral-weak">
