@@ -114,30 +114,30 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
           {newsletter.description}
         </Text>
       </Column>
-      {/* TODO: Make buttons equally big */}
       <Row center gap="m" fillWidth maxWidth={24}>
-        <Link href={`mailto:${person.email}`}>
+        <Row flex="1" fillWidth>
           <Button
+            href={`mailto:${person.email}`}
+            prefixIcon="email"
             size="m"
             variant="primary"
             fillWidth
           >
-            <Icon name="email" size="s" paddingRight="8" />
             Email Andrea
           </Button>
-        </Link>
-        <Link href={socialLinks.LinkedIn} target="_blank" rel="noopener noreferrer">
+        </Row>
+        <Row flex="1" fillWidth>
           <Button
-            variant="primary"
+            href={socialLinks.LinkedIn}
+            prefixIcon="linkedin"
             size="m"
+            variant="primary"
             fillWidth
           >
-            <Icon name="linkedin" size="s" paddingRight="8" />
             LinkedIn
           </Button>
-        </Link>
+        </Row>
       </Row>
-
     </Column>
   );
 };
