@@ -21,8 +21,8 @@ export const AboutHero: React.FC<AboutHeroProps> = ({
       <Heading variant="display-strong-m" paddingBottom="8">
         About me
       </Heading>
-      <Text variant="body-default-m" onBackground="neutral-weak" paddingBottom="32">
-        A passionate designer with 5+ years of experience turning complex problems into elegant solutions
+      <Text variant="body-default-xl" onBackground="neutral-weak" paddingBottom="32" align="center">
+        A passionate designer with 5+ years of experience turning <br />complex problems into elegant solutions
       </Text>
 
       <Column maxWidth={50}>
