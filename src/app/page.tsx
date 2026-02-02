@@ -14,7 +14,7 @@ import {
 import { home, about, person, baseURL, routes } from "@/resources";
 import { Mailchimp } from "@/components";
 import { Projects } from "@/components/work/Projects";
-import { Posts } from "@/components/blog/Posts";
+import AboutHero from "@/components/AboutHero";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -123,7 +123,8 @@ export default function Home() {
           </Row>
         </Column>
       )} */}
-      <Projects range={[2]} />
+      <AboutHero />
+      {/* <Projects range={[2]} /> */}
       <Mailchimp />
     </Column>
   );
