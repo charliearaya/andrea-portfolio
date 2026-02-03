@@ -15,6 +15,7 @@ import { home, about, person, baseURL, routes } from "@/resources";
 import { Mailchimp } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import AboutHero from "@/components/AboutHero";
+import SkillsHero from "@/components/SkillsHero";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -124,6 +125,7 @@ export default function Home() {
         </Column>
       )} */}
       <AboutHero />
+      <SkillsHero />
       {/* <Projects range={[2]} /> */}
       <Mailchimp />
     </Column>

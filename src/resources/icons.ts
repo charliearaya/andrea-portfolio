@@ -31,6 +31,7 @@ import {
 
 import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaInstagram, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, } from "react-icons/fa6";
 import { AiOutlinePlusCircle } from "react-icons/ai";
+import { MdOutlineGroups, MdOutlineGroups2, MdOutlineGroups3, MdOutlinePalette, MdOutlinePersonSearch, MdOutlineToken, MdPersonSearch } from "react-icons/md";
 
 export const iconLibrary: Record<string, IconType> = {
   arrowRight: HiArrowRight,
@@ -66,6 +67,10 @@ export const iconLibrary: Record<string, IconType> = {
   twitter: FaXTwitter,
   whatsapp: FaWhatsapp,
   x: FaX,
+  personSearch: MdOutlinePersonSearch,
+  palette: MdOutlinePalette,
+  token: MdOutlineToken,
+  group: MdOutlineGroups,
 };
 
 export type IconLibrary = typeof iconLibrary;

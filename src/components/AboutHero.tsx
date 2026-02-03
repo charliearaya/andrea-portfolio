@@ -1,23 +1,10 @@
-import { Button, Column, Flex, Heading, Media, Row, SmartLink, Text } from "@once-ui-system/core";
+import { Column, Flex, Heading, Media, Row, SmartLink, Text } from "@once-ui-system/core";
 import React from "react";
 
-type AboutHeroProps = {
-  name?: string;
-  imageSrc?: string;
-  imageAlt?: string;
-  children?: React.ReactNode;
-};
-
-export const AboutHero: React.FC<AboutHeroProps> = ({
-  name = "Andrea",
-  imageSrc = "https://via.placeholder.com/420x420.png?text=Author+Portrait",
-  imageAlt = "Portrait of the author",
-  children,
-}) => {
-
+export const AboutHero: React.FC<{}> = () => {
 
   return (
-    <Flex direction="column" fillWidth center paddingX="16">
+    <Flex direction="column" fillWidth center>
       <Heading variant="display-strong-m" paddingBottom="8">
         About me
       </Heading>
