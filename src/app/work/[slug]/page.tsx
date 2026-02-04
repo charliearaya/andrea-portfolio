@@ -3,20 +3,13 @@ import { getPosts } from "@/utils/utils";
 import {
   Meta,
   Schema,
-  AvatarGroup,
-  Button,
   Column,
-  Flex,
   Heading,
   Media,
   Text,
-  SmartLink,
-  Row,
-  Avatar,
   Line,
 } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
-import { formatDate } from "@/utils/formatDate";
 import { ScrollToHash, CustomMDX } from "@/components";
 import { Metadata } from "next";
 import { Projects } from "@/components/work/Projects";
@@ -68,10 +61,10 @@ export default async function Project({
     notFound();
   }
 
-  const avatars =
-    post.metadata.team?.map((person) => ({
-      src: person.avatar,
-    })) || [];
+  // const avatars =
+  //   post.metadata.team?.map((person) => ({
+  //     src: person.avatar,
+  //   })) || [];
 
   return (
     <Column as="section" maxWidth="m" horizontal="center" gap="l">
@@ -129,7 +122,7 @@ export default async function Project({
         <Heading as="h2" variant="heading-strong-xl" marginBottom="24">
           Related projects
         </Heading>
-        <Projects exclude={[post.slug]} range={[1]} />
+        <Projects exclude={[post.slug]} range={[1,1]} />
       </Column>
       <ScrollToHash />
     </Column>
