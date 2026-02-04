@@ -1,11 +1,11 @@
 "use client";
 
 import {
+  Badge,
   Carousel,
   Column,
   Flex,
   Heading,
-  SmartLink,
   Text,
 } from "@once-ui-system/core";
 
@@ -16,7 +16,6 @@ interface ProjectCardProps {
   title: string;
   content: string;
   description: string;
-  link: string;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -25,7 +24,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   content,
   description,
-  link,
 }) => {
   return (
     <Column fillWidth gap="xs">
@@ -62,22 +60,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             )}
             <Flex gap="24" wrap>
               {content?.trim() && (
-                <SmartLink
-                  suffixIcon="arrowRight"
-                  style={{ margin: "0", width: "fit-content" }}
-                  href={href}
-                >
-                  <Text variant="body-default-m">Read about project</Text>
-                </SmartLink>
-              )}
-              {link && (
-                <SmartLink
-                  suffixIcon="arrowUpRightFromSquare"
-                  style={{ margin: "0", width: "fit-content" }}
-                  href={link}
-                >
-                  <Text variant="body-default-m">View project</Text>
-                </SmartLink>
+                // <SmartLink
+                //   suffixIcon="arrowRight"
+                //   style={{ margin: "0", width: "fit-content" }}
+                //   href={href}
+                // >
+                //   <Text variant="body-default-m">Read about project</Text>
+                // </SmartLink>
+                <Badge id="badge-1" title="View project" arrow href={href} effect={false} borderWidth={2} border="brand-alpha-medium" />
               )}
             </Flex>
           </Column>

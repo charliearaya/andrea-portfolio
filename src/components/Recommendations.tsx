@@ -1,4 +1,4 @@
-import { Column, Flex, Grid, Text } from "@once-ui-system/core";
+import { AutoScroll, BlockQuote, Column, Flex, Grid, Text } from "@once-ui-system/core";
 import React from "react";
 
 type RecommendationProps = {
@@ -45,14 +45,10 @@ const recommendations: RecommendationProps[] = [
   },
 ];
 
-const Recommendations: React.FC<{ }> = () => {
+const Recommendations: React.FC<{}> = () => {
   return (
     <Column fillWidth horizontal="center">
-      <Text variant="heading-strong-m" align="center" marginBottom="8">
-        What People Say
-      </Text>
-      <Text marginBottom="56">Feedback from clients, managers, leaders, and teammates I’ve collaborated with.</Text>
-      <Grid fillWidth gap="24" columns={2}>
+      {/* <Grid fillWidth gap="24" columns={2}>
         {recommendations.map((rec, index) => (
           <Flex key={index} padding="16" border="neutral-medium" radius="m">
             <div
@@ -66,7 +62,37 @@ const Recommendations: React.FC<{ }> = () => {
             </div>
           </Flex>
         ))}
-      </Grid>
+      </Grid> */}
+
+      <div style={{ position: "relative", width: "100%", overflow: "hidden" }}>
+        <div
+          style={{
+            WebkitMaskImage:
+              "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
+            maskImage:
+              "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
+          }}
+        >
+          <AutoScroll speed="slow">
+            {recommendations.map((rec, index) => (
+              <BlockQuote
+                key={index}
+                minWidth="xs"
+                author={{
+                  name: rec.author,
+                  avatar: "/images/avatar_01.png",
+                }}
+                link={{
+                  href: rec.url,
+                  label: "Read more",
+                }}
+              >
+                {rec.recommendation}
+              </BlockQuote>
+            ))}
+          </AutoScroll>
+        </div>
+      </div>
     </Column>
   );
 };

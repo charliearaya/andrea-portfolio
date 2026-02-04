@@ -5,7 +5,7 @@ import SkillCard from "./SkillCard";
 export const SkillsHero: React.FC<{}> = () => {
 
   return (
-    <Flex direction="column" fillWidth center>
+    <Flex direction="column" fillWidth center marginBottom="32">
       <Heading variant="heading-strong-xl" paddingBottom="8">
         Product Design Skills - end to end
       </Heading>

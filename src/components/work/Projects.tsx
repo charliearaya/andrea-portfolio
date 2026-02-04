@@ -34,7 +34,6 @@ export function Projects({ range, exclude }: ProjectsProps) {
           title={post.metadata.title}
           description={post.metadata.summary}
           content={post.content}
-          link={post.metadata.link || ""}
         />
       ))}
     </Column>
