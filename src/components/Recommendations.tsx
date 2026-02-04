@@ -1,4 +1,4 @@
-import { BlockQuote, Column, Flex, Grid, Text } from "@once-ui-system/core";
+import { Column, Flex, Grid, Text } from "@once-ui-system/core";
 import React from "react";
 
 type RecommendationProps = {
