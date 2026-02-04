@@ -28,7 +28,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   link,
 }) => {
   return (
-    <Column fillWidth gap="m">
+    <Column fillWidth gap="xs">
       <Carousel
         aspectRatio="16/9"
         indicator="line"
