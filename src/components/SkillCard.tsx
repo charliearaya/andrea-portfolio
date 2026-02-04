@@ -12,7 +12,7 @@ type SkillCardProps = {
 export const SkillCard: React.FC<SkillCardProps> = ({ icon, title, description, bullets }) => {
   return (
     <Flex direction="column" fillWidth fillHeight horizontal="center"  border="neutral-medium" radius="m" paddingY="24" paddingX="16">
-      <Icon name={icon} size="m" onBackground="brand-strong" marginBottom="16" radius="full" padding="16" border="transparent" background="neutral-medium" />
+      <Icon name={icon} size="m" onBackground="brand-strong" marginBottom="16" radius="full" padding="16" border="transparent" background="brand-alpha-weak" />
       <Heading variant="heading-strong-xs" paddingBottom="8">
         {title}
       </Heading>
