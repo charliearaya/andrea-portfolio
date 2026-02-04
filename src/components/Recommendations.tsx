@@ -45,7 +45,7 @@ const recommendations: RecommendationProps[] = [
   },
 ];
 
-const Recommendations: React.FC<RecommendationsProps> = () => {
+const Recommendations: React.FC<{ }> = () => {
   return (
     <Column fillWidth horizontal="center">
       <Text variant="heading-strong-m" align="center" marginBottom="8">
