@@ -81,7 +81,7 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm Andrea, a Product Designer working end-to-end across design systems and key user journeys – balancing user needs, business goals, and tech constraints.
+      I'm Andrea, a Product Designer working end-to-end across design systems and key user journeys.
     </>
   ),
 };
