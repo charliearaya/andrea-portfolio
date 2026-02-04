@@ -16,6 +16,7 @@ import { Mailchimp } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import AboutHero from "@/components/AboutHero";
 import SkillsHero from "@/components/SkillsHero";
+import Recommendations from "@/components/Recommendations";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -126,6 +127,7 @@ export default function Home() {
       )} */}
       <AboutHero />
       <SkillsHero />
+      <Recommendations />
       {/* <Projects range={[2]} /> */}
       <Mailchimp />
     </Column>
