@@ -60,14 +60,15 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             )}
             <Flex gap="24" wrap>
               {content?.trim() && (
-                // <SmartLink
-                //   suffixIcon="arrowRight"
-                //   style={{ margin: "0", width: "fit-content" }}
-                //   href={href}
-                // >
-                //   <Text variant="body-default-m">Read about project</Text>
-                // </SmartLink>
-                <Badge id="badge-1" title="View project" arrow href={href} effect={false} borderWidth={2} border="brand-alpha-medium" />
+                <Badge
+                  id={`badge-${String(href).split("/").pop() ?? "project"}`}
+                  title="View project"
+                  arrow
+                  href={href}
+                  effect={false}
+                  borderWidth={2}
+                  border="brand-alpha-medium"
+                />
               )}
             </Flex>
           </Column>
