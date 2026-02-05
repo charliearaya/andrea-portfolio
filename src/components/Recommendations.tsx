@@ -23,25 +23,25 @@ const recommendations: RecommendationProps[] = [
     url: "https://sas.se",
   },
   {
-    recommendation: "Working with Andrea has been a game-changer for our team. Their expertise in modern web technologies and collaborative approach have significantly boosted our productivity.",
-    author: "Jane Smith",
-    role: "Project Manager",
-    company: "Innovatech",
-    url: "https://innovatech.com",
+    recommendation: "Beyond that, Andrea is a great team player, can work independently, is well-organised, always does her research, and always turns feedback into an even better version of her work.",
+    author: "Karo Kiessling",
+    role: "Marketing Manager",
+    company: "Netigate",
+    url: "https://netigate.com",
   },
   {
-    recommendation: "It was clear that shaping a design system together with others is something she is particularly passionate about.",
-    author: "Martin Lysell",
-    role: "Senior Developer",
+    recommendation: "She brings thoughtful design decisions to every project and always aims to elevate the user experience to the next level.",
+    author: "Ingrid Escriche-Ekström",
+    role: "Senior UX Designer",
     company: "SAS",
     url: "https://sas.se",
   },
   {
-    recommendation: "Working with Andrea has been a game-changer for our team. Their expertise in modern web technologies and collaborative approach have significantly boosted our productivity.",
-    author: "Jane Smith",
-    role: "Project Manager",
-    company: "Innovatech",
-    url: "https://innovatech.com",
+    recommendation: "The recommendations she provided were detailed and of a very high standard. Her positive energy and ability to understand our product made the whole progress smooth and succesful.",
+    author: "Karlijn Korpershoek",
+    role: "Client",
+    company: "Potentialpark",
+    url: "https://potentialpark.com",
   },
 ];
 
@@ -87,7 +87,7 @@ const Recommendations: React.FC<{}> = () => {
                   label: "Read more",
                 }}
               >
-                {rec.recommendation}
+                <Text variant="heading-default-l" marginBottom="16">"{rec.recommendation}"</Text>
               </BlockQuote>
             ))}
           </AutoScroll>

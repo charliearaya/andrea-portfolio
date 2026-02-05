@@ -4,7 +4,7 @@ import React from "react";
 export const AboutHero: React.FC<{}> = () => {
 
   return (
-    <Flex direction="column" fillWidth center>
+    <Flex direction="column" fillWidth center marginBottom="64">
       <Heading variant="display-strong-m" paddingBottom="8">
         About me
       </Heading>
