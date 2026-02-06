@@ -31,8 +31,8 @@ import {
 
 import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaInstagram, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, } from "react-icons/fa6";
 import { AiOutlinePlusCircle } from "react-icons/ai";
-import { MdOutlineGroups, MdOutlinePalette, MdOutlinePersonSearch, MdOutlineToken } from "react-icons/md";
-import { LuLightbulb } from "react-icons/lu";
+import { MdOutlineGroup, MdOutlinePalette, MdOutlinePersonSearch, MdOutlineToken } from "react-icons/md";
+import { LuLightbulb, LuPenTool } from "react-icons/lu";
 import { RiGroupLine } from "react-icons/ri";
 
 export const iconLibrary: Record<string, IconType> = {
@@ -72,9 +72,10 @@ export const iconLibrary: Record<string, IconType> = {
   personSearch: MdOutlinePersonSearch,
   palette: MdOutlinePalette,
   token: MdOutlineToken,
-  group: MdOutlineGroups,
+  group: MdOutlineGroup,
   bulb: LuLightbulb,
   group2: RiGroupLine,
+  pen: LuPenTool,
 };
 
 export type IconLibrary = typeof iconLibrary;

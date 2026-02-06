@@ -97,6 +97,7 @@ export const Header = () => {
                       prefixIcon="person"
                       href="/about"
                       label={about.label}
+                      className={styles["custom-toggle-button"]}
                       selected={pathname === "/about"}
                     />
                   </Row>
@@ -104,6 +105,7 @@ export const Header = () => {
                     <ToggleButton
                       prefixIcon="person"
                       href="/about"
+                      className={styles["custom-toggle-button"]}
                       selected={pathname === "/about"}
                     />
                   </Row>
@@ -116,6 +118,7 @@ export const Header = () => {
                       prefixIcon="grid"
                       href="/work"
                       label={work.label}
+                      className={styles["custom-toggle-button"]}
                       selected={pathname.startsWith("/work")}
                     />
                   </Row>
@@ -123,6 +126,7 @@ export const Header = () => {
                     <ToggleButton
                       prefixIcon="grid"
                       href="/work"
+                      className={styles["custom-toggle-button"]}
                       selected={pathname.startsWith("/work")}
                     />
                   </Row>
@@ -154,6 +158,7 @@ export const Header = () => {
                       prefixIcon="gallery"
                       href="/gallery"
                       label={gallery.label}
+                      className={styles["custom-toggle-button"]}
                       selected={pathname.startsWith("/gallery")}
                     />
                   </Row>
@@ -162,6 +167,7 @@ export const Header = () => {
                       prefixIcon="gallery"
                       href="/gallery"
                       selected={pathname.startsWith("/gallery")}
+                      className={styles["custom-toggle-button"]}
                     />
                   </Row>
                 </>
