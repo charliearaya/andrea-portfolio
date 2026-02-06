@@ -6,15 +6,15 @@ ul.custom {
 
 ul.custom li {
   position: relative;
-  padding-left: 1.2rem;
+  padding-left: 1.5rem;
 }
 
 ul.custom li::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 0.2rem;
-  width: .8rem;
-  height: .8rem;
+  top: 0.25rem;
+  width: 1rem;
+  height: 1rem;
   background: url('/images/bullet-check.svg') no-repeat center / contain;
 }

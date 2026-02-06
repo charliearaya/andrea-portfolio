@@ -1,4 +1,4 @@
-import { Column, Flex, Heading, Media, Row, SmartLink, Text } from "@once-ui-system/core";
+import { Badge, Column, Flex, Heading, Media, Row, SmartLink, Text } from "@once-ui-system/core";
 import React from "react";
 
 export const AboutHero: React.FC<{}> = () => {
@@ -8,7 +8,7 @@ export const AboutHero: React.FC<{}> = () => {
       <Heading variant="display-strong-m" paddingBottom="8">
         About me
       </Heading>
-      <Text variant="body-default-xl" onBackground="neutral-weak" paddingBottom="32" align="center">
+      <Text variant="body-default-xl" onBackground="neutral-weak" paddingBottom="64" align="center">
         A passionate designer with 5+ years of experience turning <br />complex problems into elegant solutions
       </Text>
 
@@ -32,13 +32,15 @@ export const AboutHero: React.FC<{}> = () => {
             <Text variant="body-default-m" onBackground="neutral-weak" paddingBottom="16">
               I collaborate closely with product, engineering, marketing, sales, and external partners, often helping teams align around a shared direction and make confident design decisions.
             </Text>
-            <SmartLink
-              suffixIcon="arrowRight"
-              style={{ margin: "0", width: "fit-content" }}
+            <Badge
+              id="badge-about-hero"
+              title="More about me"
+              arrow
               href="/about"
-            >
-              <Text variant="body-default-m">More about me</Text>
-            </SmartLink>
+              effect={false}
+              borderWidth={2}
+              border="brand-alpha-medium"
+            />
           </Column>
         </Row>
       </Column>

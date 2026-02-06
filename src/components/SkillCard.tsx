@@ -14,14 +14,14 @@ type SkillCardProps = {
 
 export const SkillCard: React.FC<SkillCardProps> = ({ icon, iconSize = "m", title, rotate = 0, bullets }) => {
   return (
-    <Flex direction="column" fillWidth fillHeight horizontal="center" border="neutral-medium" radius="m" paddingY="24" paddingX="16">
-      <Icon name={icon} size={iconSize} onBackground="brand-medium" marginBottom="16" radius="full" padding="16" border="transparent" background="brand-alpha-weak" style={{ transform: `rotate(${rotate}deg)`}}/>
+    <Flex direction="column" fillWidth fillHeight horizontal="center" border="neutral-medium" radius="m" padding="16" paddingTop="24" paddingBottom="32">
+      <Icon name={icon} size={iconSize} onBackground="brand-medium" marginBottom="16" radius="full" padding="16" border="transparent" background="brand-alpha-weak" style={{ transform: `rotate(${rotate}deg)` }} />
       <Heading variant="heading-strong-xs" paddingBottom="16">
         {title}
       </Heading>
       <List as="ul" gap="4" className={styles.custom}>
         {bullets.map((bullet, index) => (
-          <ListItem key={index} variant="body-default-s" paddingLeft="0">
+          <ListItem key={index} variant="body-default-m" marginBottom="4">
             {bullet}
           </ListItem>
         ))}
