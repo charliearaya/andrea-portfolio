@@ -206,6 +206,8 @@ const components = {
   SmartLink,
   Carousel,
   Badge,
+  List,
+  ListItem
 };
 
 type CustomMDXProps = MDXRemoteProps & {
