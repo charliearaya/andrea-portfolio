@@ -1,6 +1,8 @@
 import { Flex, Heading, Icon, List, ListItem } from "@once-ui-system/core";
 import React from "react";
 
+import styles from "./SkillCard.module.scss";
+
 type SkillCardProps = {
   icon: string;
   iconSize?: "xs" | "s" | "m" | "l" | "xl";
@@ -17,7 +19,7 @@ export const SkillCard: React.FC<SkillCardProps> = ({ icon, iconSize = "m", titl
       <Heading variant="heading-strong-xs" paddingBottom="16">
         {title}
       </Heading>
-      <List as="ul" gap="4">
+      <List as="ul" gap="4" className={styles.custom}>
         {bullets.map((bullet, index) => (
           <ListItem key={index} variant="body-default-s" paddingLeft="0">
             {bullet}
