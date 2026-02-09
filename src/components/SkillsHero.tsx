@@ -6,7 +6,7 @@ export const SkillsHero: React.FC<{}> = () => {
 
   return (
     <Flex direction="column" fillWidth center marginBottom="64">
-      <Heading variant="heading-strong-xl" paddingBottom="8">
+      <Heading variant="display-strong-s" paddingBottom="8">
         Skills & Expertise
       </Heading>
       <Text variant="body-default-xl" onBackground="neutral-weak" paddingBottom="32" align="center">

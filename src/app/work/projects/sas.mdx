@@ -2,6 +2,7 @@
 title: "SAS - Scandinavian Airlines"
 publishedAt: "2025"
 summary: "Designing SAS Digital Design System, Website Redesign and revenue-driven user journeys for upsell products."
+description: "Designing SAS Digital Design System, Website Redesign and revenue-driven user journeys for upsell products."
 subheading: "2025 • UI Design, Design System"
 images:
   - "/images/projects/sas/cover_01.png"
@@ -15,7 +16,7 @@ team:
     linkedIn: "https://www.linkedin.com/in/andrea-schulz-designs-stockholm-a2z"
 ---
 
-<Badge id="badge-1" title="My Role & Responsibilities" icon="group2" effect={false} arrow={false} paddingX="16" paddingY="8" onBackground="brand-weak" background="brand-alpha-weak" textVariant="label-default-s" />
+<Badge id="badge-1" title="Context & Role" icon="group2" effect={false} arrow={false} paddingX="16" paddingY="8" onBackground="brand-weak" background="brand-alpha-weak" textVariant="label-strong-s" />
 
 ## UI Design at Scale
 I worked at SAS (Scandinavian Airlines) as a UI Designer, focusing on key parts of the company’s digital platforms. My main area was post-purchase flows and travel extras—including seats, baggage, upgrades, and add-ons—one of the most high-traffic areas with direct impact on both customer experience and revenue.
@@ -27,7 +28,10 @@ When I joined SAS, design and UI patterns were not aligned across departments. T
 
 To improve alignment, we introduced a documentation-first approach using Zeroheight. By documenting design principles, foundations, and UI patterns — and linking them directly to both design files and code — this work created an emerging single source of truth for designers, developers, and product teams. The documentation helped create clarity across teams and set the direction for a design system that could continue to evolve over time.
 
+
+##### Commercial Components - Compact Banner
 <Carousel
+  key="carousel-commercial-components"
   sizes="(max-width: 960px) 100vw, 960px"
   items={[
       { slide: "/images/projects/sas/image_01.png", alt: "Image 1" },
@@ -35,31 +39,37 @@ To improve alignment, we introduced a documentation-first approach using Zerohei
       { slide: "/images/projects/sas/image_03.png", alt: "Image 3" },
   ]}
 />
+<br />
+<br />
 
-##### Example Commercial Components - Compact Banner
 The Compact Banner was created to balance commercial visibility with clarity. As many stakeholders wanted their messages to stand out, the component helped enforce hierarchy, focus on key information, and turn “everything should pop” into a structured, scalable design solution.
 
 <Grid fillWidth columns="2" gap="s">
   <List as="ul">
-    <ListItem onBackground="neutral-weak" marginBottom="s">Designed to scale from 1 to 6 banners, adapting to grid or carousel layouts depending on screen size</ListItem>
-    <ListItem onBackground="neutral-weak" marginBottom="s">Uses a defined surface color sequence to create visual rhythm when multiple banners are displayed together</ListItem>
+    <ListItem onBackground="neutral-weak" marginBottom="s" style={{ lineHeight: "1.5rem" }}>
+      Designed to scale from 1 to 6 banners, adapting to grid or carousel layouts depending on screen size.
+    </ListItem>
+    <ListItem onBackground="neutral-weak" marginBottom="s">
+      Uses a defined surface color sequence to create visual rhythm when multiple banners are displayed together.
+    </ListItem>
   </List>
   <List as="ul">
-    <ListItem onBackground="neutral-weak" marginBottom="s">Clearly signals that the banner is clickable and leads forward, supported by hover and focus states</ListItem>
-    <ListItem onBackground="neutral-weak" marginBottom="s">Typography and icon alignment are handled to maintain visual balance across variable content lengths</ListItem>
+    <ListItem onBackground="neutral-weak" marginBottom="s">
+      Clearly signals that the banner is clickable and leads forward, supported by hover and focus state.
+      </ListItem>
+    <ListItem onBackground="neutral-weak" marginBottom="s">
+      Typography and icon alignment are handled to maintain visual balance across variable content lengths.
+      </ListItem>
   </List>
 </Grid>
-
-
 
 
 ## Selected Work Across SAS Digital Experience
 Below is a selection of representative work across SAS’s digital ecosystem, spanning multiple teams and initiatives.
 
 ##### In-flight Entertainment Systems
-I was responsible for the design of in-flight entertainment screens, adapting a white-label platform to the SAS experience through close collaboration with product teams, external vendors, and brand stakeholders.
-
 <Carousel
+  key="carousel-in-flight-entertainment"
   aspectRatio="16/9"
   sizes="(max-width: 960px) 100vw, 960px"
   items={[
@@ -67,11 +77,15 @@ I was responsible for the design of in-flight entertainment screens, adapting a 
       { slide: "/images/projects/sas/image_05.png", alt: "Image 5" },
   ]}
 />
+<br />
+<br />
+
+I was responsible for the design of in-flight entertainment screens, adapting a white-label platform to the SAS experience through close collaboration with product teams, external vendors, and brand stakeholders.
+
 
 ##### Building Trust Into SAS Travel Extras
-I led UI coordination for third-party services such as car rentals, hotels, and transfers, shaping white-label solutions to feel seamless and aligned with SAS’s brand and design standards. The work focused on balancing external vendor constraints with a consistent SAS experience.
-
 <Carousel
+  key="carousel-car-rental"
   aspectRatio="16/9"
   sizes="(max-width: 960px) 100vw, 960px"
   items={[
@@ -81,18 +95,23 @@ I led UI coordination for third-party services such as car rentals, hotels, and 
       { slide: "/images/projects/sas/image_13.png", alt: "Image 13" },
   ]}
 />
+<br />
+<br />
+I led UI coordination for third-party services such as car rentals, hotels, and transfers, shaping white-label solutions to feel seamless and aligned with SAS’s brand and design standards. The work focused on balancing external vendor constraints with a consistent SAS experience.
 
-##### Example: Car Rental Integration
+
+##### Car Rental Integration
+
 A key part of the work was designing where and how the car rental product appeared across the customer journey. This included multiple touchpoints — from standalone pages to embedded widgets — and required strategic decisions around placement, hierarchy, and timing.
 
 The goal was to support commercial objectives while maintaining a clear, trustworthy user experience, ensuring the car rental offering felt like a natural extension of SAS’s product rather than an external add-on.
 
+
+
+
 ##### EuroBonus Checkout
-EuroBonus Checkout was launched to enable members to earn and spend EuroBonus points directly at checkout with selected online retailers. The initiative aimed to make point-based payments feel as seamless and intuitive as a standard e-commerce checkout experience.
-
-I worked on the landing page experience, where members were introduced to the concept, value proposition, and flow, as well as on the checkout integration in collaboration with an external payment partner.
-
 <Carousel
+  key="carousel-eurobonus"
   aspectRatio="16/9"
   sizes="(max-width: 960px) 100vw, 960px"
   items={[
@@ -102,10 +121,17 @@ I worked on the landing page experience, where members were introduced to the co
       { slide: "/images/projects/sas/image_11.png", alt: "Image 11" },
   ]}
 />
+<br />
+<br />
 
-<Badge id="badge-2" title="Outcome & Learnings" icon="bulb" effect={false} arrow={false} paddingX="16" paddingY="8" onBackground="brand-medium" background="brand-alpha-weak" textVariant="label-default-s" marginTop="32" />
+EuroBonus Checkout was launched to enable members to earn and spend EuroBonus points directly at checkout with selected online retailers. The initiative aimed to make point-based payments feel as seamless and intuitive as a standard e-commerce checkout experience.
 
-## Lessons From a Fast-Moving Organisation
+I worked on the landing page experience, where members were introduced to the concept, value proposition, and flow, as well as on the checkout integration in collaboration with an external payment partner.
+
+
+<Badge id="badge-2" title="Outcome & Learnings" icon="bulb" effect={false} arrow={false} paddingX="16" paddingY="8" onBackground="brand-medium" background="brand-alpha-weak" textVariant="label-strong-s" marginTop="32" />
+
+## Driving Consistency at Organisational Scale
 
 During my time at SAS, I worked in an organisation undergoing continuous change — navigating economic challenges, operational disruptions, leadership changes, internal restructures, and a major brand transformation. The company was actively redefining its strategy to remain competitive in a rapidly evolving market.
 

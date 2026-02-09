@@ -127,7 +127,7 @@ export default function Home() {
       )} */}
       <AboutHero />
       <SkillsHero />
-      {/* <Recommendations /> */}
+      <Recommendations />
       {/* <Projects range={[2]} /> */}
       <Mailchimp />
     </Column>

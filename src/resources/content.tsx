@@ -107,7 +107,7 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Andrea is a UX/UI designer with a strong foundation in graphic design and marketing, and experience that spans across IT, branding, HR, tourism, and start-ups.
+        Andrea is a UX/UI designer with a strong foundation in graphic design and marketing, and experience that spans across IT, branding, tourism, and start-ups.
         Andrea has worked in various team setups - from solo projects to cross-functional collaboration alongside Product owners and developers.
         <br />
         {/* In recent years UI design has become my strongest focus and passion. I bring structure, curiosity, analytical thinking, and an entrepreneurial mindset to every project -and I’m ready to support a team of driven, innovative creatives. */}

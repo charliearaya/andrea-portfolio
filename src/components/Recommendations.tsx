@@ -1,4 +1,4 @@
-import { AutoScroll, BlockQuote, Column, Flex, Grid, Text } from "@once-ui-system/core";
+import { AutoScroll, BlockQuote, Button, Column, Flex, Grid, Heading, Icon, Row, SmartLink, Text } from "@once-ui-system/core";
 import React from "react";
 
 type RecommendationProps = {
@@ -16,9 +16,9 @@ type RecommendationsProps = {
 
 const recommendations: RecommendationProps[] = [
   {
-    recommendation: "It was clear that shaping a design system together with others is something she is particularly passionate about.",
+    recommendation: "If you are looking for a designer with an eye for details and the ability to see the bigger picture, Andrea is an ambitious and thorough UI designer who thinks systematically and long-term from the start",
     author: "Martin Lysell",
-    role: "Senior Developer",
+    role: "Senior UI Designer",
     company: "SAS",
     url: "https://sas.se",
   },
@@ -47,53 +47,35 @@ const recommendations: RecommendationProps[] = [
 
 const Recommendations: React.FC<{}> = () => {
   return (
-    <Column fillWidth horizontal="center">
-      {/* <Grid fillWidth gap="24" columns={2}>
-        {recommendations.map((rec, index) => (
-          <Flex key={index} padding="16" border="neutral-medium" radius="m">
-            <div
-              key={index}
-            >
-              <Column gap="4">
-                <Text variant="body-default-s" marginBottom="16">"{rec.recommendation}"</Text>
-                <Text variant="body-strong-s">{rec.author}</Text>
-                <Text variant="body-default-s" onBackground="neutral-medium">{rec.role}, {rec.company}</Text>
-              </Column>
-            </div>
-          </Flex>
-        ))}
-      </Grid> */}
+    <Grid fillWidth gap="24" columns={2} border="neutral-medium" radius="m" paddingY="32" paddingX="48" background="brand-alpha-strong">
+      <Row vertical="center">
+        <Text variant="display-strong-s" size="l">
+          What Others Say
+        </Text>
+      </Row>
+      <Row background="surface" radius="l" horizontal="end" vertical="center">
+        <Button variant="secondary" arrowIcon>
+          <SmartLink href="#">
+            <Text variant="body-default-s">View full feedback</Text>
+            <Icon name="arrowUpRightFromSquare" size="s" />
+          </SmartLink>
+        </Button>
+      </Row>
 
-      <div style={{ position: "relative", width: "100%", overflow: "hidden" }}>
-        <div
-          style={{
-            WebkitMaskImage:
-              "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
-            maskImage:
-              "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
-          }}
-        >
-          <AutoScroll speed="slow">
-            {recommendations.map((rec, index) => (
-              <BlockQuote
-                key={index}
-                minWidth="xs"
-                author={{
-                  name: rec.author,
-                  avatar: "/images/avatar_01.png",
-                }}
-                link={{
-                  href: rec.url,
-                  label: "Read more",
-                }}
-              >
-                <Text variant="heading-default-l" marginBottom="16">"{rec.recommendation}"</Text>
-              </BlockQuote>
-            ))}
-          </AutoScroll>
-        </div>
-      </div>
-    </Column>
+      {recommendations.slice(0, 2).map((rec, index) => (
+        <Flex key={index} paddingY="16" paddingRight="32">
+          <div
+            key={index}
+          >
+            <Column gap="4">
+              <Text variant="body-default-s" marginBottom="16">“{rec.recommendation}”</Text>
+              <Text variant="body-strong-s">{rec.author}</Text>
+              <Text variant="body-default-s" onBackground="neutral-medium">{rec.role}, {rec.company}</Text>
+            </Column>
+          </div>
+        </Flex>
+      ))}
+    </Grid>
   );
 };
 

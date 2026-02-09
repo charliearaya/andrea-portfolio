@@ -73,7 +73,7 @@ export default async function Project({
         baseURL={baseURL}
         path={`${work.path}/${post.slug}`}
         title={post.metadata.title}
-        description={post.metadata.summary}
+        description={post.metadata.description}
         datePublished={post.metadata.publishedAt}
         dateModified={post.metadata.publishedAt}
         image={
@@ -90,7 +90,10 @@ export default async function Project({
           <Text variant="label-strong-m">Projects</Text>
         </SmartLink> */}
         <Heading variant="display-strong-m">{post.metadata.title}</Heading>
-        <Text variant="body-default-xs" onBackground="neutral-weak" marginBottom="12">
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          {post.metadata.description}
+        </Text>
+         <Text variant="body-default-s" onBackground="neutral-weak" marginBottom="12">
           {post.metadata.subheading}
         </Text>
       </Column>
@@ -120,7 +123,7 @@ export default async function Project({
       <Column fillWidth gap="40" horizontal="center" marginTop="40">
         <Line maxWidth="40" />
         <Heading as="h2" variant="heading-strong-xl" marginBottom="24">
-          Related projects
+          Other projects
         </Heading>
         <Projects exclude={[post.slug]} range={[1,1]} />
       </Column>

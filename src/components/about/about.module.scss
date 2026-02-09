@@ -4,7 +4,8 @@
     transition: var(--transition-micro-medium);
 
     &:hover {
-        transform: translateX(var(--static-space-4));
+        font-weight: 600;
+        transform: translateX(var(--static-space-2));
     }
 }
 

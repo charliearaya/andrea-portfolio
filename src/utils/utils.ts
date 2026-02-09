@@ -14,6 +14,7 @@ type Metadata = {
   subtitle?: string;
   publishedAt: string;
   summary: string;
+  description: string;
   subheading: string;
   image?: string;
   images: string[];
@@ -45,6 +46,7 @@ function readMDXFile(filePath: string) {
     subtitle: data.subtitle || "",
     publishedAt: data.publishedAt,
     summary: data.summary || "",
+    description: data.description || "",
     subheading: data.subheading || "",
     image: data.image || "",
     images: data.images || [],
