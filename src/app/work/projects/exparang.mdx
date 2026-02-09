@@ -13,96 +13,89 @@ team:
     linkedIn: "https://www.linkedin.com/in/andrea-schulz-designs-stockholm-a2z"
 ---
 
-## Context & Role
+<Badge id="badge-1" title="Context & Role" icon="group2" effect={false} arrow={false} paddingX="16" paddingY="8" className="exparang-badge" textVariant="label-strong-s" />
 
-I worked at SAS (Scandinavian Airlines) as a UI Designer, focusing on key parts of the company’s digital platforms.
+## Designing Under Tight Constraints
+While employed at VNTRS, I supported Exparang — a Stockholm-based HR-tech startup that connects senior professionals with leadership and advisory roles through a privacy-driven matching platform.
 
-My primary focus was post-purchase flows and travel extras such as seats, baggage, upgrades, and add-ons — a high-traffic area with direct impact on both customer experience and revenue. In parallel, I contributed across multiple projects and team setups, collaborating with product, brand, engineering, and business stakeholders while supporting consistency through a shared design system.
+In this project, I worked independently from VNTRS and collaborated with an external development team. Because Exparang had limited resources, my time on the project was minimal, which led us to focus on a few high-impact priorities.
 
-During this period, SAS underwent a major brand transformation in collaboration with an external agency. I worked closely with the agency to translate the new brand identity into the digital platform, supporting a shift toward a more leisure- and youth-oriented audience. The work focused on embedding the brand values of being trustworthy, engaging, and helpful across key touchpoints.
+<br />
+<Media key="exparang-01" src="/images/projects/exparang/image_01.png" radius="l" sizes="584px" />
+<br />
+<br />
 
-## Establishing a Shared Design System Foundation
+## Challenge
 
-When I joined SAS, design and UI patterns were not aligned across departments. Teams worked in separate codebases with their own solutions, which led to inconsistent interfaces and duplicated effort across the digital experience.
+With limited design time and several areas needing improvement, the challenge was to identify the highest-impact issues and address the most urgent pain points.
 
-To improve alignment, we introduced a documentation-first approach using Zeroheight. By documenting design principles, foundations, and UI patterns — and linking them directly to both design files and code — this work created an emerging single source of truth for designers, developers, and product teams. The documentation helped create clarity across teams and set the direction for a design system that could continue to evolve over time.
+<ol>
+  <li>Inefficient Onboarding</li>
+  <span>
+    The onboarding flow required extensive information without the ability to save progress. Users who left the process had to start over, leading to frustration and high drop-off risk.
+  </span>
+  <br />
+  <br />
+
+  <li>Unclear Product Structure</li>
+  <span>
+    Navigation, information architecture, and user flows were not well defined. This made it difficult for users to understand where they were in the product or how to complete key tasks.
+  </span>
+  <br />
+  <br />
+
+  <li>Outdated Visual Design </li>
+  <span>
+    The interface needed a visual refresh, but the scope allowed only for targeted polish. The focus was on improving hierarchy, consistency, and overall clarity.
+  </span>
+</ol>
+
+### Onboarding Impovements
+
+I redesigned the onboarding by reducing the initial steps to only the essential information needed to create an account. This addressed the high drop-off caused by asking users to complete their full profile upfront.
+
+<br />
+<Media key="exparang-02" src="/images/projects/exparang/image_02.png" radius="l" sizes="584px" />
+<br />
+<br />
+Exparang relies on detailed user data to generate meaningful matches, so we needed a way to encourage users to complete their profiles without overwhelming them during signup. We implemented:
+
+<ul>
+  <li>
+    A progress bar to show remaining steps
+  </li>
+  <li>
+    A final onboarding step with a clear call-to-action to complete the profile
+  </li>
+  <li>
+    Seamless transition into the tool, saving all progress
+  </li>
+</ul>
 
 
-## Example Commercial Components - Compact Banner
+This allowed users to register quickly, guided them to finish their profiles, improved completion rates, reduced frustration, and ensured we collected the data needed for relevant matches.
 
-The Compact Banner was created to balance commercial visibility with clarity. As many stakeholders wanted their messages to stand out, the component helped enforce hierarchy, focus on key information, and turn “everything should pop” into a structured, scalable design solution.
+<br />
+<Media key="exparang-03" src="/images/projects/exparang/image_03.png" radius="l" sizes="584px" />
+<br />
+<br />
 
-## Design considerations
+### Navigation & Structure Improvements
+To bring clarity to the product, I introduced a left-side navigation. This gives users a stable structure, makes key sections visible immediately, and scales better than the previous layout.
 
-Designed to scale from 1 to 6 banners, adapting to grid or carousel layouts depending on screen size
-Uses a defined surface color sequence to create visual rhythm when multiple banners are displayed together
-Clearly signals that the banner is clickable and leads forward, supported by hover and focus states
-Typography and icon alignment are handled to maintain visual balance across variable content lengths
-
-<Carousel
-  sizes="(max-width: 960px) 100vw, 960px"
-  items={[
-      { slide: "/images/projects/sas/image_01.png", alt: "Image 1" },
-      { slide: "/images/projects/sas/image_02.png", alt: "Image 2" },
-      { slide: "/images/projects/sas/image_03.png", alt: "Image 3" },
-  ]}
-/>
+Building on the onboarding flow, the home dashboard now highlights the most important action: completing the profile. Since matches depend on this information, users are guided to finish their profile right after signup, preventing confusion and empty results.
 
 
-## Selected Work Across SAS Digital Experience
+<br />
+<Media key="exparang-04" src="/images/projects/exparang/image_04.png" radius="l" sizes="584px" />
+<br />
+<br />
 
-Below is a selection of representative work across SAS’s digital ecosystem, spanning multiple teams and initiatives.
 
-## In-flight Entertainment Systems
+### Visual Design
+I introduced a lightweight design system built around essentials - color, typography, and key components like CTAs. These basics created a clearer visual hierarchy, consistent patterns, and a more purposeful overall experience.
 
-I was responsible for the design of in-flight entertainment screens, adapting a white-label platform to the SAS experience through close collaboration with product teams, external vendors, and brand stakeholders.
+<Badge id="badge-2" title="Outcome & Learnings" icon="bulb" effect={false} arrow={false} paddingX="16" paddingY="8" className="exparang-badge" textVariant="label-strong-s" marginTop="32" />
 
-<Carousel
-  aspectRatio="16/9"
-  sizes="(max-width: 960px) 100vw, 960px"
-  items={[
-      { slide: "/images/projects/sas/image_04.png", alt: "Image 4" },
-      { slide: "/images/projects/sas/image_05.png", alt: "Image 5" },
-  ]}
-/>
-
-## Ancillaries & Partner Integrations
-
-I led UI coordination for third-party services such as car rentals, hotels, and transfers, shaping white-label solutions to feel seamless and aligned with SAS’s brand and design standards. The work focused on balancing external vendor constraints with a consistent SAS experience.
-
-## Example: Car Rental Integration
-
-A key part of the work was designing where and how the car rental product appeared across the customer journey. This included multiple touchpoints — from standalone pages to embedded widgets — and required strategic decisions around placement, hierarchy, and timing.
-
-The goal was to support commercial objectives while maintaining a clear, trustworthy user experience, ensuring the car rental offering felt like a natural extension of SAS’s product rather than an external add-on.
-<Carousel
-  aspectRatio="16/9"
-  sizes="(max-width: 960px) 100vw, 960px"
-  items={[
-      { slide: "/images/projects/sas/image_06.png", alt: "Image 6" },
-      { slide: "/images/projects/sas/image_07.png", alt: "Image 7" },
-      { slide: "/images/projects/sas/image_08.png", alt: "Image 8" },
-  ]}
-/>
-## EuroBonus Checkout
-
-EuroBonus Checkout was launched to enable members to earn and spend EuroBonus points directly at checkout with selected online retailers. The initiative aimed to make point-based payments feel as seamless and intuitive as a standard e-commerce checkout experience.
-
-I worked on the landing page experience, where members were introduced to the concept, value proposition, and flow, as well as on the checkout integration in collaboration with an external payment partner.
-<Carousel
-  aspectRatio="16/9"
-  sizes="(max-width: 960px) 100vw, 960px"
-  items={[
-      { slide: "/images/projects/sas/image_09.png", alt: "Image 9" },
-      { slide: "/images/projects/sas/image_10.png", alt: "Image 10" },
-      { slide: "/images/projects/sas/image_11.png", alt: "Image 11" },
-  ]}
-/>
-
-## Outcome & Learnings
-
-During my time at SAS, I worked in an organisation undergoing continuous change — navigating economic challenges, operational disruptions, leadership changes, internal restructures, and a major brand transformation. The company was actively redefining its strategy to remain competitive in a rapidly evolving market.
-
-Within this environment, I worked closely with commercial and sales teams operating under high pressure to meet revenue goals, particularly around ancillary revenue. This required designing revenue-driven experiences that supported business objectives while maintaining a clear, respectful, and trust-building user experience.
-
-As a team, we learned to adapt quickly through iteration and course correction, improving cross-team collaboration, strengthening internal communication, and laying the foundation for a more structured design practice through the development of a shared design system. These experiences strengthened my ability to operate effectively in complex organisations, balance commercial and user needs, and contribute to scalable, resilient design processes.
+## High-Impact Improvements with Minimal Change
+By focusing on the most impactful UX issues, I streamlined key flows, clarified the product structure, and introduced a minimal design system to unify the visual language. These targeted improvements reduced user friction, strengthened trust, and created a scalable foundation for future product growth - without requiring a full redesign.
