@@ -87,13 +87,14 @@ export const Header = () => {
           >
             <Row gap="s" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
               {routes["/"] && (
-                <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"} />
+                <ToggleButton size="l" prefixIcon="home" href="/" selected={pathname === "/"} />
               )}
               <Line background="neutral-alpha-medium" vert maxHeight="24" />
               {routes["/about"] && (
                 <>
                   <Row s={{ hide: true }}>
                     <ToggleButton
+                      size="l"
                       prefixIcon="person"
                       href="/about"
                       label={about.label}
@@ -103,6 +104,7 @@ export const Header = () => {
                   </Row>
                   <Row hide s={{ hide: false }}>
                     <ToggleButton
+                      size="l"
                       prefixIcon="person"
                       href="/about"
                       className={styles["custom-toggle-button"]}
@@ -115,6 +117,7 @@ export const Header = () => {
                 <>
                   <Row s={{ hide: true }}>
                     <ToggleButton
+                      size="l"
                       prefixIcon="grid"
                       href="/work"
                       label={work.label}
@@ -124,6 +127,7 @@ export const Header = () => {
                   </Row>
                   <Row hide s={{ hide: false }}>
                     <ToggleButton
+                      size="l"
                       prefixIcon="grid"
                       href="/work"
                       className={styles["custom-toggle-button"]}
@@ -136,6 +140,7 @@ export const Header = () => {
                 <>
                   <Row s={{ hide: true }}>
                     <ToggleButton
+                      size="l"
                       prefixIcon="book"
                       href="/blog"
                       label={blog.label}
@@ -144,6 +149,7 @@ export const Header = () => {
                   </Row>
                   <Row hide s={{ hide: false }}>
                     <ToggleButton
+                      size="l"
                       prefixIcon="book"
                       href="/blog"
                       selected={pathname.startsWith("/blog")}
@@ -155,6 +161,7 @@ export const Header = () => {
                 <>
                   <Row s={{ hide: true }}>
                     <ToggleButton
+                      size="l"
                       prefixIcon="gallery"
                       href="/gallery"
                       label={gallery.label}
@@ -164,6 +171,7 @@ export const Header = () => {
                   </Row>
                   <Row hide s={{ hide: false }}>
                     <ToggleButton
+                      size="l"
                       prefixIcon="gallery"
                       href="/gallery"
                       selected={pathname.startsWith("/gallery")}
