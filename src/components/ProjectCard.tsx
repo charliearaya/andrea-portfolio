@@ -67,7 +67,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   href={href}
                   effect={false}
                   borderWidth={2}
-                  border="brand-alpha-medium"
+                  border="brand-alpha-strong"
                 />
               )}
             </Flex>

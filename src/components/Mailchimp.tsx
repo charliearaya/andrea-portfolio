@@ -114,7 +114,7 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
           {newsletter.description}
         </Text>
       </Column>
-      <Row center gap="m" fillWidth maxWidth={24}>
+      <Row center gap="s" fillWidth maxWidth={24}>
         <Row flex="1" fillWidth>
           <Button
             href={`mailto:${person.email}`}

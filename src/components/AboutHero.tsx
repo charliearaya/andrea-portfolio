@@ -20,7 +20,6 @@ export const AboutHero: React.FC<{}> = () => {
                 objectFit="contain"
                 sizes="(max-width: 768px) 100vw, 408px"
                 radius="xl"
-                border="neutral-alpha-medium"
                 width={25}
               />
             </Flex>
@@ -39,7 +38,7 @@ export const AboutHero: React.FC<{}> = () => {
               href="/about"
               effect={false}
               borderWidth={2}
-              border="brand-alpha-medium"
+              border="brand-alpha-strong"
             />
           </Column>
         </Row>
