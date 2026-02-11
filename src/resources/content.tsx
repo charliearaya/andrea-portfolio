@@ -168,7 +168,7 @@ const about: About = {
       {
         company: "PotentialPark",
         timeframe: "2020 - 2020",
-        role: "UX/UI Consultant (Project-based)",
+        role: "UX/UI Consultant",
         achievements: [],
         images: [],
         description: `Project-based consultant on a client interface revamp, redesigning core 
@@ -192,15 +192,15 @@ const about: About = {
     institutions: [
       {
         name: "UX/UI Design",
-        description: "IxDF - The Interaction Design Foundation, 2020 - 2021",
+        description: <>IxDF - The Interaction Design Foundation<br />2020 - 2021</>
       },
       {
         name: "Graphic Design B.A.",
-        description: "Faber-Castell Akademie, 2017 - 2020",
+        description: <>Faber-Castell Akademie<br />2017 - 2020</>,
       },
       {
         name: "Tourism Management",
-        description: "IST University of Applied Sciences & IHK Germany, 2013 - 2015",
+        description: <>IST University of Applied Sciences & IHK Germany<br />2013 - 2015</>,
       },
     ],
   },
