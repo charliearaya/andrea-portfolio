@@ -199,8 +199,8 @@ const about: About = {
         description: "Faber-Castell Akademie, 2017 - 2020",
       },
       {
-        name: "Bachelor Professional of Tourism",
-        description: "IST University of Applied Sciences, 2013 - 2015",
+        name: "Tourism Management",
+        description: "IST University of Applied Sciences & IHK Germany, 2013 - 2015",
       },
     ],
   },
@@ -209,61 +209,24 @@ const about: About = {
     title: "Skills",
     skills: [
       {
-        title: "Design & Prototyping",
-        description: (
-          <>Figma, UI design, prototyping, responsive design</>
-        ),
-        tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          // {
-          //   src: "/images/projects/project-01/cover-02.jpg",
-          //   alt: "Project image",
-          //   width: 16,
-          //   height: 9,
-          // },
-          // {
-          //   src: "/images/projects/project-01/cover-03.jpg",
-          //   alt: "Project image",
-          //   width: 16,
-          //   height: 9,
-          // },
-        ],
+        title: "Product Design",
+        description: "End-to-end product design spanning discovery, UX, interaction design, UI, and accessibility — from early exploration to production-ready solutions.",
       },
       {
         title: "Design Systems & Product UI",
-        description: (
-          <>Zeroheight, component libraries, design tokens, scalability, inclusive design</>
-        ),
+        description: "Building scalable UI systems through component libraries, design tokens, and documentation, ensuring consistency across teams and touchpoints.",
       },
       {
-        title: "UX Research & Analytics",
-        description: (
-          <>Hotjar, Google Analytics, Mixpanel, Maze, Lookback, A/B testing, conversion funnel analytics</>
-        ),
+        title: "Research & Validation",
+        description: "Using qualitative and quantitative methods — usability testing, A/B testing, and behavioral analytics — to inform decisions and validate outcomes.",
       },
       {
-        title: "Workflow & Collaboration",
-        description: (
-          <>Agile workflows, Jira, cross-functional collaboration, stakeholder collaboration</>
-        ),
+        title: "Delivery & Collaboration",
+        description: "Working closely with product owners, developers, and stakeholders in agile environments to align design, business, and technical constraints.",
       },
       {
-        title: "Visual & Brand Design (prior experience)",
-        description: (
-          <>Adobe Creative Suite (Photoshop, Illustrator, InDesign, Lightroom)</>
-        ),
-      },
-      {
-        title: "Supporting Skills",
-        description: (
-          <>Basic motion and video editing (After Effects, Premiere Pro)</>
-        ),
+        title: "Visual & Brand Design (Prior Experience)",
+        description: "Strong foundation in visual design and branding, supporting clear, coherent communication across digital products.",
       },
     ],
   },
