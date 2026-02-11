@@ -14,17 +14,15 @@ export const AboutHero: React.FC<{}> = () => {
 
       <Column maxWidth={50}>
         <Row fillWidth gap="64" s={{ direction: "column" }}>
-          <Row>
-            <Flex center>
-              <Media src="/images/avatar_02.png"
-                objectFit="contain"
-                sizes="(max-width: 768px) 100vw, 408px"
-                radius="xl"
-                width={25}
-              />
-            </Flex>
-          </Row>
-          <Column gap="16" flex="1" vertical="center">
+          <Flex center>
+            <Media src="/images/avatar_02.png"
+              objectFit="contain"
+              sizes="(max-width: 768px) 100vw, 408px"
+              radius="xl"
+              width={25}
+            />
+          </Flex>
+          <Flex direction="column" gap="16" vertical="center" s={{ direction: "column", horizontal: "center" }}>
             <Text variant="body-default-m" onBackground="neutral-weak">
               I focus on creating clear, well-structured digital experiences that balance user needs, business goals, and technical constraints.
             </Text>
@@ -40,7 +38,7 @@ export const AboutHero: React.FC<{}> = () => {
               borderWidth={2}
               border="brand-alpha-strong"
             />
-          </Column>
+          </Flex>
         </Row>
       </Column>
     </Flex>
