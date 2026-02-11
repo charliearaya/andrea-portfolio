@@ -1,4 +1,4 @@
-import { Flex, Heading, Icon, List, ListItem } from "@once-ui-system/core";
+import { Flex, Heading, Icon, List, ListItem, Row } from "@once-ui-system/core";
 import React from "react";
 
 import styles from "./SkillCard.module.scss";
@@ -15,15 +15,18 @@ type SkillCardProps = {
 export const SkillCard: React.FC<SkillCardProps> = ({ icon, iconSize = "m", title, rotate = 0, bullets }) => {
   return (
     <Flex direction="column" fillWidth fillHeight horizontal="center" border="neutral-medium" radius="m" padding="16" paddingTop="24" paddingBottom="32">
-      <Icon name={icon} size={iconSize} onBackground="brand-medium" marginBottom="16" radius="full" padding="16" border="transparent" background="brand-alpha-weak" style={{ transform: `rotate(${rotate}deg)` }} />
+      <Icon name={icon} size={iconSize} onBackground="accent-medium" marginBottom="16" radius="full" padding="16" border="transparent" background="brand-alpha-weak" style={{ transform: `rotate(${rotate}deg)` }} />
       <Heading variant="heading-strong-xs" paddingBottom="16">
         {title}
       </Heading>
       <List as="ul" gap="4" className={styles.custom}>
         {bullets.map((bullet, index) => (
-          <ListItem key={index} variant="body-default-m" marginBottom="4">
-            {bullet}
-          </ListItem>
+          <Row key={index}>
+            <Icon name="checkCircle" size="s" onBackground="accent-medium" />
+            <ListItem variant="body-default-m" marginBottom="4" >
+              {bullet}
+            </ListItem>
+          </Row>
         ))}
       </List>
 

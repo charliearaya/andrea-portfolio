@@ -93,7 +93,7 @@ export default async function Project({
         <Text variant="body-default-m" onBackground="neutral-strong">
           {post.metadata.description}
         </Text>
-         <Text variant="body-default-s" onBackground="neutral-weak" marginBottom="12">
+        <Text variant="body-default-s" onBackground="neutral-weak" marginBottom="12">
           {post.metadata.subheading}
         </Text>
       </Column>
@@ -120,8 +120,8 @@ export default async function Project({
       <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
         <CustomMDX source={post.content} />
       </Column>
-      <Column fillWidth gap="40" horizontal="center" marginTop="40">
-        <Line maxWidth="40" />
+      <Column fillWidth gap="40" horizontal="center" marginTop="80">
+        <Line maxWidth="xs" />
         <Heading as="h2" variant="heading-strong-xl" marginBottom="24">
           Other projects
         </Heading>

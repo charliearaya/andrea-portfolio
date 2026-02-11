@@ -34,6 +34,7 @@ import { AiOutlinePlusCircle } from "react-icons/ai";
 import { MdOutlineGroup, MdOutlinePalette, MdOutlinePersonSearch, MdOutlineToken } from "react-icons/md";
 import { LuLightbulb, LuPenTool } from "react-icons/lu";
 import { RiGroupLine } from "react-icons/ri";
+import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 
 export const iconLibrary: Record<string, IconType> = {
   arrowRight: HiArrowRight,
@@ -76,6 +77,7 @@ export const iconLibrary: Record<string, IconType> = {
   bulb: LuLightbulb,
   group2: RiGroupLine,
   pen: LuPenTool,
+  checkCircle: IoMdCheckmarkCircleOutline,
 };
 
 export type IconLibrary = typeof iconLibrary;
