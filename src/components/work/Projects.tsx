@@ -5,23 +5,23 @@ import { ProjectCard } from "@/components";
 interface ProjectsProps {
   range?: [number, number?];
   exclude?: string[];
+  current?: string;
+  nextOnly?: boolean;
 }
 
-export function Projects({ range, exclude }: ProjectsProps) {
-  let allProjects = getPosts(["src", "app", "work", "projects"]);
+export function Projects({ range, exclude, current, nextOnly }: ProjectsProps) {
+  const allProjects = getPosts(["src", "app", "work", "projects"])
+    .filter((post) => !exclude?.includes(post.slug))
+    .sort((a, b) => new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime());
 
-  // Exclude by slug (exact match)
-  if (exclude && exclude.length > 0) {
-    allProjects = allProjects.filter((post) => !exclude.includes(post.slug));
+  let displayedProjects = allProjects;
+  
+  if (nextOnly) {
+    const currentIndex = allProjects.findIndex((post) => post.slug === current);
+    displayedProjects = [allProjects[(currentIndex + 1) % allProjects.length]];
+  } else if (range) {
+    displayedProjects = allProjects.slice(range[0] - 1, range[1] ?? allProjects.length);
   }
-
-  const sortedProjects = allProjects.sort((a, b) => {
-    return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
-  });
-
-  const displayedProjects = range
-    ? sortedProjects.slice(range[0] - 1, range[1] ?? sortedProjects.length)
-    : sortedProjects;
 
   return (
     <Column fillWidth gap="xl" marginBottom="40" paddingX="l">

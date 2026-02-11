@@ -123,9 +123,9 @@ export default async function Project({
       <Column fillWidth gap="40" horizontal="center" marginTop="80">
         <Line maxWidth="xs" />
         <Heading as="h2" variant="heading-strong-xl" marginBottom="24">
-          Other projects
+          Next project
         </Heading>
-        <Projects exclude={[post.slug]} range={[1,1]} />
+        <Projects current={post.slug} nextOnly />
       </Column>
       <ScrollToHash />
     </Column>
