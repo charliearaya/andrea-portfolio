@@ -68,6 +68,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   effect={false}
                   borderWidth={2}
                   border="brand-alpha-strong"
+                  background="transparent"
                 />
               )}
             </Flex>
