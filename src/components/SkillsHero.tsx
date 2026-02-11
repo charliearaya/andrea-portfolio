@@ -1,4 +1,4 @@
-import { Flex, Heading, Text } from "@once-ui-system/core";
+import { Flex, Grid, Heading, Text } from "@once-ui-system/core";
 import React from "react";
 import SkillCard from "./SkillCard";
 
@@ -13,7 +13,7 @@ export const SkillsHero: React.FC<{}> = () => {
         Turning user insights into a scalable design language through research, UI design,<br />systems thinking, and collaboration
       </Text>
 
-      <Flex gap="16" s={{ direction: "column" }} fillWidth center>
+      <Grid columns="4" gap="16" m={{ columns: 2 }} s={{ columns: 1 }} fillWidth>
         <SkillCard
           icon="personSearch"
           iconSize="l"
@@ -38,7 +38,7 @@ export const SkillsHero: React.FC<{}> = () => {
           title="Delivery & Collaboration"
           bullets={["Agile teams & iteration", "Jira-ready handoffs", "Cross-functional alignment"]}
         />
-      </Flex>
+      </Grid>
     </Flex>
   );
 };
