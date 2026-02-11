@@ -5,14 +5,14 @@ import { ToggleButton, useTheme } from "@once-ui-system/core";
 
 export const ThemeToggle: React.FC = () => {
   const { theme, setTheme } = useTheme();
-  const [currentTheme, setCurrentTheme] = useState("light");
+  const [currentTheme, setCurrentTheme] = useState("dark");
 
   useEffect(() => {
-    setCurrentTheme(document.documentElement.getAttribute("data-theme") || "light");
+    setCurrentTheme(document.documentElement.getAttribute("data-theme") || "dark");
   }, []);
 
   useEffect(() => {
-    setCurrentTheme(document.documentElement.getAttribute("data-theme") || "light");
+    setCurrentTheme(document.documentElement.getAttribute("data-theme") || "dark");
   }, [theme]);
 
   const icon = currentTheme === "dark" ? "light" : "dark";
