@@ -9,7 +9,7 @@ const person: Person = {
   avatar: "/images/avatar_01.png",
   email: "andrea.isabelle.schulz@gmail.com",
   location: "Europe/Stockholm",
-  languages: ["English", "German", "Swedish"],
+  languages: ["German · C2", "English · C1", "Swedish · B1"],
 };
 
 const newsletter: Newsletter = {
@@ -122,7 +122,10 @@ const about: About = {
         company: "Scandinavian Airlines (SAS)",
         timeframe: "2022 - Present",
         role: "UI Designer",
-        description: "Designed and evolved user interfaces across SAS’s digital products, focusing on usability, accessibility, visual consistency, and brand alignment. Contributed to building and maintaining a design system, including reusable UI components and documentation. Collaborating closely with commercial, UX, and engineering teams on revenue-critical areas, balancing business goals with clear and trust-building user experiences.",
+        description: `Designed and evolved user interfaces across SAS digital products, 
+                      focusing on usability, accessibility, and brand consistency. Contributed to 
+                      the design system and collaborated closely with commercial, UX, and 
+                      engineering teams on revenue-critical experiences.`,
         achievements: [],
         images: [
           // optional: leave the array empty if you don't want to display images
@@ -146,7 +149,9 @@ const about: About = {
         role: "UX/UI Designer",
         achievements: [],
         images: [],
-        description: "Delivered UX/UI projects for multiple clients through the consultancy, and assigned in-house to a client team on a long-term project."
+        description: `Delivered UX/UI projects for multiple early-stage startups within a venture 
+                      studio, working in fast-paced, iterative environments with frequent 
+                      workshops and close founder collaboration`
       },
       {
         company: "NewGlue",
@@ -154,7 +159,10 @@ const about: About = {
         role: "UX Designer",
         achievements: [],
         images: [],
-        description: "Worked on improving the website sales funnel through user research, data-driven UX, and growth-focused design. Optimized the core product’s usability and interface, while also managing client projects in branding, graphic design, and web design."
+        description: `Worked on improving the website sales funnel through user research, 
+                      data-driven UX, and growth-focused design. Optimized the core product’s 
+                      usability and interface, while also managing client projects in branding, 
+                      graphic design, and web design`
       },
       {
         company: "PotentialPark",
@@ -162,7 +170,9 @@ const about: About = {
         role: "UX/UI Consultant (Project-based)",
         achievements: [],
         images: [],
-        description: "Project-based consultant for the revamp of Potentialpark’s client interface. Collaborated closely with the internal team to redesign key user flows, enhance navigation through improved information architecture, and deliver a new dashboard. Developed foundational design system components, including layout structure, visual hierarchy, color system, typography styles, and branded UI elements."
+        description: `Project-based consultant on a client interface revamp, redesigning core 
+                      user flows, information architecture, and a new dashboard, and 
+                      contributing foundational design system elements.`
       },
       {
         company: "Netigate",
@@ -170,7 +180,8 @@ const about: About = {
         role: "Graphic Designer",
         achievements: [],
         images: [],
-        description: "Designed digital and print marketing materials, developed brand guidelines, and collaborated closely with the UX/UI team to align branding across departments."
+        description: `Designed digital and print brand assets, developed brand guidelines, and 
+                      collaborated cross-functionally to ensure consistent brand application`
       },
     ],
   },
@@ -179,16 +190,16 @@ const about: About = {
     title: "Studies",
     institutions: [
       {
-        name: "IxDF - The Interaction Design Foundation",
-        description: <>UX/UI Design, 2020 - 2021</>,
+        name: "UX/UI Design",
+        description: "IxDF - The Interaction Design Foundation, 2020 - 2021",
       },
       {
-        name: "Faber-Castell Akademie",
-        description: <>Graphic Design B.A., 2017 - 2020</>,
+        name: "Graphic Design B.A.",
+        description: "Faber-Castell Akademie, 2017 - 2020",
       },
       {
-        name: "IST University of Applied Sciences",
-        description: <>Bachelor Professional of Tourism, 2013 - 2015</>,
+        name: "Bachelor Professional of Tourism",
+        description: "IST University of Applied Sciences, 2013 - 2015",
       },
     ],
   },

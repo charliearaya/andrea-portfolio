@@ -50,7 +50,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) =
       {structure
         .filter((section) => section.display)
         .map((section, sectionIndex) => (
-          <Column key={sectionIndex} gap="12">
+          <Column key={sectionIndex} gap="8">
             <Flex
               cursor="interactive"
               className={styles.hover}
@@ -59,7 +59,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) =
               onClick={() => scrollTo(section.title, 80)}
             >
               <Flex height="1" minWidth="16" background="neutral-strong"></Flex>
-              <Text>{section.title}</Text>
+              <Text paddingY="4">{section.title}</Text>
             </Flex>
             {about.tableOfContent.subItems && (
               <>
