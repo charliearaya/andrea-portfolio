@@ -37,7 +37,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         }))}
       />
       <Flex
-        xs={{ direction: "column" }}
+        xs={{ direction: "column", horizontal: "center" }}
         fillWidth
         paddingX="s"
         paddingTop="12"
@@ -52,9 +52,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           </Flex>
         )}
         {(description?.trim() || content?.trim()) && (
-          <Column flex={7} gap="16">
+          <Flex direction="column" flex={7} gap="16" xs={{ direction: "column", horizontal: "center", wrap: "auto" }}>
             {description?.trim() && (
-              <Text wrap="balance" variant="body-default-m" onBackground="neutral-weak">
+              <Text variant="body-default-m" onBackground="neutral-weak">
                 {description}
               </Text>
             )}
@@ -72,7 +72,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                 />
               )}
             </Flex>
-          </Column>
+          </Flex>
         )}
       </Flex>
     </Column>
