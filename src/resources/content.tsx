@@ -5,7 +5,7 @@ const person: Person = {
   firstName: "Andrea",
   lastName: "Schulz",
   name: `Andrea Schulz`,
-  role: "UX/UI Designer",
+  role: "Product Designer",
   avatar: "/images/avatar_01.png",
   email: "andrea.isabelle.schulz@gmail.com",
   location: "Europe/Stockholm",
@@ -99,7 +99,7 @@ const about: About = {
     display: true,
   },
   calendar: {
-    display: true,
+    display: false,
     link: "https://cal.com",
   },
   intro: {
@@ -107,9 +107,10 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Andrea is a UX/UI designer with a strong foundation in graphic design and marketing, and experience that spans across IT, branding, tourism, and start-ups.
-        Andrea has worked in various team setups - from solo projects to cross-functional collaboration alongside Product owners and developers.
+        Andrea is a Product Designer with a strong foundation in visual design, UX, and brand thinking. With experience spanning large organisations and early-stage startups, Andrea works end to end; from problem framing and user insight to interaction, UI, and scalable design systems.
         <br />
+        <br />
+        Comfortable working both independently and in cross-functional teams, Andrea collaborates closely with product owners, developers, and stakeholders to design solutions that balance user needs, business goals, and technical constraints.
         {/* In recent years UI design has become my strongest focus and passion. I bring structure, curiosity, analytical thinking, and an entrepreneurial mindset to every project -and I’m ready to support a team of driven, innovative creatives. */}
       </>
     ),
@@ -119,7 +120,7 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "Scandinavian Airlines (SAS)",
+        company: "SAS · Scandinavian Airlines",
         timeframe: "2022 - Present",
         role: "UI Designer",
         description: `Designed and evolved user interfaces across SAS digital products, 
@@ -144,7 +145,7 @@ const about: About = {
         ],
       },
       {
-        company: "VNTRS",
+        company: "VNTRS (Venture Studio)",
         timeframe: "2022 - 2023",
         role: "UX/UI Designer",
         achievements: [],
@@ -154,7 +155,7 @@ const about: About = {
                       workshops and close founder collaboration`
       },
       {
-        company: "NewGlue",
+        company: "NewGlue (acquired by Eniro)",
         timeframe: "2020 - 2022",
         role: "UX Designer",
         achievements: [],
