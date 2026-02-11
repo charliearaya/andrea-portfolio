@@ -20,8 +20,8 @@ const routes: RoutesConfig = {
   "/": true,
   "/about": true,
   "/work": true,
-  "/blog": true,
-  "/gallery": true,
+  // "/blog": true,
+  // "/gallery": true,
 };
 
 const display: DisplayConfig = {
