@@ -107,10 +107,14 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Andrea is a Product Designer with a strong foundation in visual design, UX, and brand thinking. With experience spanning large organisations and early-stage startups, Andrea works end to end; from problem framing and user insight to interaction, UI, and scalable design systems.
+        I’m a Product Designer with a strong foundation in visual design, UX, and brand thinking. I’ve worked across large organisations and early-stage startups, taking products end to end — from problem framing and user insight to interaction design, UI, and scalable design systems.
         <br />
         <br />
-        Comfortable working both independently and in cross-functional teams, Andrea collaborates closely with product owners, developers, and stakeholders to design solutions that balance user needs, business goals, and technical constraints.
+        I’m comfortable working independently and in cross-functional teams, and I collaborate closely with product owners, developers, and stakeholders to design solutions that balance user needs, business goals, and technical constraints.
+
+        <br />
+        <br />
+        Outside of work, I enjoy photography, spending time in nature, and practicing yoga.
         {/* In recent years UI design has become my strongest focus and passion. I bring structure, curiosity, analytical thinking, and an entrepreneurial mindset to every project -and I’m ready to support a team of driven, innovative creatives. */}
       </>
     ),
