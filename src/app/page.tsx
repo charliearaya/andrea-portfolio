@@ -12,8 +12,7 @@ import {
   Line,
 } from "@once-ui-system/core";
 import { home, about, person, baseURL, routes } from "@/resources";
-import { Mailchimp } from "@/components";
-import { Projects } from "@/components/work/Projects";
+import { Mailchimp, ProjectCard } from "@/components";
 import AboutHero from "@/components/AboutHero";
 import SkillsHero from "@/components/SkillsHero";
 import Recommendations from "@/components/Recommendations";
@@ -27,6 +26,16 @@ export async function generateMetadata() {
     image: home.image,
   });
 }
+
+const projectImages = [
+  "/images/projects/sas/cover_01.png",
+  "/images/projects/float/cover_01.png",
+  "/images/projects/exparang/cover_01.png",
+  "/images/projects/mcm/cover_01.png",
+  "/images/projects/youse/cover_01.png",
+  "/images/projects/netigate/cover_01.png",
+  "/images/projects/brides-unite/cover_01.png",
+]
 
 export default function Home() {
   return (
@@ -103,7 +112,16 @@ export default function Home() {
         </Column>
       </Column>
       <RevealFx translateY="16" delay={0.6} marginBottom="l">
-        <Projects range={[1, 1]} />
+        <ProjectCard
+          key="projects-carousel"
+          href="/work"
+          images={projectImages}
+          title="Selected product work"
+          description="Shipped work across large-scale platforms, complex user journeys, and design systems used by cross-functional teams."
+          content="there is content"
+          ctaText="View all projects"
+          autoScroll
+        />
       </RevealFx>
       {/* {routes["/blog"] && (
         <Column fillWidth gap="24" marginBottom="l">

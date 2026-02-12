@@ -81,7 +81,7 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm Andrea, a Product Designer working end-to-end across design systems and key user journeys.
+      I’m Andrea, a Product Designer working end-to-end on complex digital products.
     </>
   ),
 };

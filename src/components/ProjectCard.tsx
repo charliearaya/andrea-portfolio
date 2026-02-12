@@ -16,6 +16,8 @@ interface ProjectCardProps {
   title: string;
   content: string;
   description: string;
+  ctaText?: string;
+  autoScroll?: boolean;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -23,13 +25,16 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   images = [],
   title,
   content,
+  ctaText,
   description,
+  autoScroll = false,
 }) => {
   return (
-    <Column fillWidth gap="xs">
+    <Column fillWidth gap="xs" radius="m" overflow="hidden">
       <Carousel
+        play={ autoScroll ? { auto: true, interval: 3000, controls: true, progress: true } : undefined }
         aspectRatio="16/9"
-        indicator="line"
+        indicator={autoScroll ? 'line' : false}
         sizes="(max-width: 960px) 100vw, 960px"
         items={images.map((image) => ({
           slide: image,
@@ -62,7 +67,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               {content?.trim() && (
                 <Badge
                   id={`badge-${String(href).split("/").pop() ?? "project"}`}
-                  title="View project"
+                  title={ctaText || "View project"}
                   arrow
                   href={href}
                   effect={false}
