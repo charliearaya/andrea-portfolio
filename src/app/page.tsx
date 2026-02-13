@@ -12,7 +12,7 @@ import {
   Line,
 } from "@once-ui-system/core";
 import { home, about, person, baseURL, routes } from "@/resources";
-import { Mailchimp, ProjectCard } from "@/components";
+import { Connect, ProjectCard } from "@/components";
 import AboutHero from "@/components/AboutHero";
 import SkillsHero from "@/components/SkillsHero";
 import Recommendations from "@/components/Recommendations";
@@ -147,7 +147,7 @@ export default function Home() {
       <SkillsHero />
       {/* <Recommendations /> */}
       {/* <Projects range={[2]} /> */}
-      <Mailchimp />
+      <Connect />
     </Column>
   );
 }
