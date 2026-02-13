@@ -28,7 +28,7 @@ export async function generateMetadata() {
 }
 
 const projectImages = [
-  "/images/projects/sas/cover_01.png",
+  "/images/projects/sas/cover_04.png",
   "/images/projects/float/cover_01.png",
   "/images/projects/exparang/cover_01.png",
   "/images/projects/mcm/cover_01.png",
