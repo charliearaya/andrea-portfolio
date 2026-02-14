@@ -37,7 +37,7 @@ const recommendations: RecommendationProps[] = [
     url: "https://sas.se",
   },
   {
-    recommendation: "The recommendations she provided were detailed and of a very high standard. Her positive energy and ability to understand our product made the whole progress smooth and succesful.",
+    recommendation: "The recommendations she provided were detailed and of a very high standard. Her positive energy and ability to understand our product made the whole progress smooth and successful.",
     author: "Karlijn Korpershoek",
     role: "Client",
     company: "Potentialpark",

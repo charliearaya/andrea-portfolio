@@ -59,12 +59,20 @@
   --scheme-youse-600-30: rgba(102, 138, 131, 0.3);
   --scheme-youse-700: #85b0a7;
   --scheme-youse-900: #c2e8de;
+
+  --scheme-brides-400: #8e6d4b;
+  --scheme-brides-500: #9e7c57;
+  --scheme-brides-600-15: rgba(255, 122, 0, 0.15);
+  --scheme-brides-600-30: rgba(173, 141, 106, 0.3);
+  --scheme-brides-700: #bfa180;
+  --scheme-brides-900: #e5d8c8;
 }
 
 .float-badge,
 .exparang-badge,
 .mcm-badge,
-.youse-badge {
+.youse-badge,
+.brides-badge {
   color: var(--badge-color);
   background-color: var(--badge-bg-color);
   border-color: var(--badge-border-color);
@@ -94,6 +102,11 @@
   --badge-border-color: var(--scheme-youse-600-30);
 }
 
+.brides-badge {
+  --badge-bg-color: var(--scheme-brides-600-15);
+  --badge-border-color: var(--scheme-brides-600-30);
+}
+
 [data-theme=dark] {
   .float-badge {
     --badge-color: var(--scheme-float-700);
@@ -113,6 +126,11 @@
   .youse-badge {
     --badge-color: var(--scheme-youse-700);
     --badge-medium-color: var(--scheme-youse-900);
+  }
+
+  .brides-badge {
+    --badge-color: var(--scheme-brides-700);
+    --badge-medium-color: var(--scheme-brides-900);
   }
 }
 
@@ -135,6 +153,11 @@
   .youse-badge {
     --badge-color: var(--scheme-youse-400);
     --badge-medium-color: var(--scheme-youse-400);
+  }
+
+  .brides-badge {
+    --badge-color: var(--scheme-brides-500);
+    --badge-medium-color: var(--scheme-brides-400);
   }
 }
 
