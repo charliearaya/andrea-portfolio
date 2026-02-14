@@ -152,8 +152,8 @@ function createCodeBlock(props: any) {
   return <pre {...props} />;
 }
 
-function createList({ children }: { children: ReactNode }) {
-  return <List>{children}</List>;
+function createList(as: "ul" | "ol") {
+  return ({ children }: { children: ReactNode }) => <List as={as}>{children}</List>;
 }
 
 function createListItem({ children }: { children: ReactNode }) {
@@ -184,8 +184,8 @@ const components = {
   a: CustomLink as any,
   code: createInlineCode as any,
   pre: createCodeBlock as any,
-  ol: createList as any,
-  ul: createList as any,
+  ol: createList("ol") as any,
+  ul: createList("ul") as any,
   li: createListItem as any,
   hr: createHR as any,
   Heading,
@@ -215,5 +215,5 @@ type CustomMDXProps = MDXRemoteProps & {
 };
 
 export function CustomMDX(props: CustomMDXProps) {
-  return <MDXRemote options={{ blockJS: false }}{...props} components={{ ...components, ...(props.components || {}) }} />;
+  return <MDXRemote options={{ blockJS: false }} {...props} components={{ ...components, ...(props.components || {}) }} />;
 }
