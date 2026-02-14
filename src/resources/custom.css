@@ -53,93 +53,88 @@
   --scheme-mcm-700: #4d4d4d;
   --scheme-mcm-900: #e6e6e6;
 
+  --scheme-youse-400: #374d48;
+  --scheme-youse-500: #4e6b65;
+  --scheme-youse-600-10: rgba(75, 205, 175, 0.1);
+  --scheme-youse-600-30: rgba(102, 138, 131, 0.3);
+  --scheme-youse-700: #85b0a7;
+  --scheme-youse-900: #c2e8de;
+}
+
+.float-badge,
+.exparang-badge,
+.mcm-badge,
+.youse-badge {
+  color: var(--badge-color);
+  background-color: var(--badge-bg-color);
+  border-color: var(--badge-border-color);
+
+  >.brand-on-background-medium {
+    color: var(--badge-medium-color);
+  }
+}
+
+.float-badge {
+  --badge-bg-color: var(--scheme-float-600-15);
+  --badge-border-color: var(--scheme-float-600-30);
+}
+
+.exparang-badge {
+  --badge-bg-color: var(--scheme-exparang-600-15);
+  --badge-border-color: var(--scheme-exparang-600-30);
+}
+
+.mcm-badge {
+  --badge-bg-color: var(--scheme-mcm-600-15);
+  --badge-border-color: var(--scheme-mcm-600-30);
+}
+
+.youse-badge {
+  --badge-bg-color: var(--scheme-youse-600-10);
+  --badge-border-color: var(--scheme-youse-600-30);
 }
 
 [data-theme=dark] {
   .float-badge {
-    color: var(--scheme-float-700);
-    /* brand-on-background-weak = 700 */
-    background-color: var(--scheme-float-600-15);
-    /* brand-alpha-weak = 600-15 */
-    border-color: var(--scheme-float-600-30);
-    /* brand-alpha-weak = 600-30 */
-
-    >.brand-on-background-medium {
-      color: var(--scheme-float-900);
-      /* brand-on-background-medium = 900 */
-    }
+    --badge-color: var(--scheme-float-700);
+    --badge-medium-color: var(--scheme-float-900);
   }
 
   .exparang-badge {
-    color: var(--scheme-exparang-700);
-    /* brand-on-background-weak = 700 */
-    background-color: var(--scheme-exparang-600-15);
-    /* brand-alpha-weak = 600-15 */
-    border-color: var(--scheme-exparang-600-30);
-    /* brand-alpha-weak = 600-30 */
-
-    >.brand-on-background-medium {
-      color: var(--scheme-exparang-900);
-      /* brand-on-background-medium = 900 */
-    }
+    --badge-color: var(--scheme-exparang-700);
+    --badge-medium-color: var(--scheme-exparang-900);
   }
 
   .mcm-badge {
-    color: var(--scheme-mcm-900);
-    /* brand-on-background-weak = 700 */
-    background-color: var(--scheme-mcm-600-15);
-    /* brand-alpha-weak = 600-15 */
-    border-color: var(--scheme-mcm-600-30);
-    /* brand-alpha-weak = 600-30 */
+    --badge-color: var(--scheme-mcm-900);
+    --badge-medium-color: var(--scheme-mcm-900);
+  }
 
-    >.brand-on-background-medium {
-      color: var(--scheme-mcm-900);
-      /* brand-on-background-medium = 900 */
-    }
+  .youse-badge {
+    --badge-color: var(--scheme-youse-700);
+    --badge-medium-color: var(--scheme-youse-900);
   }
 }
 
 [data-theme=light] {
   .float-badge {
-    color: var(--scheme-float-500);
-    /* brand-on-background-weak = 500 */
-    background-color: var(--scheme-float-600-15);
-    /* brand-alpha-weak = 600-15 */
-    border-color: var(--scheme-float-600-30);
-    /* brand-alpha-medium = 600-30 */
-
-    >.brand-on-background-medium {
-      color: var(--scheme-float-400);
-      /* brand-on-background-medium = 400 */
-    }
+    --badge-color: var(--scheme-float-500);
+    --badge-medium-color: var(--scheme-float-400);
   }
 
   .exparang-badge {
-    color: var(--scheme-exparang-500);
-    /* brand-on-background-weak = 500 */
-    background-color: var(--scheme-exparang-600-15);
-    /* brand-alpha-weak = 600-15 */
-    border-color: var(--scheme-exparang-600-30);
-    /* brand-alpha-medium = 600-30 */
-
-    >.brand-on-background-medium {
-      color: var(--scheme-exparang-400);
-      /* brand-on-background-medium = 400 */
-    }
+    --badge-color: var(--scheme-exparang-500);
+    --badge-medium-color: var(--scheme-exparang-400);
   }
 
   .mcm-badge {
-    color: var(--scheme-mcm-500);
-    /* brand-on-background-weak = 500 */
-    background-color: var(--scheme-mcm-600-15);
-    /* brand-alpha-weak = 600-15 */
-    border-color: var(--scheme-mcm-600-30);
-    /* brand-alpha-medium = 600-30 */
+    --badge-color: var(--scheme-mcm-500);
+    --badge-medium-color: var(--scheme-mcm-400);
+  }
 
-    >.brand-on-background-medium {
-      color: var(--scheme-mcm-400);
-      /* brand-on-background-medium = 400 */
-    }
+  .youse-badge {
+    --badge-color: var(--scheme-youse-400);
+    --badge-medium-color: var(--scheme-youse-400);
   }
 }
 
