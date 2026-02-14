@@ -100,8 +100,8 @@ export default function About() {
             </Row>
             {person.languages && person.languages.length > 0 && (
               <Row wrap gap="8" horizontal="center">
-                {person.languages.map((language, index) => (
-                  <Tag key={index} size="l">
+                {person.languages.map((language) => (
+                  <Tag key={language} size="l">
                     {language}
                   </Tag>
                 ))}
@@ -242,7 +242,7 @@ export default function About() {
                       <Row fillWidth gap="12" wrap>
                         {experience.images.map((image, index) => (
                           <Row
-                            key={index}
+                            key={image.alt}
                             border="neutral-medium"
                             radius="m"
                             minWidth={image.width}
@@ -317,7 +317,7 @@ export default function About() {
                       <Row fillWidth paddingTop="m" gap="12" wrap>
                         {skill.images.map((image, index) => (
                           <Row
-                            key={index}
+                            key={image.alt}
                             border="neutral-medium"
                             radius="m"
                             minWidth={image.width}
