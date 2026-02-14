@@ -32,6 +32,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <Column fillWidth gap="xs" radius="m" overflow="hidden">
       <Carousel
+        className="carousel-fix"
         play={ autoScroll ? { auto: true, interval: 4000, controls: true } : undefined }
         aspectRatio="16/9"
         indicator={autoScroll ? 'line' : false}

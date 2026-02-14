@@ -142,3 +142,8 @@
     }
   }
 }
+
+/* Fixes the carousel's border radius not applying on the transition effect */
+.carousel-fix > div:nth-child(2) {
+  border-radius: var(--radius-l);
+}
