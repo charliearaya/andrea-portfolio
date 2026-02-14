@@ -9,9 +9,8 @@ import {
   Row,
   Schema,
   Meta,
-  Line,
 } from "@once-ui-system/core";
-import { home, about, person, baseURL, routes } from "@/resources";
+import { home, about, person, baseURL } from "@/resources";
 import { Connect, ProjectCard } from "@/components";
 import AboutHero from "@/components/AboutHero";
 import SkillsHero from "@/components/SkillsHero";
@@ -28,13 +27,14 @@ export async function generateMetadata() {
 }
 
 const projectImages = [
-  "/images/projects/sas/cover_04.png",
-  "/images/projects/float/cover_01.png",
-  "/images/projects/exparang/cover_01.png",
-  "/images/projects/mcm/cover_01.png",
+  "/images/projects/sas/cover_01.png",
   "/images/projects/youse/cover_01.png",
-  "/images/projects/netigate/cover_01.png",
-  "/images/projects/brides-unite/cover_01.png",
+  "/images/projects/exparang/cover_04.png",
+  "/images/projects/sas/cover_04.png",
+  "/images/projects/float/cover_04.png",
+  "/images/projects/sas/image_06.png",
+  "/images/projects/mcm/cover_01.png",
+  "/images/projects/sas/image_04.png",
 ]
 
 export default function Home() {
@@ -123,26 +123,7 @@ export default function Home() {
           autoScroll
         />
       </RevealFx>
-      {/* {routes["/blog"] && (
-        <Column fillWidth gap="24" marginBottom="l">
-          <Row fillWidth paddingRight="64">
-            <Line maxWidth={48} />
-          </Row>
-          <Row fillWidth gap="24" marginTop="40" s={{ direction: "column" }}>
-            <Row flex={1} paddingLeft="l" paddingTop="24">
-              <Heading as="h2" variant="display-strong-xs" wrap="balance">
-                Latest from the blog
-              </Heading>
-            </Row>
-            <Row flex={3} paddingX="20">
-              <Posts range={[1, 2]} columns="2" />
-            </Row>
-          </Row>
-          <Row fillWidth paddingLeft="64" horizontal="end">
-            <Line maxWidth={48} />
-          </Row>
-        </Column>
-      )} */}
+    
       <AboutHero />
       <SkillsHero />
       {/* <Recommendations /> */}

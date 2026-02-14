@@ -35,7 +35,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         className="carousel-fix"
         play={ autoScroll ? { auto: true, interval: 4000, controls: true } : undefined }
         aspectRatio="16/9"
-        indicator={autoScroll ? 'line' : false}
+        indicator="line"
         sizes="(max-width: 960px) 100vw, 960px"
         items={images.map((image) => ({
           slide: image,
