@@ -16,7 +16,7 @@ export const SkillCard: React.FC<SkillCardProps> = ({ icon, iconSize = "m", titl
   return (
     <Flex direction="column" fillWidth fillHeight horizontal="center" border="neutral-medium" radius="m" padding="16" paddingTop="24" paddingBottom="32" >
       <Icon name={icon} size={iconSize} onBackground="accent-medium" marginBottom="16" radius="full" padding="16" border="transparent" background="brand-alpha-weak" style={{ transform: `rotate(${rotate}deg)` }} />
-      <Heading variant="heading-strong-xs" paddingBottom="16">
+      <Heading variant="heading-strong-xs" paddingBottom="16" align="center">
         {title}
       </Heading>
       <List as="ul" gap="4" className={styles.custom} fit>
