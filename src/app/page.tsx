@@ -31,7 +31,7 @@ const projectImages = [
   "/images/projects/youse/cover_01.png",
   "/images/projects/exparang/cover_04.png",
   "/images/projects/sas/cover_04.png",
-  "/images/projects/float/cover_04.png",
+  "/images/projects/float/cover_03.png",
   "/images/projects/sas/image_06.png",
   "/images/projects/mcm/cover_01.png",
   "/images/projects/sas/image_04.png",

@@ -111,10 +111,6 @@ const about: About = {
         <br />
         <br />
         I’m comfortable working independently and in cross-functional teams, and I collaborate closely with product owners, developers, and stakeholders to design solutions that balance user needs, business goals, and technical constraints.
-
-        <br />
-        <br />
-        Outside of work, I enjoy photography, spending time in nature, and practicing yoga.
         {/* In recent years UI design has become my strongest focus and passion. I bring structure, curiosity, analytical thinking, and an entrepreneurial mindset to every project -and I’m ready to support a team of driven, innovative creatives. */}
       </>
     ),

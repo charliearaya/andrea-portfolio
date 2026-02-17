@@ -1,19 +1,18 @@
-import { Badge, Column, Flex, Heading, Media, Row, SmartLink, Text } from "@once-ui-system/core";
-import React from "react";
+import { Badge, Column, Flex, Heading, Media, Row, Text } from "@once-ui-system/core";
 
-export const AboutHero: React.FC<{}> = () => {
+export const AboutHero: React.FC<void> = () => {
 
   return (
     <Flex direction="column" fillWidth center marginBottom="l">
       <Heading variant="display-strong-m" paddingBottom="8">
         How I work
       </Heading>
-      <Text variant="body-default-xl" onBackground="neutral-weak" paddingBottom="64" align="center">
+      <Text variant="body-default-xl" onBackground="neutral-weak" paddingBottom="64" align="center" wrap="balance">
         Product designer with 5+ years of experience turning complex product challenges into clear, effective solutions.
       </Text>
 
       <Column maxWidth={50}>
-        <Row fillWidth gap="64" s={{ direction: "column" }}>
+        <Row fillWidth s={{ direction: "column" }} className="g-xl">
           <Flex center>
             <Media src="/images/avatar_02.png"
               objectFit="contain"
@@ -27,7 +26,7 @@ export const AboutHero: React.FC<{}> = () => {
               I design clear, structured digital products by working closely with product and engineering teams to solve complex problems and make informed trade-offs.
               <br />
               <br />
-              I’m used to collaborating across disciplines – aligning stakeholders, navigating constraints, and helping teams move forward with confidence.
+              I’m used to collaborating across disciplines, aligning stakeholders, navigating constraints, and helping teams move forward with confidence.
             </Text>
             <Badge
               id="badge-about-hero"

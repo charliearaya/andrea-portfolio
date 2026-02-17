@@ -9,8 +9,8 @@ export const SkillsHero: React.FC<{}> = () => {
       <Heading variant="display-strong-s" paddingBottom="8">
         Skills & Expertise
       </Heading>
-      <Text variant="body-default-xl" onBackground="neutral-weak"  paddingBottom="64" align="center">
-        Turning user insights into a scalable design language through research, UI design,<br />systems thinking, and collaboration
+      <Text variant="body-default-xl" onBackground="neutral-weak"  paddingBottom="64" align="center" wrap="balance">
+        Turning user insights into a scalable design language through research, UI design, systems thinking, and collaboration
       </Text>
 
       <Grid columns="4" gap="16" m={{ columns: 2 }} s={{ columns: 1 }} fillWidth>
