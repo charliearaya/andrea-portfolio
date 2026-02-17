@@ -1,32 +1,61 @@
-import { Badge, Column, Flex, Heading, Media, Row, Text } from "@once-ui-system/core";
+import {
+  Badge,
+  Column,
+  Flex,
+  Heading,
+  Media,
+  Row,
+  Text,
+} from "@once-ui-system/core";
+import React from "react";
 
-export const AboutHero: React.FC<void> = () => {
-
+export const AboutHero: React.FC<{}> = () => {
   return (
     <Flex direction="column" fillWidth center marginBottom="l">
       <Heading variant="display-strong-m" paddingBottom="8">
         How I work
       </Heading>
-      <Text variant="body-default-xl" onBackground="neutral-weak" paddingBottom="64" align="center" wrap="balance">
-        Product designer with 5+ years of experience turning complex product challenges into clear, effective solutions.
+      <Text
+        variant="body-default-xl"
+        onBackground="neutral-weak"
+        paddingBottom="64"
+        align="center"
+        wrap="balance"
+      >
+        Product designer with 5+ years of experience turning complex product
+        challenges into clear, effective solutions.
       </Text>
 
       <Column maxWidth={50}>
         <Row fillWidth s={{ direction: "column" }} className="g-xl">
           <Flex center>
-            <Media src="/images/avatar_02.png"
+            <Media
+              src="/images/avatar_02.png"
               objectFit="contain"
               sizes="(max-width: 768px) 100vw, 408px"
               radius="xl"
               width={25}
             />
           </Flex>
-          <Flex direction="column" gap="16" vertical="center" s={{ direction: "column", horizontal: "center" }}>
-            <Text variant="body-default-m" onBackground="neutral-weak" paddingBottom="16">
-              I design clear, structured digital products by working closely with product and engineering teams to solve complex problems and make informed trade-offs.
+          <Flex
+            direction="column"
+            gap="16"
+            vertical="center"
+            s={{ direction: "column", horizontal: "center" }}
+          >
+            <Text
+              variant="body-default-m"
+              onBackground="neutral-weak"
+              paddingBottom="16"
+            >
+              I design clear, structured digital products by working closely
+              with product and engineering teams to solve complex problems and
+              make informed trade-offs.
               <br />
               <br />
-              I’m used to collaborating across disciplines, aligning stakeholders, navigating constraints, and helping teams move forward with confidence.
+              I’m used to collaborating across disciplines, aligning
+              stakeholders, navigating constraints, and helping teams move
+              forward with confidence.
             </Text>
             <Badge
               id="badge-about-hero"
