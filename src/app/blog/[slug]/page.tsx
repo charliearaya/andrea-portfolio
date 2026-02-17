@@ -65,11 +65,6 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
     notFound();
   }
 
-  const avatars =
-    post.metadata.team?.map((person) => ({
-      src: person.avatar,
-    })) || [];
-
   return (
     <Row fillWidth>
       <Row maxWidth={12} m={{ hide: true }} />

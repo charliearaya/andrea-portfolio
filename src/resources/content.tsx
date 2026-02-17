@@ -31,7 +31,7 @@ const social: Social = [
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/in/andrea-schulz-designs-stockholm-a2z/",
+    link: "https://www.linkedin.com/in/andreaschulz-uxui/",
     essential: true,
   },
   // {

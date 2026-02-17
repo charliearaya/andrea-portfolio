@@ -13,7 +13,7 @@ export const AboutHero: React.FC<{}> = () => {
   return (
     <Flex direction="column" fillWidth center marginBottom="l">
       <Heading variant="display-strong-m" paddingBottom="8">
-        How I work
+        About me
       </Heading>
       <Text
         variant="body-default-xl"

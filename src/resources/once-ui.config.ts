@@ -196,7 +196,7 @@ const schema: SchemaConfig = {
 
 // social links
 const sameAs: SameAsConfig = {
-  linkedin: "https://www.linkedin.com/in/andrea-schulz-designs-stockholm-a2z",
+  linkedin: "https://www.linkedin.com/in/andreaschulz-uxui",
 };
 
 // social sharing configuration for blog posts
