@@ -58,7 +58,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           </Flex>
         )}
         {(description?.trim() || content?.trim()) && (
-          <Flex direction="column" flex={7} gap="16" xs={{ direction: "column", horizontal: "center", wrap: "auto" }}>
+          <Flex direction="column" flex={7} gap="16" xs={{ direction: "column", horizontal: "center" }}>
             {description?.trim() && (
               <Text variant="body-default-m" onBackground="neutral-weak">
                 {description}
