@@ -1,11 +1,22 @@
 "use client";
 
 import { mailchimp, newsletter, person } from "@/resources";
-import { Button, Heading, Text, Background, Column, Row } from "@once-ui-system/core";
+import {
+  Heading,
+  Text,
+  Background,
+  Column,
+  Row,
+  Badge,
+  Icon,
+  Flex,
+} from "@once-ui-system/core";
 import { opacity, SpacingToken } from "@once-ui-system/core";
 import { socialLinks } from "@/resources/content";
 
-export const Connect: React.FC<React.ComponentProps<typeof Column>> = ({ ...flex }) => {
+export const Connect: React.FC<React.ComponentProps<typeof Column>> = ({
+  ...flex
+}) => {
   if (newsletter.display === false) return null;
 
   return (
@@ -67,34 +78,44 @@ export const Connect: React.FC<React.ComponentProps<typeof Column>> = ({ ...flex
         <Heading marginBottom="s" variant="display-strong-xs">
           {newsletter.title}
         </Heading>
-        <Text wrap="balance" marginBottom="l" variant="body-default-l" onBackground="neutral-weak">
+        <Text
+          wrap="balance"
+          marginBottom="l"
+          variant="body-default-l"
+          onBackground="neutral-weak"
+        >
           {newsletter.description}
         </Text>
       </Column>
-      <Row center gap="s" fillWidth maxWidth={24}>
-        <Row flex="1" fillWidth>
-          <Button
-            href={`mailto:${person.email}`}
-            prefixIcon="email"
-            size="m"
-            variant="primary"
-            fillWidth
-          >
+      <Flex center gap="s">
+        <Badge
+          id="badge-email-connect"
+          textVariant="label-strong-m"
+          href={`mailto:${person.email}`}
+          effect={false}
+          arrow={false}
+          fillWidth
+        >
+          <Row vertical="center">
+            <Icon name="email" marginRight="8" size="s" />
             Email Andrea
-          </Button>
-        </Row>
-        <Row flex="1" fillWidth>
-          <Button
-            href={socialLinks.LinkedIn}
-            prefixIcon="linkedin"
-            size="m"
-            variant="primary"
-            fillWidth
-          >
+          </Row>
+        </Badge>
+        <Badge
+          id="badge-linkedin-connect"
+          textVariant="label-strong-m"
+          onBackground="accent-strong"
+          href={socialLinks.LinkedIn}
+          arrow={false}
+          effect={false}
+          fillWidth
+        >
+          <Row vertical="center">
+            <Icon name="linkedin" marginRight="8" size="s" />
             LinkedIn
-          </Button>
-        </Row>
-      </Row>
+          </Row>
+        </Badge>
+      </Flex>
     </Column>
   );
 };

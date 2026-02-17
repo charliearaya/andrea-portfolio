@@ -13,7 +13,7 @@ export const SkillsHero: React.FC<{}> = () => {
         Turning user insights into a scalable design language through research, UI design, systems thinking, and collaboration
       </Text>
 
-      <Grid columns="4" gap="16" m={{ columns: 2 }} s={{ columns: 1 }} fillWidth>
+      <Grid columns="4" gap="32" m={{ columns: 2 }} s={{ columns: 1 }} fillWidth>
         <SkillCard
           icon="personSearch"
           iconSize="l"
