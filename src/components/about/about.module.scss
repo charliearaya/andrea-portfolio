@@ -18,3 +18,13 @@
         align-self: center;
     }
 }
+
+// Temp fix after core 1.6.1 changes
+.avatar {
+    top: var(--static-space-64);
+}
+@media (max-width: breakpoints.$s) {
+    .avatar {
+        top: auto;
+    }
+}

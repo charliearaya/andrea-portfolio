@@ -81,11 +81,9 @@ export default function About() {
         {about.avatar.display && (
           <Column
             className={styles.avatar}
-            top="64"
             fitHeight
             position="sticky"
-            s={{ position: "relative", style: { top: "auto" } }}
-            xs={{ style: { top: "auto" } }}
+            s={{ position: "relative" }}
             minWidth="160"
             paddingX="l"
             paddingBottom="xl"
