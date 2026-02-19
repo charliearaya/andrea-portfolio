@@ -22,8 +22,7 @@ export const AboutHero: React.FC<{}> = () => {
         align="center"
         wrap="balance"
       >
-        Product designer with 5+ years of experience turning complex product
-        challenges into clear, effective solutions.
+        Product designer with 5+ years of experience turning complex product challenges into effective, scalable solutions.
       </Text>
 
       <Column maxWidth={50}>
