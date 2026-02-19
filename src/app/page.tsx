@@ -29,7 +29,7 @@ export async function generateMetadata() {
 const projectImages = [
   "/images/projects/sas/cover_01.png",
   "/images/projects/youse/cover_01.png",
-  "/images/projects/exparang/cover_02.png",
+  "/images/projects/exparang/cover_04.png",
   "/images/projects/sas/cover_04.png",
   "/images/projects/float/cover_03.png",
   "/images/projects/sas/image_06.png",
@@ -77,14 +77,9 @@ export default function Home() {
             </RevealFx>
           )}
           <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="16">
-            <Heading wrap="balance" variant="display-strong-l">
+            <Heading wrap="balance" variant="display-strong-m" className="page-headline">
               {home.headline}
             </Heading>
-          </RevealFx>
-          <RevealFx translateY="8" delay={0.2} fillWidth horizontal="center" paddingBottom="32">
-            <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
-              {home.subline}
-            </Text>
           </RevealFx>
           <RevealFx paddingTop="12" delay={0.4} horizontal="center" paddingLeft="12">
             <Button
@@ -123,7 +118,6 @@ export default function Home() {
           autoScroll
         />
       </RevealFx>
-    
       <AboutHero />
       <SkillsHero />
       {/* <Recommendations /> */}

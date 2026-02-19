@@ -165,3 +165,7 @@
 .carousel-fix > div:nth-child(2) {
   border-radius: var(--radius-l);
 }
+
+.page-headline {
+  line-height: 1.2 !important;
+}

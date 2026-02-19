@@ -65,9 +65,9 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Designing products through every stage</>,
+  headline: <>Hi, I’m Andrea – I design digital products from idea to delivery, and beyond.</>,
   featured: {
-    display: true,
+    display: false,
     title: (
       <Row gap="12" vertical="center">
         <strong className="ml-4">SAS</strong>{" "}
