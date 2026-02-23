@@ -3,6 +3,7 @@ import "@once-ui-system/core/css/tokens.css";
 import "@/resources/custom.css";
 
 import classNames from "classnames";
+import Script from "next/script";
 
 import {
   Background,
@@ -13,8 +14,10 @@ import {
   RevealFx,
   SpacingToken,
 } from "@once-ui-system/core";
-import { Footer, Header, RouteGuard, Providers } from "@/components";
+import { AnalyticsTracker, Footer, Header, RouteGuard, Providers } from "@/components";
 import { baseURL, effects, fonts, style, dataStyle, home } from "@/resources";
+
+const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -46,6 +49,28 @@ export default async function RootLayout({
       )}
     >
       <head>
+        {gaMeasurementId && (
+          <>
+            <Script
+              id="ga-init"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  window.gtag = window.gtag || gtag;
+                  gtag('js', new Date());
+                  gtag('config', '${gaMeasurementId}', { send_page_view: false });
+                `,
+              }}
+            />
+            <Script
+              id="ga-script"
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
+              strategy="afterInteractive"
+            />
+          </>
+        )}
         <script
           id="theme-init"
           dangerouslySetInnerHTML={{
@@ -105,6 +130,7 @@ export default async function RootLayout({
         />
       </head>
       <Providers>
+        {gaMeasurementId && <AnalyticsTracker />}
         <Column
           as="body"
           background="page"
