@@ -3,8 +3,6 @@ import "@once-ui-system/core/css/tokens.css";
 import "@/resources/custom.css";
 
 import classNames from "classnames";
-import Script from "next/script";
-import { Analytics } from "@vercel/analytics/next"
 
 import {
   Background,
@@ -15,10 +13,8 @@ import {
   RevealFx,
   SpacingToken,
 } from "@once-ui-system/core";
-import { AnalyticsTracker, Footer, Header, RouteGuard, Providers } from "@/components";
+import { Footer, Header, RouteGuard, Providers } from "@/components";
 import { baseURL, effects, fonts, style, dataStyle, home } from "@/resources";
-
-const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -50,23 +46,6 @@ export default async function RootLayout({
       )}
     >
       <head>
-        {gaMeasurementId && (
-          <Script>
-            <Script async src="https://www.googletagmanager.com/gtag/js?id=G-XLSG641Q8X"></Script>
-            <Script dangerouslySetInnerHTML={{
-              __html: `
-            window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-
-              gtag('config', 'G-XLSG641Q8X');
-              `}}
-            >
-
-            </Script>
-
-          </Script>
-        )}
         <script
           id="theme-init"
           dangerouslySetInnerHTML={{
@@ -126,8 +105,6 @@ export default async function RootLayout({
         />
       </head>
       <Providers>
-        {gaMeasurementId && <AnalyticsTracker />}
-        <Analytics />
         <Column
           as="body"
           background="page"
