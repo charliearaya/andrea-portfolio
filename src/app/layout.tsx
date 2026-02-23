@@ -132,7 +132,6 @@ export default async function RootLayout({
       </head>
       <Providers>
         {gaMeasurementId && <AnalyticsTracker />}
-        <Analytics/>
         <Column
           as="body"
           background="page"
@@ -192,6 +191,7 @@ export default async function RootLayout({
             </Flex>
           </Flex>
           <Footer />
+          <Analytics />
         </Column>
       </Providers>
     </Flex>
