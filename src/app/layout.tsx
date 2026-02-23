@@ -51,26 +51,21 @@ export default async function RootLayout({
     >
       <head>
         {gaMeasurementId && (
-          <>
-            <Script
-              id="ga-init"
-              strategy="afterInteractive"
-              dangerouslySetInnerHTML={{
-                __html: `
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  window.gtag = window.gtag || gtag;
-                  gtag('js', new Date());
-                  gtag('config', '${gaMeasurementId}', { send_page_view: false });
-                `,
-              }}
-            />
-            <Script
-              id="ga-script"
-              src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
-              strategy="afterInteractive"
-            />
-          </>
+          <Script>
+            <Script async src="https://www.googletagmanager.com/gtag/js?id=G-XLSG641Q8X"></Script>
+            <Script dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-XLSG641Q8X');
+              `}}
+            >
+
+            </Script>
+
+          </Script>
         )}
         <script
           id="theme-init"
@@ -83,17 +78,17 @@ export default async function RootLayout({
                   
                   // Set defaults from config
                   const config = ${JSON.stringify({
-                    brand: style.brand,
-                    accent: style.accent,
-                    neutral: style.neutral,
-                    solid: style.solid,
-                    "solid-style": style.solidStyle,
-                    border: style.border,
-                    surface: style.surface,
-                    transition: style.transition,
-                    scaling: style.scaling,
-                    "viz-style": dataStyle.variant,
-                  })};
+              brand: style.brand,
+              accent: style.accent,
+              neutral: style.neutral,
+              solid: style.solid,
+              "solid-style": style.solidStyle,
+              border: style.border,
+              surface: style.surface,
+              transition: style.transition,
+              scaling: style.scaling,
+              "viz-style": dataStyle.variant,
+            })};
                   
                   // Apply default values
                   Object.entries(config).forEach(([key, value]) => {
@@ -132,7 +127,7 @@ export default async function RootLayout({
       </head>
       <Providers>
         {gaMeasurementId && <AnalyticsTracker />}
-        <Analytics/>
+        <Analytics />
         <Column
           as="body"
           background="page"
@@ -194,6 +189,6 @@ export default async function RootLayout({
           <Footer />
         </Column>
       </Providers>
-    </Flex>
+    </Flex >
   );
 }
