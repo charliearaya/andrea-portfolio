@@ -17,7 +17,6 @@ import {
 } from "@once-ui-system/core";
 import { Footer, Header, RouteGuard, Providers } from "@/components";
 import { baseURL, effects, fonts, style, dataStyle, home } from "@/resources";
-import Script from "next/script";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -49,19 +48,6 @@ export default async function RootLayout({
       )}
     >
       <head>
-        <Script>
-          <Script async src="https://www.googletagmanager.com/gtag/js?id=G-XLSG641Q8X"></Script>
-          <Script dangerouslySetInnerHTML={{
-            __html: `
-            window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-
-              gtag('config', 'G-XLSG641Q8X');
-              `}}
-          >
-          </Script>
-        </Script>
         <script
           id="theme-init"
           dangerouslySetInnerHTML={{
