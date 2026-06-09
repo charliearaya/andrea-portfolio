@@ -27,14 +27,14 @@ export async function generateMetadata() {
 }
 
 const projectImages = [
-  "/images/projects/sas/cover_01.png",
-  "/images/projects/youse/cover_01.png",
-  "/images/projects/exparang/cover_02.png",
-  "/images/projects/sas/cover_04.png",
-  "/images/projects/float/cover_03.png",
-  "/images/projects/sas/image_06.png",
-  "/images/projects/mcm/cover_01.png",
-  "/images/projects/sas/image_04.png",
+  "/images/projects/sas/cover_01.jpg",
+  "/images/projects/youse/cover_01.jpg",
+  "/images/projects/exparang/cover_02.jpg",
+  "/images/projects/sas/cover_04.jpg",
+  "/images/projects/float/cover_03.jpg",
+  "/images/projects/sas/image_06.jpg",
+  "/images/projects/mcm/cover_01.jpg",
+  "/images/projects/sas/image_04.jpg",
 ]
 
 export default function Home() {
