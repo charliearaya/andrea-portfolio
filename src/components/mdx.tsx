@@ -153,12 +153,12 @@ function createCodeBlock(props: any) {
 }
 
 function createList(as: "ul" | "ol") {
-  return ({ children }: { children: ReactNode }) => <List as={as}>{children}</List>;
+  return ({ children }: { children: ReactNode }) => <List as={as} role="list">{children}</List>;
 }
 
 function createListItem({ children }: { children: ReactNode }) {
   return (
-    <ListItem marginTop="4" marginBottom="8" style={{ lineHeight: "175%" }}>
+    <ListItem role="listitem" marginTop="4" marginBottom="8" style={{ lineHeight: "175%" }}>
       {children}
     </ListItem>
   );

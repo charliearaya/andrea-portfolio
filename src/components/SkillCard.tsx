@@ -19,11 +19,11 @@ export const SkillCard: React.FC<SkillCardProps> = ({ icon, iconSize = "m", titl
       <Heading variant="heading-strong-xs" paddingBottom="16" align="center">
         {title}
       </Heading>
-      <List as="ul" gap="4" className={styles.custom} fit>
+      <List as="ul" role="list" gap="4" className={styles.custom} fit>
         {bullets.map((bullet, index) => (
           <Row key={index}>
             <Icon name="checkCircle" size="s" onBackground="accent-medium" />
-            <ListItem variant="body-default-m" marginBottom="4" >
+            <ListItem role="listitem" variant="body-default-m" marginBottom="4" >
               {bullet}
             </ListItem>
           </Row>
