@@ -9,6 +9,10 @@ const withMDX = mdx({
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   transpilePackages: ["next-mdx-remote"],
+  devIndicators: {
+    buildActivity: true,
+    position: "bottom-left",
+  },
   images: {
     remotePatterns: [
       {
