@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 
 import { Fade, Line, Row, ToggleButton } from "@once-ui-system/core";
 
-import { routes, display, about, blog, work, gallery } from "@/resources";
+import { routes, display, about, work } from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Header.module.scss";
 
@@ -95,50 +95,6 @@ export const Header = () => {
                       href="/work"
                       className={styles["custom-toggle-button"]}
                       selected={pathname.startsWith("/work")}
-                    />
-                  </Row>
-                </>
-              )}
-              {/* {routes["/blog"] && (
-                <>
-                  <Row s={{ hide: true }}>
-                    <ToggleButton
-                      size="l"
-                      prefixIcon="book"
-                      href="/blog"
-                      label={blog.label}
-                      selected={pathname.startsWith("/blog")}
-                    />
-                  </Row>
-                  <Row hide s={{ hide: false }}>
-                    <ToggleButton
-                      size="l"
-                      prefixIcon="book"
-                      href="/blog"
-                      selected={pathname.startsWith("/blog")}
-                    />
-                  </Row>
-                </>
-              )} */}
-              {routes["/gallery"] && (
-                <>
-                  <Row s={{ hide: true }}>
-                    <ToggleButton
-                      size="l"
-                      prefixIcon="gallery"
-                      href="/gallery"
-                      label={gallery.label}
-                      className={styles["custom-toggle-button"]}
-                      selected={pathname.startsWith("/gallery")}
-                    />
-                  </Row>
-                  <Row hide s={{ hide: false }}>
-                    <ToggleButton
-                      size="l"
-                      prefixIcon="gallery"
-                      href="/gallery"
-                      selected={pathname.startsWith("/gallery")}
-                      className={styles["custom-toggle-button"]}
                     />
                   </Row>
                 </>

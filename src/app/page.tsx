@@ -14,7 +14,6 @@ import { home, about, person, baseURL } from "@/resources";
 import { Connect, ProjectCard } from "@/components";
 import AboutHero from "@/components/AboutHero";
 import SkillsHero from "@/components/SkillsHero";
-import Recommendations from "@/components/Recommendations";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -27,14 +26,14 @@ export async function generateMetadata() {
 }
 
 const projectImages = [
-  "/images/projects/sas/cover_01.jpg",
-  "/images/projects/youse/cover_01.jpg",
-  "/images/projects/exparang/cover_02.jpg",
-  "/images/projects/sas/cover_04.jpg",
-  "/images/projects/float/cover_03.jpg",
-  "/images/projects/sas/image_06.jpg",
-  "/images/projects/mcm/cover_01.jpg",
-  "/images/projects/sas/image_04.jpg",
+  "/images/projects/sas/cover_01.webp",
+  "/images/projects/youse/cover_01.webp",
+  "/images/projects/exparang/cover_02.webp",
+  "/images/projects/sas/cover_04.webp",
+  "/images/projects/float/cover_03.webp",
+  "/images/projects/sas/image_06.webp",
+  "/images/projects/mcm/cover_01.webp",
+  "/images/projects/sas/image_04.webp",
 ]
 
 export default function Home() {
