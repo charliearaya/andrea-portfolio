@@ -36,6 +36,8 @@ const projectImages = [
 ];
 
 export default function Home() {
+
+  // TODO: use FadingLettersFx?
   return (
     <Column maxWidth="m" gap="xl" paddingY="12" horizontal="center">
       <Schema
@@ -113,7 +115,6 @@ export default function Home() {
           description="Shipped work across large-scale platforms, complex user journeys, and design systems used by cross-functional teams."
           content="there is content"
           ctaText="View all projects"
-          autoScroll
         />
       </RevealFx>
       <AboutHero />

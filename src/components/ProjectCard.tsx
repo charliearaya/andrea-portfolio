@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 import {
   Badge,
   Carousel,
@@ -8,7 +10,6 @@ import {
   Heading,
   Text,
 } from "@once-ui-system/core";
-import { useEffect, useRef, useState } from "react";
 
 interface ProjectCardProps {
   href: string;
@@ -30,34 +31,50 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   autoScroll = false,
 }) => {
-  const [interval, setInterval] = useState(10000);
-  const isFirstLoadRef = useRef(true);
+  const [canAutoScroll, setCanAutoScroll] = useState(!autoScroll || images.length < 2);
 
   useEffect(() => {
-    // Preload the first image for better performance
-    if (images.length > 0) {
-      const img = new Image();
-      img.src = images[0];
+    if (!autoScroll || images.length < 2) {
+      setCanAutoScroll(true);
+      return;
     }
-  }, [images]);
 
-  useEffect(() => {
-    if (isFirstLoadRef.current) {
-      isFirstLoadRef.current = false;
-      const timer = setTimeout(() => {
-        setInterval(5500);
-      }, 10000);
-      return () => clearTimeout(timer);
-    }
-  }, []);
+    let cancelled = false;
 
+    const preloadImage = (src: string) =>
+      new Promise<void>((resolve) => {
+        const image = new window.Image();
 
+        image.onload = () => resolve();
+        image.onerror = () => resolve();
+        image.src = src;
+      });
+
+    const prepareCarousel = async () => {
+      await preloadImage(images[0]);
+      await preloadImage(images[1]);
+
+      if (!cancelled) {
+        setCanAutoScroll(true);
+      }
+
+      void Promise.all(images.slice(2).map(preloadImage));
+    };
+
+    setCanAutoScroll(false);
+    void prepareCarousel();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [autoScroll, images]);
 
   return (
     <Column fillWidth gap="xs" radius="m" overflow="hidden">
+      {/* TODO: Change with swiper? */}
       <Carousel
         className="carousel-fix"
-        play={ autoScroll ? { auto: true, interval: interval, controls: true } : undefined }
+        play={autoScroll && canAutoScroll ? { auto: true, interval: 5500, controls: true } : undefined}
         aspectRatio="16/9"
         indicator="line"
         sizes="(max-width: 960px) 100vw, 960px"

@@ -28,6 +28,7 @@ export async function generateMetadata() {
 }
 
 export default function About() {
+  // TODO: Use HeadingNav & HeadingLink. Use Timeline somehow?
   const structure = [
     {
       title: about.intro.title,

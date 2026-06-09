@@ -6,7 +6,7 @@ const person: Person = {
   lastName: "Schulz",
   name: `Andrea Schulz`,
   role: "Product Designer",
-  avatar: "/images/avatar_01.jpg",
+  avatar: "/images/avatar_01.webp",
   email: "andrea.isabelle.schulz@gmail.com",
   location: "Stockholm",
   languages: ["German · C2", "English · C1", "Swedish · B1"],
@@ -61,7 +61,7 @@ const socialLinks: Record<string, string> = social.reduce<Record<string, string>
 
 const home: Home = {
   path: "/",
-  image: "/images/og/home.jpg",
+  image: "/images/og/og_sm.webp",
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
@@ -128,21 +128,7 @@ const about: About = {
                       the design system and collaborated closely with commercial, UX, and 
                       engineering teams on revenue-critical experiences.`,
         achievements: [],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          // {
-          //   src: "/images/projects/project-01/cover-01.jpg",
-          //   alt: "Once UI Project",
-          //   width: 16,
-          //   height: 9,
-          // },
-          // {
-          //   src: "/images/projects/project-01/cover-01.jpg",
-          //   alt: "Once UI Project",
-          //   width: 16,
-          //   height: 9,
-          // },
-        ],
+        images: [],
       },
       {
         company: "VNTRS (Venture Studio)",

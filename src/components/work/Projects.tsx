@@ -38,4 +38,5 @@ export function Projects({ range, exclude, current, nextOnly }: Readonly<Project
       ))}
     </Column>
   );
+  // TODO: Add scroll to top
 }

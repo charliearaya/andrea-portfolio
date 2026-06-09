@@ -29,7 +29,7 @@ export const AboutHero: React.FC<{}> = () => {
         <Row fillWidth s={{ direction: "column" }} className="g-xl">
           <Flex center>
             <Media
-              src="/images/avatar_02.jpg"
+              src="/images/avatar_02.webp"
               objectFit="contain"
               sizes="(max-width: 768px) 100vw, 408px"
               radius="xl"
