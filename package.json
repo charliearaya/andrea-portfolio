@@ -5,6 +5,7 @@
     "dev": "next dev",
     "export": "next export",
     "build": "next build",
+    "images:webp": "node scripts/convert-project-images-to-webp.mjs",
     "biome-write": "npx @biomejs/biome format --write .",
     "start": "next start",
     "lint": "next lint"
