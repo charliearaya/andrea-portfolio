@@ -55,6 +55,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 
   return (
     <Column fillWidth gap="xs" radius="m" overflow="hidden">
+      {/* TODO: Change with swiper? */}
       <Carousel
         className="carousel-fix"
         play={ autoScroll ? { auto: true, interval: interval, controls: true } : undefined }

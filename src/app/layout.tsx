@@ -18,6 +18,7 @@ import {
 import { Footer, Header, Providers } from "@/components";
 import { baseURL, effects, fonts, style, dataStyle, home } from "@/resources";
 
+// TODO: use import { Meta } from "@/once-ui/modules";
 export async function generateMetadata() {
   return Meta.generate({
     title: home.title,
