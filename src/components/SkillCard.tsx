@@ -9,7 +9,6 @@ type SkillCardProps = {
   title: string;
   bullets: string[];
   rotate?: number;
-  children?: React.ReactNode;
 };
 
 export const SkillCard: React.FC<SkillCardProps> = ({ icon, iconSize = "m", title, rotate = 0, bullets }) => {

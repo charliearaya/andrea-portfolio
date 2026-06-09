@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { Line, Row, ToggleButton } from "@once-ui-system/core";
 
-import { routes, display, about, work } from "@/resources";
+import { routes, display, about, work, home } from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Header.module.scss";
 
@@ -13,7 +13,7 @@ export const HeaderNav = () => {
   return (
     <Row gap="s" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
       {routes["/"] && (
-        <ToggleButton size="l" prefixIcon="home" href="/" selected={pathname === "/"} />
+        <ToggleButton size="l" prefixIcon="home" href="/" label={home.label} selected={pathname === "/"} />
       )}
       <Line background="neutral-alpha-medium" vert maxHeight="24" />
       {routes["/about"] && (
