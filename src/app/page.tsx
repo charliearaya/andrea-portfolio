@@ -1,6 +1,5 @@
 import {
   Heading,
-  Text,
   Button,
   Avatar,
   RevealFx,
@@ -34,7 +33,7 @@ const projectImages = [
   "/images/projects/sas/image_06.webp",
   "/images/projects/mcm/cover_01.webp",
   "/images/projects/sas/image_04.webp",
-]
+];
 
 export default function Home() {
   return (
@@ -55,7 +54,7 @@ export default function Home() {
       <Column fillWidth horizontal="center">
         <Column maxWidth="s" horizontal="center" align="center">
           {home.featured.display && (
-            <RevealFx
+            <Row
               fillWidth
               horizontal="center"
               paddingTop="16"
@@ -73,14 +72,14 @@ export default function Home() {
               >
                 <Row paddingY="2">{home.featured.title}</Row>
               </Badge>
-            </RevealFx>
+            </Row>
           )}
-          <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="16">
+          <Row translateY="4" fillWidth horizontal="center" paddingBottom="16">
             <Heading wrap="balance" variant="display-strong-m" className="page-headline">
               {home.headline}
             </Heading>
-          </RevealFx>
-          <RevealFx paddingTop="12" delay={0.4} horizontal="center" paddingLeft="12">
+          </Row>
+          <Row paddingTop="12" horizontal="center" paddingLeft="12">
             <Button
               id="about"
               data-border="rounded"
@@ -102,10 +101,10 @@ export default function Home() {
                 {about.title}
               </Row>
             </Button>
-          </RevealFx>
+          </Row>
         </Column>
       </Column>
-      <RevealFx translateY="16" delay={0.6} marginBottom="l">
+      <RevealFx translateY="16" delay={0} speed="medium" marginBottom="l">
         <ProjectCard
           key="projects-carousel"
           href="/work"

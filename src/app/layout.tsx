@@ -4,7 +4,7 @@ import "@/resources/custom.css";
 
 import classNames from "classnames";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 
 import {
   Background,
@@ -59,17 +59,17 @@ export default async function RootLayout({
                   
                   // Set defaults from config
                   const config = ${JSON.stringify({
-              brand: style.brand,
-              accent: style.accent,
-              neutral: style.neutral,
-              solid: style.solid,
-              "solid-style": style.solidStyle,
-              border: style.border,
-              surface: style.surface,
-              transition: style.transition,
-              scaling: style.scaling,
-              "viz-style": dataStyle.variant,
-            })};
+                    brand: style.brand,
+                    accent: style.accent,
+                    neutral: style.neutral,
+                    solid: style.solid,
+                    "solid-style": style.solidStyle,
+                    border: style.border,
+                    surface: style.surface,
+                    transition: style.transition,
+                    scaling: style.scaling,
+                    "viz-style": dataStyle.variant,
+                  })};
                   
                   // Apply default values
                   Object.entries(config).forEach(([key, value]) => {
@@ -107,8 +107,6 @@ export default async function RootLayout({
         />
       </head>
       <Providers>
-        <SpeedInsights />
-        <Analytics />
         <Column
           as="body"
           background="page"
@@ -118,7 +116,7 @@ export default async function RootLayout({
           padding="0"
           horizontal="center"
         >
-          <RevealFx fill position="absolute">
+          <RevealFx fill position="absolute" speed="fast">
             <Background
               mask={{
                 x: effects.mask.x,
@@ -169,7 +167,13 @@ export default async function RootLayout({
           </Flex>
           <Footer />
         </Column>
+        {process.env.NODE_ENV === "production" && (
+          <>
+            <SpeedInsights />
+            <Analytics />
+          </>
+        )}
       </Providers>
-    </Flex >
+    </Flex>
   );
 }
