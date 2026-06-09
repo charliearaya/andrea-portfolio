@@ -8,6 +8,7 @@ import {
   Heading,
   Text,
 } from "@once-ui-system/core";
+import { useEffect, useRef, useState } from "react";
 
 interface ProjectCardProps {
   href: string;
@@ -29,11 +30,34 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   autoScroll = false,
 }) => {
+  const [interval, setInterval] = useState(10000);
+  const isFirstLoadRef = useRef(true);
+
+  useEffect(() => {
+    // Preload the first image for better performance
+    if (images.length > 0) {
+      const img = new Image();
+      img.src = images[0];
+    }
+  }, [images]);
+
+  useEffect(() => {
+    if (isFirstLoadRef.current) {
+      isFirstLoadRef.current = false;
+      const timer = setTimeout(() => {
+        setInterval(5500);
+      }, 10000);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+
+
   return (
     <Column fillWidth gap="xs" radius="m" overflow="hidden">
       <Carousel
         className="carousel-fix"
-        // play={ autoScroll ? { auto: true, interval: 5500, controls: true } : undefined }
+        play={ autoScroll ? { auto: true, interval: interval, controls: true } : undefined }
         aspectRatio="16/9"
         indicator="line"
         sizes="(max-width: 960px) 100vw, 960px"
