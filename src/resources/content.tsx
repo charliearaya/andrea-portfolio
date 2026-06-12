@@ -19,38 +19,16 @@ const newsletter: Newsletter = {
 };
 
 const social: Social = [
-  // Links are automatically displayed.
   // Import new icons in /once-ui/icons.ts
-  // Set essentials: true for links you want to show on the about page
-  // {
-  //   name: "GitHub",
-  //   icon: "github",
-  //   link: "https://github.com/once-ui-system",
-  //   essential: true,
-  // },
   {
     name: "LinkedIn",
     icon: "linkedin",
     link: "https://www.linkedin.com/in/andreaschulz-uxui/",
-    essential: true,
   },
-  // {
-  //   name: "Instagram",
-  //   icon: "instagram",
-  //   link: "https://www.instagram.com/once_ui/",
-  //   essential: false,
-  // },
-  // {
-  //   name: "Threads",
-  //   icon: "threads",
-  //   link: "https://www.threads.com/@once_ui",
-  //   essential: true,
-  // },
   {
     name: "Email",
     icon: "email",
     link: `mailto:${person.email}`,
-    essential: true,
   },
 ];
 
