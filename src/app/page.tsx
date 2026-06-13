@@ -2,7 +2,6 @@ import {
   Heading,
   Button,
   Avatar,
-  RevealFx,
   Column,
   Badge,
   Row,
@@ -106,17 +105,16 @@ export default function Home() {
           </Row>
         </Column>
       </Column>
-      <RevealFx translateY="16" delay={0} speed="medium" marginBottom="l">
-        <ProjectCard
-          key="projects-carousel"
-          href="/work"
-          images={projectImages}
-          title="Selected product work"
-          description="Shipped work across large-scale platforms, complex user journeys, and design systems used by cross-functional teams."
-          content="there is content"
-          ctaText="View all projects"
-        />
-      </RevealFx>
+      <ProjectCard
+        key="projects-carousel"
+        priority
+        href="/work"
+        images={projectImages}
+        title="Selected product work"
+        description="Shipped work across large-scale platforms, complex user journeys, and design systems used by cross-functional teams."
+        content="there is content"
+        ctaText="View all projects"
+      />
       <AboutHero />
       <SkillsHero />
       {/* <Recommendations /> */}

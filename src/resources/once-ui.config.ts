@@ -40,20 +40,8 @@ const protectedRoutes: ProtectedRoutesConfig = {
 import { Inter } from "next/font/google";
 import { Geist_Mono } from "next/font/google";
 
-const heading = Inter({
-  variable: "--font-heading",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const body = Inter({
+const inter = Inter({
   variable: "--font-body",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const label = Inter({
-  variable: "--font-label",
   subsets: ["latin"],
   display: "swap",
 });
@@ -65,9 +53,9 @@ const code = Geist_Mono({
 });
 
 const fonts: FontsConfig = {
-  heading: heading,
-  body: body,
-  label: label,
+  heading: inter,
+  body: inter,
+  label: inter,
   code: code,
 };
 
@@ -118,7 +106,7 @@ const effects: EffectsConfig = {
     colorEnd: "page-background",
   },
   dots: {
-    display: true,
+    display: false,
     opacity: 40,
     size: "2",
     color: "brand-background-strong",

@@ -29,6 +29,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   content,
   ctaText,
   description,
+  priority = false,
   autoScroll = false,
 }) => {
   const [canAutoScroll, setCanAutoScroll] = useState(!autoScroll || images.length < 2);
@@ -75,6 +76,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       <Carousel
         className="carousel-fix"
         play={autoScroll && canAutoScroll ? { auto: true, interval: 5500, controls: true } : undefined}
+        priority={priority}
         aspectRatio="16/9"
         indicator="line"
         sizes="(max-width: 960px) 100vw, 960px"
