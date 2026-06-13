@@ -76,7 +76,7 @@ export default function Home() {
             </Row>
           )}
           <Row translateY="4" fillWidth horizontal="center" paddingBottom="16">
-            <Heading wrap="balance" variant="display-strong-m" className="page-headline">
+            <Heading wrap="balance" variant="display-strong-m" style={{ lineHeight: 1.2 }}>
               {home.headline}
             </Heading>
           </Row>
@@ -89,6 +89,7 @@ export default function Home() {
               size="m"
               weight="default"
               arrowIcon
+              style={{ borderWidth: "2px"}}
             >
               <Row gap="8" vertical="center" paddingRight="4">
                 {about.avatar.display && (
