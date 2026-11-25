@@ -1,0 +1,64 @@
+.intro {
+  padding: clamp(2rem, 6vw, 5rem) 0 1rem;
+  text-align: left;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.title {
+  font-size: clamp(2.75rem, 7vw, 5.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+  max-width: 22ch;
+}
+
+.lead {
+  font-size: clamp(1.125rem, 2.2vw, 1.5rem);
+  line-height: 1.5;
+  max-width: 42ch;
+}
+
+.article {
+  min-width: 0;
+  padding-block: 1rem 2rem;
+
+  > :global(p),
+  > :global(ul),
+  > :global(ol) {
+    max-width: 72ch;
+    width: 100%;
+    align-self: center;
+  }
+
+  > :global(h2),
+  > :global(h3),
+  > :global(h4),
+  > :global(h5) {
+    width: 100%;
+    max-width: 72ch;
+    align-self: center;
+  }
+
+  > :global(h2) {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--neutral-border-medium);
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    letter-spacing: -0.035em;
+    line-height: 1.2;
+  }
+
+  > :global(h3) {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .article > :global(h2) {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  }
+}

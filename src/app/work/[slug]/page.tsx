@@ -14,6 +14,7 @@ import { ScrollToHash, CustomMDX } from "@/components";
 import { Metadata } from "next";
 import { Projects } from "@/components/work/Projects";
 import { ProjectSummary } from "@/components/work/ProjectSummary";
+import styles from "./CaseStudy.module.scss";
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const posts = getPosts(["src", "app", "work", "projects"]);
@@ -86,12 +87,17 @@ export default async function Project({
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Column maxWidth="s" gap="16" horizontal="center" align="center">
+      <Column fillWidth gap="24" className={styles.intro}>
         {/* <SmartLink href="/work">
           <Text variant="label-strong-m">Projects</Text>
         </SmartLink> */}
-        <Heading variant="display-strong-m">{post.metadata.title}</Heading>
-        <Text variant="body-default-m" onBackground="neutral-strong">
+        <Text variant="label-default-s" onBackground="neutral-weak" className={styles.eyebrow}>
+          Selected work / {post.metadata.title}
+        </Text>
+        <Heading as="h1" variant="display-strong-m" className={styles.title}>
+          {post.metadata.title}
+        </Heading>
+        <Text variant="body-default-m" onBackground="neutral-strong" className={styles.lead}>
           {post.metadata.description}
         </Text>
         {post.metadata.projectDetails ? (
@@ -122,7 +128,7 @@ export default async function Project({
       {post.metadata.images.length > 0 && (
         <Media priority aspectRatio="16 / 9" radius="m" alt="image" src={post.metadata.images[0]} />
       )}
-      <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
+      <Column as="article" fillWidth className={styles.article}>
         <CustomMDX source={post.content} />
       </Column>
       <Column fillWidth gap="40" horizontal="center" marginTop="80">
