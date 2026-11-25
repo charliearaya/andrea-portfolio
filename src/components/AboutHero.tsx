@@ -55,6 +55,11 @@ export const AboutHero: React.FC<{}> = () => {
               I’m used to collaborating across disciplines, aligning
               stakeholders, navigating constraints, and helping teams move
               forward with confidence.
+              <br />
+              <br />
+              I integrate AI into my design process to explore ideas, prototype,
+              and iterate more effectively while keeping human judgment at the
+              centre of my work.
             </Text>
             <Badge
               id="badge-about-hero"

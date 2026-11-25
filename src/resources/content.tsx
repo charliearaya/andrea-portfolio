@@ -89,7 +89,12 @@ const about: About = {
         <br />
         <br />
         I work independently and in cross-functional teams, and I collaborate closely with product owners, developers, and stakeholders to design solutions that balance user needs, business goals, and technical constraints.
-        {/* In recent years UI design has become my strongest focus and passion. I bring structure, curiosity, analytical thinking, and an entrepreneurial mindset to every project -and I’m ready to support a team of driven, innovative creatives. */}
+        <br />
+        <br />
+        AI has become an integral part of my design practice. I use it to support research, explore
+        ideas, and prototype and iterate more efficiently. I’m particularly interested in how AI can
+        extend our capabilities as designers while keeping critical thinking, design judgment, and
+        human needs at the centre of the process.
       </>
     ),
   },
@@ -183,6 +188,11 @@ const about: About = {
       {
         title: "Research & Validation",
         description: "Using qualitative and quantitative methods — usability testing, A/B testing, and behavioral analytics — to inform decisions and validate outcomes.",
+      },
+      {
+        title: "AI-Assisted Design",
+        description:
+          "Integrating AI into research, concept exploration, prototyping, and iteration. Exploring connected workflows with tools such as Claude, Perplexity, and Figma, while critically evaluating outputs and retaining creative ownership.",
       },
       {
         title: "Delivery & Collaboration",
