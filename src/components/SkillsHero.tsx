@@ -1,93 +1,50 @@
-import { Heading, Icon, SmartLink, Text } from "@once-ui-system/core";
+import { Heading, Text } from "@once-ui-system/core";
+import Link from "next/link";
 import styles from "./SkillsHero.module.scss";
-
-const expertise = [
-  {
-    title: "Research & validation",
-    description:
-      "Turning user insights into informed product decisions through qualitative and quantitative research.",
-    methods: "Interviews · Usability testing · A/B testing · Funnel insights",
-    tools: "Hotjar, Maze, Google Analytics",
-  },
-  {
-    title: "Product & interaction design",
-    description:
-      "Shaping clear, intuitive digital experiences, from early concepts and user flows to high-fidelity interfaces.",
-    methods: "UX · UI · Responsive design · Accessibility · Prototyping",
-    tools: "Figma",
-  },
-  {
-    title: "Design systems",
-    description:
-      "Building scalable design foundations that connect product, brand, and engineering across touchpoints.",
-    methods: "Component libraries · Design tokens · Documentation",
-    tools: "Figma, Zeroheight",
-  },
-  {
-    title: "Delivery & collaboration",
-    description:
-      "Bringing teams together around user needs, business goals, and technical constraints throughout delivery.",
-    methods: "Agile iteration · Developer handoff · Stakeholder alignment",
-    tools: "Jira",
-  },
-];
 
 export function SkillsHero() {
   return (
     <section className={styles.section} aria-labelledby="expertise-heading">
       <div className={styles.intro}>
-        <div>
-          <p className={styles.eyebrow}>My practice</p>
-          <Heading as="h2" id="expertise-heading" variant="display-strong-m">
-            Skills &amp; expertise
-          </Heading>
-        </div>
-        <Text variant="body-default-l" onBackground="neutral-weak">
-          I bring together research, visual craft, systems thinking, and collaboration to design
-          digital products that work for people and businesses.
+        <Heading as="h2" id="expertise-heading" variant="display-strong-s">
+          Skills &amp; expertise
+        </Heading>
+        <Text variant="body-default-m" onBackground="neutral-weak">
+          From understanding the problem to designing the details.
         </Text>
       </div>
 
-      <div className={styles.grid}>
-        {expertise.map((skill, index) => (
-          <article key={skill.title} className={styles.skill}>
-            <span className={styles.number} aria-hidden="true">
-              {String(index + 1).padStart(2, "0")}
-            </span>
-            <Heading as="h3" variant="heading-strong-l">
-              {skill.title}
-            </Heading>
-            <Text variant="body-default-m" onBackground="neutral-weak">
-              {skill.description}
-            </Text>
-            <p className={styles.methods}>{skill.methods}</p>
-            <p className={styles.tools}>{skill.tools}</p>
-          </article>
-        ))}
+      <dl className={styles.expertise}>
+        <div className={styles.row}>
+          <dt>Research &amp; strategy</dt>
+          <dd>User interviews, usability testing, A/B testing, funnel analysis</dd>
+        </div>
+        <div className={styles.row}>
+          <dt>Product &amp; UI design</dt>
+          <dd>User flows, interaction design, visual design, accessibility, prototyping</dd>
+        </div>
+        <div className={styles.row}>
+          <dt>Design systems</dt>
+          <dd>Component libraries, design tokens, documentation, scalable UI</dd>
+        </div>
+        <div className={styles.row}>
+          <dt>AI-assisted design</dt>
+          <dd>
+            Research synthesis, concept exploration, prototyping and iteration
+            <Link href="/work/flow" className={styles.projectLink}>
+              Flow case study <span aria-hidden="true">↗</span>
+            </Link>
+          </dd>
+        </div>
+        <div className={styles.row}>
+          <dt>Collaboration &amp; delivery</dt>
+          <dd>Facilitation, stakeholder alignment, agile teams, developer handoff</dd>
+        </div>
+      </dl>
 
-        <article className={styles.ai}>
-          <div className={styles.aiTitle}>
-            <span className={styles.eyebrow}>05 / An evolving practice</span>
-            <Heading as="h3" variant="heading-strong-xl">
-              AI-assisted design
-            </Heading>
-          </div>
-          <div className={styles.aiCopy}>
-            <Text variant="body-default-m" onBackground="neutral-weak">
-              Integrating AI into research, concept exploration, prototyping, and iteration.
-              Exploring connected workflows while maintaining critical judgment and creative ownership.
-            </Text>
-            <p className={styles.methods}>
-              Research synthesis · Concept exploration · AI-assisted prototyping
-            </p>
-            <p className={styles.tools}>Claude, Perplexity, Figma + MCP</p>
-            <SmartLink href="/work/flow">
-              <span className={styles.link}>
-                Explore my AI design project <Icon name="arrowUpRight" size="s" />
-              </span>
-            </SmartLink>
-          </div>
-        </article>
+      <div className={styles.toolkit}>
+        <span>Tools I work with</span>
+        <p>Figma, Zeroheight, Claude, Perplexity, Maze, Hotjar, Google Analytics, Jira</p>
       </div>
     </section>
   );
