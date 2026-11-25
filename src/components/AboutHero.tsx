@@ -1,80 +1,36 @@
-import {
-  Badge,
-  Column,
-  Flex,
-  Heading,
-  Media,
-  Row,
-  Text,
-} from "@once-ui-system/core";
-import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import styles from "./AboutHero.module.scss";
 
-export const AboutHero: React.FC<{}> = () => {
+export function AboutHero() {
   return (
-    <Flex direction="column" fillWidth center marginBottom="l">
-      <Heading variant="display-strong-m" paddingBottom="8">
-        About me
-      </Heading>
-      <Text
-        variant="body-default-xl"
-        onBackground="neutral-weak"
-        paddingBottom="64"
-        align="center"
-        wrap="balance"
-      >
-        Product designer with 5+ years of experience turning complex product challenges into effective, scalable solutions.
-      </Text>
-
-      <Column maxWidth={50}>
-        <Row fillWidth s={{ direction: "column" }} className="g-xl">
-          <Flex center>
-            <Media
-              src="/images/avatar_02.webp"
-              objectFit="contain"
-              sizes="(max-width: 768px) 100vw, 408px"
-              radius="xl"
-              width={25}
-            />
-          </Flex>
-          <Flex
-            direction="column"
-            gap="16"
-            vertical="center"
-            s={{ direction: "column", horizontal: "center" }}
-          >
-            <Text
-              variant="body-default-m"
-              onBackground="neutral-weak"
-              paddingBottom="16"
-            >
-              I design clear, structured digital products by working closely
-              with product and engineering teams to solve complex problems and
-              make informed trade-offs.
-              <br />
-              <br />
-              I’m used to collaborating across disciplines, aligning
-              stakeholders, navigating constraints, and helping teams move
-              forward with confidence.
-              <br />
-              <br />
-              I integrate AI into my design process to explore ideas, prototype,
-              and iterate more effectively while keeping human judgment at the
-              centre of my work.
-            </Text>
-            <Badge
-              id="badge-about-hero"
-              title="More about me"
-              arrow
-              href="/about"
-              effect={false}
-              borderWidth={2}
-              border="brand-alpha-strong"
-            />
-          </Flex>
-        </Row>
-      </Column>
-    </Flex>
+    <section className={styles.section} aria-labelledby="about-heading">
+      <div className={styles.portrait}>
+        <Image
+          src="/images/avatar_02.webp"
+          alt="Andrea Schulz"
+          fill
+          sizes="(max-width: 720px) 100vw, 420px"
+        />
+      </div>
+      <div className={styles.copy}>
+        <p className={styles.label}>About me</p>
+        <h2 id="about-heading">Hi, I’m Andrea.</h2>
+        <p className={styles.lead}>
+          A Product Designer with 5+ years of experience and a background in visual design.
+        </p>
+        <p>
+          I work across research, UX, UI and design systems, collaborating with product and
+          engineering teams to solve complex problems and make informed trade-offs.
+        </p>
+        <p>
+          I also integrate AI into research, concept exploration and prototyping, with critical
+          thinking and human judgment at the centre of my process.
+        </p>
+        <Link href="/about" className={styles.link}>More about me <span>↗</span></Link>
+      </div>
+    </section>
   );
-};
+}
 
 export default AboutHero;

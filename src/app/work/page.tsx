@@ -1,12 +1,13 @@
-import { Column, Heading, Meta, Row, Schema } from "@once-ui-system/core";
+import { Meta, Schema } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
-import { Projects } from "@/components/work/Projects";
+import { SelectedWork } from "@/components/work/SelectedWork";
+import styles from "../Portfolio.module.scss";
 
 export async function generateMetadata() {
   return Meta.generate({
     title: work.title,
     description: work.description,
-    baseURL: baseURL,
+    baseURL,
     image: `/api/og/generate?title=${encodeURIComponent(work.title)}`,
     path: work.path,
   });
@@ -14,7 +15,7 @@ export async function generateMetadata() {
 
 export default function Work() {
   return (
-    <Column maxWidth="m" paddingTop="24">
+    <div className={styles.page}>
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -28,12 +29,17 @@ export default function Work() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Row s={{ hide: false}} m={{ hide: true}} fillWidth center marginBottom="24">
-        <Heading marginBottom="l" variant="heading-strong-xl" align="center">
-          {work.title}
-        </Heading>
-      </Row>
-      <Projects />
-    </Column>
+      <header className={styles.hero}>
+        <p className={styles.kicker}>Portfolio</p>
+        <h1>Selected work.</h1>
+        <p className={styles.lead}>
+          Product design, digital experiences and design systems across established organisations
+          and early-stage startups.
+        </p>
+      </header>
+      <section className={styles.section} aria-label="Projects">
+        <SelectedWork />
+      </section>
+    </div>
   );
 }
