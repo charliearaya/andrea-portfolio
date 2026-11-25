@@ -5,13 +5,12 @@ import {
   Schema,
   Column,
   Heading,
-  Media,
-  Text,
-  Line,
 } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
 import { ScrollToHash, CustomMDX } from "@/components";
-import { Metadata } from "next";
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import { Projects } from "@/components/work/Projects";
 import { ProjectSummary } from "@/components/work/ProjectSummary";
 import styles from "./CaseStudy.module.scss";
@@ -69,7 +68,7 @@ export default async function Project({
   //   })) || [];
 
   return (
-    <Column as="section" maxWidth="m" horizontal="center" gap="l">
+    <div className={styles.page} data-project={post.slug}>
       <Schema
         as="blogPosting"
         baseURL={baseURL}
@@ -87,58 +86,46 @@ export default async function Project({
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Column fillWidth gap="24" className={styles.intro}>
-        {/* <SmartLink href="/work">
-          <Text variant="label-strong-m">Projects</Text>
-        </SmartLink> */}
-        <Text variant="label-default-s" onBackground="neutral-weak" className={styles.eyebrow}>
-          Selected work / {post.metadata.title}
-        </Text>
-        <Heading as="h1" variant="display-strong-m" className={styles.title}>
-          {post.metadata.title}
-        </Heading>
-        <Text variant="body-default-m" onBackground="neutral-strong" className={styles.lead}>
-          {post.metadata.description}
-        </Text>
-        {post.metadata.projectDetails ? (
-          <ProjectSummary details={post.metadata.projectDetails} />
-        ) : (
-          <Text variant="body-default-s" onBackground="neutral-weak" marginBottom="12">
-            {post.metadata.subheading}
-          </Text>
-        )}
-      </Column>
-      {/* <Row marginBottom="32" horizontal="center">
-        <Row gap="16" vertical="center">
-          {post.metadata.team && <AvatarGroup reverse avatars={avatars} size="s" />}
-          <Text variant="label-default-m" onBackground="brand-weak">
-            {post.metadata.team?.map((member, idx) => (
-              <span key={idx}>
-                {idx > 0 && (
-                  <Text as="span" onBackground="neutral-weak">
-                    ,{" "}
-                  </Text>
-                )}
-                <SmartLink href={member.linkedIn}>{member.name}</SmartLink>
-              </span>
-            ))}
-          </Text>
-        </Row>
-      </Row> */}
+      <header className={styles.hero}>
+        <div className={styles.heroInner}>
+          <div className={styles.heroTop}>
+            <Link href="/work">← Selected work</Link>
+            <span>{post.metadata.projectDetails?.timeline || post.metadata.subheading}</span>
+          </div>
+          <p className={styles.eyebrow}>{post.metadata.title}</p>
+          <h1 className={styles.title}>
+            {post.metadata.description || post.metadata.title}
+          </h1>
+          <p className={styles.lead}>{post.metadata.summary}</p>
+        </div>
+      </header>
       {post.metadata.images.length > 0 && (
-        <Media priority aspectRatio="16 / 9" radius="m" alt="image" src={post.metadata.images[0]} />
+        <div className={styles.cover}>
+          <Image
+            src={post.metadata.images[0]}
+            alt={`${post.metadata.title} project cover`}
+            width={1600}
+            height={1000}
+            sizes="(max-width: 768px) 100vw, 1200px"
+            priority
+          />
+        </div>
       )}
-      <Column as="article" fillWidth className={styles.article}>
-        <CustomMDX source={post.content} />
-      </Column>
-      <Column fillWidth gap="40" horizontal="center" marginTop="80">
-        <Line maxWidth="xs" />
-        <Heading as="h2" variant="heading-strong-xl" marginBottom="24">
-          Next project
-        </Heading>
-        <Projects current={post.slug} nextOnly />
-      </Column>
+      <div className={styles.content}>
+        {post.metadata.projectDetails && (
+          <ProjectSummary details={post.metadata.projectDetails} />
+        )}
+        <article className={styles.article}>
+          <CustomMDX source={post.content} />
+        </article>
+      </div>
+      <div className={styles.next}>
+        <Column fillWidth gap="40" horizontal="center">
+          <Heading as="h2" variant="heading-strong-xl">Next project</Heading>
+          <Projects current={post.slug} nextOnly />
+        </Column>
+      </div>
       <ScrollToHash />
-    </Column>
+    </div>
   );
 }

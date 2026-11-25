@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import styles from "./CaseStudyBlocks.module.scss";
 
 export function EditorialSection({
@@ -68,9 +69,42 @@ export function KeyInsight({
   children: ReactNode;
 }) {
   return (
-    <aside className={styles.callout}>
+    <aside className={label === "How might we" ? styles.question : styles.callout}>
       <p className={styles.label}>{label}</p>
       <div>{children}</div>
     </aside>
+  );
+}
+
+export function FeatureBand({ children }: { children: ReactNode }) {
+  return <div className={styles.band}>{children}</div>;
+}
+
+export function Feature({
+  title,
+  children,
+}: {
+  title: string;
+  children: ReactNode;
+}) {
+  return (
+    <section className={styles.feature}>
+      <h3>{title}</h3>
+      <div className={styles.featureCopy}>{children}</div>
+    </section>
+  );
+}
+
+export function CaseFigure({
+  src,
+  alt,
+}: {
+  src: string;
+  alt: string;
+}) {
+  return (
+    <figure className={styles.figure}>
+      <Image src={src} alt={alt} width={1600} height={1000} sizes="(max-width: 768px) 100vw, 1100px" />
+    </figure>
   );
 }

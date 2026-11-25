@@ -1,7 +1,16 @@
 import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
 import React, { ReactNode } from "react";
 import { slugify as transliterate } from "transliteration";
-import { EditorialSection, Evidence, Insight, InsightGrid, KeyInsight } from "./work/CaseStudyBlocks";
+import {
+  CaseFigure,
+  EditorialSection,
+  Evidence,
+  Feature,
+  FeatureBand,
+  Insight,
+  InsightGrid,
+  KeyInsight,
+} from "./work/CaseStudyBlocks";
 
 import {
   Heading,
@@ -174,8 +183,11 @@ function createHR() {
 }
 
 const components = {
+  CaseFigure,
   EditorialSection,
   Evidence,
+  Feature,
+  FeatureBand,
   Insight,
   InsightGrid,
   KeyInsight,
