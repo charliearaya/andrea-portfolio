@@ -13,6 +13,7 @@ import { baseURL, about, person, work } from "@/resources";
 import { ScrollToHash, CustomMDX } from "@/components";
 import { Metadata } from "next";
 import { Projects } from "@/components/work/Projects";
+import { ProjectSummary } from "@/components/work/ProjectSummary";
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const posts = getPosts(["src", "app", "work", "projects"]);
@@ -93,9 +94,13 @@ export default async function Project({
         <Text variant="body-default-m" onBackground="neutral-strong">
           {post.metadata.description}
         </Text>
-        <Text variant="body-default-s" onBackground="neutral-weak" marginBottom="12">
-          {post.metadata.subheading}
-        </Text>
+        {post.metadata.projectDetails ? (
+          <ProjectSummary details={post.metadata.projectDetails} />
+        ) : (
+          <Text variant="body-default-s" onBackground="neutral-weak" marginBottom="12">
+            {post.metadata.subheading}
+          </Text>
+        )}
       </Column>
       {/* <Row marginBottom="32" horizontal="center">
         <Row gap="16" vertical="center">

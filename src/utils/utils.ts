@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import type { ProjectDetails } from "@/components/work/ProjectSummary";
 
 type Metadata = {
   title: string;
@@ -13,6 +14,7 @@ type Metadata = {
   images: string[];
   tag?: string;
   link?: string;
+  projectDetails?: ProjectDetails;
 };
 
 import { notFound } from "next/navigation";
@@ -44,6 +46,7 @@ function readMDXFile(filePath: string) {
     images: data.images || [],
     tag: data.tag || [],
     link: data.link || "",
+    projectDetails: data.projectDetails,
   };
 
   return { metadata, content };
