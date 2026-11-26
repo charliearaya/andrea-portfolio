@@ -8,7 +8,7 @@ export function AboutHero() {
     <section className={styles.section} aria-labelledby="about-heading">
       <div className={styles.portrait}>
         <Image
-          src="/images/avatar_02.webp"
+          src="/images/avatar_03.jpg"
           alt="Andrea Schulz"
           fill
           sizes="(max-width: 720px) 100vw, 420px"

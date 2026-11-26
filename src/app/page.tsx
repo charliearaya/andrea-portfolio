@@ -24,7 +24,7 @@ const projectImages = [
   "/images/projects/youse/cover_01.webp",
   "/images/projects/sas/image_06.webp",
   "/images/projects/float/cover_03.webp",
-  "/images/projects/sas/cover_04.webp",
+  "/images/eurobonus.jpg",
   "/images/projects/mcm/cover_01.webp",
 ];
 

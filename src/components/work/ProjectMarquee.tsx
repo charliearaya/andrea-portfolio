@@ -13,7 +13,7 @@ type Cover = {
   fit: "cover" | "contain";
   position: string;
   alt: string;
-  treatment?: "eurobonus" | "travel" | "flow";
+  treatment?: "travel" | "flow";
 };
 
 const covers: Record<string, Cover> = {
@@ -50,14 +50,13 @@ const covers: Record<string, Cover> = {
     position: "center",
     alt: "Exparang desktop and mobile experience",
   },
-  "/images/projects/sas/cover_04.webp": {
-    ratio: 0.86,
+  "/images/eurobonus.jpg": {
+    ratio: 824 / 1102,
     background: "#2034ce",
     inset: "0",
     fit: "cover",
-    position: "100% center",
+    position: "center",
     alt: "SAS EuroBonus checkout on mobile",
-    treatment: "eurobonus",
   },
   "/images/projects/float/cover_03.webp": {
     ratio: 1.48,
@@ -199,15 +198,14 @@ export function ProjectMarquee({ images }: { images: string[] }) {
                     } as CSSProperties}
                   >
                     {cover?.treatment === "flow" ||
-                    cover?.treatment === "eurobonus" ||
                     cover?.treatment === "travel" ? (
                       <div className={`${styles.composition} ${styles[cover.treatment]}`}>
                         <div className={styles.crop}>
                           <Image
                             src={cover.treatment === "flow" ? "/images/projects/flow/completion.jpg" : src}
                             alt={duplicate ? "" : cover.alt}
-                            width={cover.treatment === "flow" ? 1536 : cover.treatment === "travel" ? 980 : 1200}
-                            height={cover.treatment === "flow" ? 960 : cover.treatment === "travel" ? 551 : 674}
+                            width={cover.treatment === "flow" ? 1536 : 980}
+                            height={cover.treatment === "flow" ? 960 : 551}
                             quality={95}
                             loading="eager"
                           />
