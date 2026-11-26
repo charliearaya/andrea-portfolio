@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { person, routes } from "@/resources";
@@ -13,7 +14,14 @@ export const HeaderNav = () => {
   return (
     <nav className={styles.nav} aria-label="Main navigation">
       <Link href="/" className={styles.name} aria-current={pathname === "/" ? "page" : undefined}>
-        {person.name}
+        <Image
+          src={person.avatar}
+          alt=""
+          width={44}
+          height={44}
+          className={styles.avatar}
+        />
+        <span>{person.name}</span>
       </Link>
       <div className={styles.links}>
         {routes["/work"] && (
