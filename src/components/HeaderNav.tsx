@@ -14,13 +14,9 @@ export const HeaderNav = () => {
   return (
     <nav className={styles.nav} aria-label="Main navigation">
       <Link href="/" className={styles.name} aria-current={pathname === "/" ? "page" : undefined}>
-        <Image
-          src={person.avatar}
-          alt=""
-          width={44}
-          height={44}
-          className={styles.avatar}
-        />
+        <span className={styles.avatar}>
+          <Image src={person.avatar} alt="" width={96} height={96} />
+        </span>
         <span>{person.name}</span>
       </Link>
       <div className={styles.links}>
