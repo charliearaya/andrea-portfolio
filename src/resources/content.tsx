@@ -106,7 +106,8 @@ const about: About = {
         company: "Etraveli Group",
         timeframe: "Jun – Nov 2026",
         role: "UX Designer",
-        description: "Designed post-booking travel experiences, translating user needs, business requirements and technical constraints into clear, intuitive solutions. Collaborated closely with product and engineering throughout exploration, refinement and design delivery.",
+        description:
+          "Designed self-service experiences within the post-booking journey, simplifying complex booking changes and supporting informed customer decisions. Collaborated closely with product and engineering to translate business rules and technical constraints into intuitive, scalable design solutions.",
         achievements: [],
         images: [],
       },
