@@ -36,22 +36,16 @@
   position: relative;
   flex-shrink: 0;
   height: var(--slide-height);
-  width: calc(var(--slide-height) * 1.38);
+  width: calc(var(--slide-height) * var(--cover-ratio, 1.6));
   border-radius: 1rem;
-
-  &:nth-child(3n + 2) {
-    width: calc(var(--slide-height) * 1.1);
-  }
-
-  &:nth-child(3n) {
-    width: calc(var(--slide-height) * 1.65);
-  }
   overflow: hidden;
-  background: var(--neutral-alpha-weak);
+  background: var(--cover-background, #efefef);
+}
 
-  img {
-    object-fit: cover;
-  }
+.artwork {
+  position: absolute;
+  inset: var(--cover-inset, 0);
+  overflow: hidden;
 }
 
 .control {

@@ -47,7 +47,7 @@ export default function Home() {
       <header className={`${styles.hero} ${styles.homeHero}`}>
         <h1>Design that turns complexity into confidence.</h1>
         <p className={styles.lead}>
-          Hi, I’m Andrea — a Product Designer combining UX, visual design and systems thinking
+          Stockholm-based Product Designer combining UX, visual design and systems thinking
           to create clear, useful and considered digital experiences.
         </p>
         <div className={styles.actions}>
