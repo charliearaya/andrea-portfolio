@@ -26,12 +26,12 @@ export const HeaderNav = () => {
       <div className={styles.links}>
         {routes["/work"] && (
           <Link href="/work" aria-current={workActive ? "page" : undefined}>
-            Work
+            Projects
           </Link>
         )}
         {routes["/about"] && (
           <Link href="/about" aria-current={aboutActive ? "page" : undefined}>
-            About
+            About me
           </Link>
         )}
         <a href={`mailto:${person.email}`}>
