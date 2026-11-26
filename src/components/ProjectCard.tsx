@@ -106,7 +106,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           {(description?.trim() || content?.trim()) && (
             <Flex direction="column" flex={7} gap="16" xs={{ direction: "column", horizontal: "center" }}>
               {description?.trim() && (
-                <Text variant="body-default-m" onBackground="neutral-weak">
+                <Text variant="body-default-m" style={{ color: "var(--portfolio-secondary-text)" }}>
                   {description}
                 </Text>
               )}

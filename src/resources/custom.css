@@ -17,6 +17,7 @@
   --portfolio-h3-tracking: -0.025em;
   --portfolio-heading-weight: 600;
   --portfolio-label-size: 0.875rem;
+  --portfolio-secondary-text: var(--neutral-on-background-weak);
 
   /*
   /* Override default variables here */
@@ -183,4 +184,9 @@
 /* Fixes the carousel's border radius not applying on the transition effect */
 .carousel-fix > div:nth-child(2) {
   border-radius: var(--radius-l);
+}
+
+/* Readable secondary copy without changing muted metadata or dark mode. */
+[data-theme="light"] {
+  --portfolio-secondary-text: #595959;
 }

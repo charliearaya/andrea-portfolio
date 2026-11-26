@@ -41,7 +41,7 @@
   p {
     max-width: 58ch;
     margin: 0.5rem 0 0;
-    color: var(--neutral-on-background-weak);
+    color: var(--portfolio-secondary-text);
     line-height: 1.65;
   }
 }
@@ -151,7 +151,7 @@
   p {
     grid-column: 1 / -1;
     margin: 0;
-    color: var(--neutral-on-background-weak);
+    color: var(--portfolio-secondary-text);
     line-height: 1.65;
     max-width: 75ch;
   }
@@ -200,7 +200,7 @@
   p {
     line-height: 1.65;
     margin: 0;
-    color: var(--neutral-on-background-weak);
+    color: var(--portfolio-secondary-text);
   }
 }
 
