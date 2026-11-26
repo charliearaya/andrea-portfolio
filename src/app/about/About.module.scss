@@ -46,50 +46,83 @@
   }
 }
 
-.intro {
+.overview {
   display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-  align-items: center;
-  gap: clamp(2rem, 7vw, 6rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr) minmax(0, 1.5fr);
+  grid-template-areas:
+    "portrait experience philosophy"
+    "portrait tools tools";
+  gap: 1rem;
+  max-width: 1000px;
+  margin-inline: auto;
 }
 
 .portrait {
+  grid-area: portrait;
   position: relative;
-  aspect-ratio: 4 / 5;
+  min-height: 340px;
   border-radius: 1rem;
   overflow: hidden;
 
   img {
     object-fit: cover;
+    object-position: center;
   }
 }
 
-.copy {
-  h2 {
-    font-size: var(--portfolio-h2-size);
-    line-height: var(--portfolio-h2-leading);
-    letter-spacing: var(--portfolio-h2-tracking);
-    font-weight: var(--portfolio-heading-weight);
-    margin: 0 0 1.5rem;
-  }
-
-  p {
-    color: var(--neutral-on-background-weak);
-    font-size: 1.0625rem;
-    line-height: 1.7;
-    margin: 0 0 1rem;
-  }
-}
-
-.details {
+.experienceCard {
+  grid-area: experience;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  border-top: 1px solid var(--neutral-border-medium);
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  font-size: 0.875rem;
-  color: var(--neutral-on-background-weak);
+  justify-content: center;
+}
+
+.years {
+  font-size: var(--portfolio-h1-size);
+  line-height: var(--portfolio-h1-leading);
+  letter-spacing: var(--portfolio-h1-tracking);
+  font-weight: var(--portfolio-heading-weight);
+}
+
+.philosophyCard {
+  grid-area: philosophy;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.toolsCard {
+  grid-area: tools;
+}
+
+.tools {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1rem 0.5rem;
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.625rem;
+    min-width: 0;
+    font-size: 0.8125rem;
+    text-align: center;
+  }
+
+  svg {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.introAction {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
 .list {
@@ -151,18 +184,12 @@
   }
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-}
-
 .card {
-  padding: clamp(1.5rem, 4vw, 2.5rem);
+  padding: clamp(1.25rem, 3vw, 2rem);
   border-radius: 1rem;
   background: #f7f7f7;
 
-  h3 {
+  h2 {
     font-size: var(--portfolio-h3-size);
     line-height: var(--portfolio-h3-leading);
     letter-spacing: var(--portfolio-h3-tracking);
@@ -175,6 +202,16 @@
     margin: 0;
     color: var(--neutral-on-background-weak);
   }
+}
+
+.experienceCard .years {
+  color: var(--neutral-on-background-strong);
+  line-height: var(--portfolio-h1-leading);
+  margin-bottom: 0.5rem;
+}
+
+.philosophyCard h2 {
+  margin: 0;
 }
 
 :global([data-theme="dark"]) .card {
@@ -191,16 +228,24 @@
     --heading-space: 1.5rem;
   }
 
-  .intro,
-  .grid,
-  .education {
-    grid-template-columns: 1fr;
+  .overview {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "portrait experience"
+      "philosophy philosophy"
+      "tools tools";
   }
 
   .portrait {
-    width: 100%;
-    max-width: 440px;
-    margin-inline: auto;
+    min-height: 220px;
+  }
+
+  .tools {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .education {
+    grid-template-columns: 1fr;
   }
 
   .education > div {

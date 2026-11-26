@@ -1,30 +1,19 @@
 import Image from "next/image";
 import { Meta, Schema } from "@once-ui-system/core";
-import { about, baseURL, person } from "@/resources";
+import { about, baseURL, person, socialLinks } from "@/resources";
+import { FaFigma, FaJira, FaSlack } from "react-icons/fa6";
+import { SiAnthropic, SiNotion, SiOpenai } from "react-icons/si";
+import { PortfolioButton } from "@/components/PortfolioButton";
 import { SectionLabel } from "@/components/PortfolioDetails";
 import styles from "./About.module.scss";
 
-const principles = [
-  {
-    title: "Understand before designing",
-    description:
-      "Ask questions, explore assumptions and take time to understand the people and problems behind a brief.",
-  },
-  {
-    title: "Make connections",
-    description:
-      "Look beyond individual screens to understand how design decisions affect the wider experience.",
-  },
-  {
-    title: "Create together",
-    description:
-      "Bring different perspectives into the process and make design decisions accessible to everyone involved.",
-  },
-  {
-    title: "Stay curious",
-    description:
-      "Explore new technologies and AI-assisted workflows while retaining creative ownership and critical judgment.",
-  },
+const tools = [
+  { name: "Figma", Icon: FaFigma, color: "#a259ff" },
+  { name: "Claude", Icon: SiAnthropic, color: "#d97757" },
+  { name: "ChatGPT", Icon: SiOpenai, color: "currentColor" },
+  { name: "Notion", Icon: SiNotion, color: "currentColor" },
+  { name: "Jira", Icon: FaJira, color: "#2684ff" },
+  { name: "Slack", Icon: FaSlack, color: "#b45cb3" },
 ];
 
 export async function generateMetadata() {
@@ -58,35 +47,50 @@ export default function About() {
         <header className={styles.hero}>
           <SectionLabel>A little more about me</SectionLabel>
           <h1 id="about-intro">Curious by nature. A designer by choice.</h1>
+          <p>
+            A Product Designer with a background in visual design and a curiosity for how
+            people, design and technology come together.
+          </p>
         </header>
-        <div className={styles.intro}>
+        <div className={styles.overview}>
           <div className={styles.portrait}>
             <Image
               src="/images/avatar_02.webp"
               alt="Andrea Schulz"
               fill
-              sizes="(max-width: 720px) 100vw, 420px"
+              sizes="(max-width: 720px) 100vw, 360px"
               priority
             />
           </div>
-          <div className={styles.copy}>
-            <h2>Hi, I’m Andrea.</h2>
-            <p>
-              My journey into product design started with a fascination for visual communication
-              and how design influences the way we perceive and interact with the world.
-            </p>
-            <p>
-              Over the years, that curiosity has grown beyond the visual layer into understanding
-              people, questioning assumptions and exploring how things work together.
-            </p>
-            <p>
-              Today, I enjoy working at the intersection of design, technology and human behaviour.
-            </p>
-            <div className={styles.details}>
-              <span>Based in Stockholm, Sweden</span>
-              <span>{person.languages?.join(" / ")}</span>
-            </div>
+          <div className={`${styles.card} ${styles.experienceCard}`}>
+            <p className={styles.years}>6+ years</p>
+            <p>Design experience</p>
           </div>
+          <div className={`${styles.card} ${styles.philosophyCard}`}>
+            <SectionLabel>My design philosophy</SectionLabel>
+            <h2>Clarity. Curiosity. Collaboration.</h2>
+            <p>
+              I believe in asking the right questions, looking beyond the obvious and creating
+              shared understanding. I value thoughtful design, open collaboration and continuous
+              learning.
+            </p>
+          </div>
+          <div className={`${styles.card} ${styles.toolsCard}`}>
+            <h2>Tools that shape my workflow</h2>
+            <ul className={styles.tools}>
+              {tools.map(({ name, Icon, color }) => (
+                <li key={name}>
+                  <Icon aria-hidden="true" style={{ color }} />
+                  <span>{name}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div className={styles.introAction}>
+          <PortfolioButton href={socialLinks.LinkedIn} variant="secondary">
+            LinkedIn
+          </PortfolioButton>
         </div>
       </section>
 
@@ -108,21 +112,6 @@ export default function About() {
               </div>
               <span className={styles.date}>{experience.timeframe}</span>
               {index < 4 && <p>{experience.description}</p>}
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section aria-labelledby="principles-heading">
-        <header className={styles.sectionHeading}>
-          <SectionLabel>How I work</SectionLabel>
-          <h2 id="principles-heading">Curiosity, collaboration and a willingness to learn.</h2>
-        </header>
-        <div className={styles.grid}>
-          {principles.map((principle) => (
-            <article className={styles.card} key={principle.title}>
-              <h3>{principle.title}</h3>
-              <p>{principle.description}</p>
             </article>
           ))}
         </div>
