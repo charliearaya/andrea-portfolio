@@ -120,8 +120,7 @@ export default function About() {
 
       <section aria-labelledby="education-heading">
         <header className={styles.sectionHeading}>
-          <SectionLabel>Education</SectionLabel>
-          <h2 id="education-heading">Always learning.</h2>
+          <h2 id="education-heading">Education &amp; continuous learning</h2>
         </header>
         <div className={styles.list}>
           {about.studies.institutions.map((institution) => (
@@ -136,10 +135,11 @@ export default function About() {
       <section className={styles.personal} aria-labelledby="personal-heading">
         <header className={styles.sectionHeading}>
           <SectionLabel>Beyond design</SectionLabel>
-          <h2 id="personal-heading">Finding inspiration outside the screen.</h2>
+          <h2 id="personal-heading">A little more about me.</h2>
           <p>
-            Originally from Germany and now living in Sweden, I enjoy exploring new perspectives,
-            spending time in nature and finding creative inspiration in everyday life.
+            Originally from Germany, I now call Sweden home. Outside of design, I have a passion
+            for photography and videography. I enjoy capturing everyday moments, exploring
+            different perspectives and spending time in nature.
           </p>
         </header>
       </section>
