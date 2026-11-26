@@ -4,7 +4,7 @@ import styles from "./About.module.scss";
 const sections = [
   { id: "experience", label: "Work experience" },
   { id: "education", label: "Education & courses" },
-  { id: "expertise", label: "Skills" },
+  { id: "expertise", label: "Expertise" },
 ];
 
 export function AboutNavigation() {
