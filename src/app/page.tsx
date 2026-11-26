@@ -45,10 +45,10 @@ export default function Home() {
         }}
       />
       <header className={`${styles.hero} ${styles.homeHero}`}>
-        <h1>Designing digital products from idea to delivery, and beyond.</h1>
+        <h1>Design that turns complexity into confidence.</h1>
         <p className={styles.lead}>
           Hi, I’m Andrea — a Product Designer combining UX, visual design and systems thinking
-          to make complex digital experiences clear, useful and considered.
+          to create clear, useful and considered digital experiences.
         </p>
         <div className={styles.actions}>
           <PortfolioButton href="#selected-work" variant="primary" icon="down">
