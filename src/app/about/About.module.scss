@@ -327,18 +327,24 @@
   }
 }
 
-@media (min-width: 1600px) {
+@media (min-width: 1024px) {
+  .page {
+    --nav-width: clamp(168px, 14vw, 220px);
+    max-width: calc(1120px + var(--nav-width) + 2rem);
+    padding-left: calc(var(--nav-width) + 2rem);
+  }
+
   .sideNav {
     display: block;
     position: absolute;
-    top: 1rem;
-    right: calc(100% + 1rem);
-    width: 190px;
+    top: clamp(2rem, 12vh, 7rem);
+    right: calc(100% + 1.5rem);
+    width: var(--nav-width);
 
     ul {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 2rem;
       margin: 0;
       padding: 0;
       list-style: none;
@@ -347,34 +353,30 @@
     a {
       display: flex;
       align-items: center;
-      gap: 0.65rem;
-      padding-block: 0.375rem;
-      color: var(--portfolio-secondary-text);
+      gap: 0.75rem;
+      min-height: 44px;
+      color: var(--neutral-on-background-strong);
       text-decoration: none;
-      font-size: 0.8125rem;
+      font-size: 1rem;
       line-height: 1.4;
 
       &::before {
         content: "";
-        width: 14px;
+        width: 16px;
         height: 1px;
         flex-shrink: 0;
         background: currentColor;
-        opacity: 0.45;
+        opacity: 0.22;
       }
 
-      &[aria-current="location"] {
-        color: var(--neutral-on-background-strong);
-        font-weight: 600;
-
-        &::before {
-          height: 2px;
-          opacity: 1;
-        }
+      &[aria-current="location"]::before,
+      &:hover::before {
+        opacity: 0.85;
       }
 
-      &:hover {
-        color: var(--neutral-on-background-strong);
+      &:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 4px;
       }
     }
   }
@@ -384,7 +386,7 @@
   }
 }
 
-@media (max-width: 1599px) {
+@media (max-width: 1023px) {
   .onPage {
     height: auto;
     margin-bottom: calc(1.25rem - var(--section-space));
