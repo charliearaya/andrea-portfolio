@@ -85,9 +85,10 @@
   .cover {
     aspect-ratio: 1.29;
     border-radius: 1rem;
+    background: transparent;
 
     img {
-      object-fit: contain;
+      object-fit: cover;
     }
   }
 
