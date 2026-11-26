@@ -52,13 +52,38 @@
 
   figcaption {
     display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
+    align-items: center;
+    gap: 0.75rem;
   }
 }
 
 :global([data-theme="dark"]) .card {
   background: var(--neutral-alpha-weak);
+}
+
+.avatar,
+.initials {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--neutral-alpha-weak);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.attribution {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
 }
 
 .author {
