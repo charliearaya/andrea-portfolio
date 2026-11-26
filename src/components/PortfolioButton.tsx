@@ -5,7 +5,7 @@ import styles from "./PortfolioButton.module.scss";
 type PortfolioButtonProps = {
   href: string;
   children: ReactNode;
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "tertiary";
   icon?: "down" | "diagonal";
 };
 

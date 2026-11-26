@@ -50,7 +50,9 @@ export default function Home() {
       <section id="selected-work" className={styles.section}>
         <div className={styles.sectionHeader}>
           <h2>Selected work</h2>
-          <PortfolioButton href="/work">All projects</PortfolioButton>
+          <PortfolioButton href="/work" variant="tertiary">
+            All projects
+          </PortfolioButton>
         </div>
         <SelectedWork featured />
       </section>
