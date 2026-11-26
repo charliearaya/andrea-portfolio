@@ -33,7 +33,7 @@ export function KindWords() {
   return (
     <section className={styles.section} aria-labelledby="kind-words-heading">
       <header className={styles.heading}>
-        <SectionLabel>Kind words</SectionLabel>
+        <SectionLabel>Words from people I’ve worked with</SectionLabel>
         <h2 id="kind-words-heading">Good design is a team effort.</h2>
       </header>
       <div className={styles.grid}>
