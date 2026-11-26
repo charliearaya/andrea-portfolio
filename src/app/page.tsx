@@ -3,7 +3,7 @@ import { PortfolioButton } from "@/components/PortfolioButton";
 import { about, baseURL, home, person } from "@/resources";
 import AboutHero from "@/components/AboutHero";
 import SkillsHero from "@/components/SkillsHero";
-import { ProjectCard } from "@/components/ProjectCard";
+import { ProjectMarquee } from "@/components/work/ProjectMarquee";
 import styles from "./Portfolio.module.scss";
 
 export async function generateMetadata() {
@@ -65,16 +65,7 @@ export default function Home() {
             All projects
           </PortfolioButton>
         </div>
-        <ProjectCard
-          href="/work"
-          images={projectImages}
-          title="Selected product work"
-          description=""
-          content=""
-          priority
-          autoScroll
-          showDetails={false}
-        />
+        <ProjectMarquee images={projectImages} />
       </section>
 
       <AboutHero />
