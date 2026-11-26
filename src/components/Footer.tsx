@@ -1,5 +1,6 @@
-import { Row, IconButton, SmartLink, Text } from "@once-ui-system/core";
-import { display, person, social } from "@/resources";
+import { Row, SmartLink, Text } from "@once-ui-system/core";
+import { display, person } from "@/resources";
+import { SocialLinks } from "./PortfolioDetails";
 import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Footer.module.scss";
 
@@ -31,19 +32,7 @@ export const Footer = () => {
           </Text>
         </Text>
         <Row gap="16" vertical="center">
-          {social.map(
-            (item) =>
-              item.link && (
-                <IconButton
-                  key={item.name}
-                  href={item.link}
-                  icon={item.icon}
-                  tooltip={item.name}
-                  size="s"
-                  variant="ghost"
-                />
-              ),
-          )}
+          <SocialLinks />
           {display.themeSwitcher && <ThemeToggle />}
         </Row>
       </Row>

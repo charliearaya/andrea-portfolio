@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { PortfolioButton } from "./PortfolioButton";
+import { SectionLabel, SocialLinks } from "./PortfolioDetails";
 import styles from "./AboutHero.module.scss";
 
 export function AboutHero() {
@@ -14,7 +15,7 @@ export function AboutHero() {
         />
       </div>
       <div className={styles.copy}>
-        <p className={styles.label}>About me</p>
+        <SectionLabel>About</SectionLabel>
         <h2 id="about-heading">Hi, I’m Andrea.</h2>
         <p className={styles.lead}>
           A Product Designer with 6 years of experience and a background in visual design.
@@ -27,7 +28,12 @@ export function AboutHero() {
           I also integrate AI into research, concept exploration and prototyping, with critical
           thinking and human judgment at the centre of my process.
         </p>
-        <PortfolioButton href="/about" variant="tertiary">More about me</PortfolioButton>
+        <PortfolioButton href="/about" variant="tertiary">
+          More about me
+        </PortfolioButton>
+        <div style={{ marginTop: "1.25rem" }}>
+          <SocialLinks />
+        </div>
       </div>
     </section>
   );

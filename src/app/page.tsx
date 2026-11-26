@@ -1,5 +1,6 @@
 import { Meta, Schema } from "@once-ui-system/core";
 import { PortfolioButton } from "@/components/PortfolioButton";
+import { SectionLabel } from "@/components/PortfolioDetails";
 import { about, baseURL, home, person } from "@/resources";
 import AboutHero from "@/components/AboutHero";
 import SkillsHero from "@/components/SkillsHero";
@@ -65,7 +66,7 @@ export default function Home() {
       <SkillsHero />
 
       <section className={styles.contact}>
-        <p className={styles.kicker}>Get in touch</p>
+        <SectionLabel>Contact</SectionLabel>
         <h2>Let’s connect.</h2>
         <p>I’m open to new opportunities and conversations about design.</p>
         <div className={styles.actions}>

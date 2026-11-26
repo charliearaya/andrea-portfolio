@@ -1,10 +1,11 @@
+import { SectionLabel } from "./PortfolioDetails";
 import styles from "./SkillsHero.module.scss";
 
 export function SkillsHero() {
   return (
     <section className={styles.section} aria-labelledby="expertise-heading">
       <div>
-        <p className={styles.label}>What I do</p>
+        <SectionLabel>Expertise</SectionLabel>
         <h2 id="expertise-heading">From the bigger picture to the smallest detail.</h2>
       </div>
       <ul className={styles.skills}>
