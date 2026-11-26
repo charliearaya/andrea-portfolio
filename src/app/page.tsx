@@ -22,7 +22,6 @@ const projectImages = [
   "/images/projects/sas/cover_01.webp",
   "/images/projects/flow/entry.jpg",
   "/images/projects/exparang/cover_02.webp",
-  "/images/projects/sas/image_04.webp",
   "/images/projects/youse/cover_01.webp",
   "/images/projects/sas/image_06.webp",
   "/images/projects/float/cover_03.webp",
