@@ -17,6 +17,9 @@ export function AboutHero() {
       <div className={styles.copy}>
         <SectionLabel>About</SectionLabel>
         <h2 id="about-heading">Hi, I’m Andrea.</h2>
+        <div className={styles.socialLinks}>
+          <SocialLinks />
+        </div>
         <p className={styles.lead}>
           A Product Designer with 6 years of experience and a background in visual design.
         </p>
@@ -31,9 +34,6 @@ export function AboutHero() {
         <PortfolioButton href="/about" variant="tertiary">
           More about me
         </PortfolioButton>
-        <div style={{ marginTop: "1.25rem" }}>
-          <SocialLinks />
-        </div>
       </div>
     </section>
   );
