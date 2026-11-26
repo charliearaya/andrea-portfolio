@@ -34,9 +34,9 @@ export const HeaderNav = () => {
             About me
           </Link>
         )}
-        <a href={`mailto:${person.email}`}>
+        <Link href="/contact" aria-current={pathname === "/contact" ? "page" : undefined}>
           Contact
-        </a>
+        </Link>
         {display.themeSwitcher && <ThemeToggle />}
       </div>
     </nav>
