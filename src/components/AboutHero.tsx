@@ -11,7 +11,9 @@ export function AboutHero() {
           src="/images/avatar_03.jpg"
           alt="Andrea Schulz"
           fill
-          sizes="(max-width: 720px) 100vw, 420px"
+          // The landscape source scales to cover the height of the portrait frame.
+          sizes="(max-width: 440px) calc(100vw * 1.875), 825px"
+          quality={95}
         />
       </div>
       <div className={styles.copy}>
