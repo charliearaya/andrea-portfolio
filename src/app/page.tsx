@@ -51,15 +51,15 @@ export default function Home() {
           A selection of my product design work, combining UX, visual design and systems thinking
           across large-scale platforms and end-to-end user journeys.
         </p>
-      </header>
-
-      <section className={styles.marqueeSection} aria-label="Project gallery">
-        <ProjectMarquee images={projectImages} />
-        <div className={styles.galleryLink}>
+        <div className={styles.actions}>
           <PortfolioButton href="/work" variant="tertiary">
             View all projects
           </PortfolioButton>
         </div>
+      </header>
+
+      <section className={styles.marqueeSection} aria-label="Project gallery">
+        <ProjectMarquee images={projectImages} />
       </section>
 
       <SkillsHero />

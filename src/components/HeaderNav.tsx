@@ -18,7 +18,10 @@ export const HeaderNav = () => {
         <span className={styles.avatar}>
           <Image src={person.avatar} alt="" width={96} height={96} />
         </span>
-        <span>{person.name}</span>
+        <span className={styles.identity}>
+          <span>{person.name}</span>
+          <span className={styles.location}>Stockholm, Sweden</span>
+        </span>
       </Link>
       <div className={styles.links}>
         {routes["/work"] && (

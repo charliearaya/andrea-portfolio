@@ -85,7 +85,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding-block: clamp(4rem, 10vw, 8rem) clamp(4rem, 8vw, 6.5rem);
+  padding-block: clamp(4rem, 10vw, 8rem) clamp(2.5rem, 5vw, 4rem);
 
   h1 {
     max-width: 19ch;
@@ -107,7 +107,7 @@
 }
 
 .marqueeSection {
-  padding-bottom: clamp(3.5rem, 8vw, 7rem);
+  padding-bottom: clamp(1.5rem, 3vw, 2rem);
   scroll-margin-top: 6rem;
 }
 
