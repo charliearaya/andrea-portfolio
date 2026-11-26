@@ -78,10 +78,11 @@ export default function About() {
 
       <section id="introduction" aria-labelledby="about-intro">
         <header className={styles.hero}>
-          <h1 id="about-intro">Curious by nature. A designer by choice.</h1>
+          <h1 id="about-intro">A designer who likes to understand the why.</h1>
           <p>
-            A Product Designer with a background in visual design and a curiosity for how
-            people, design and technology come together.
+            With a background in visual design and experience across UX, UI and design systems,
+            I bring curiosity, creative thinking and a structured approach to solving complex
+            problems.
           </p>
         </header>
         <div className={styles.overview}>
