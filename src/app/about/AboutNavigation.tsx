@@ -9,7 +9,6 @@ const sections = [
   { id: "experience", label: "Work experience" },
   { id: "education", label: "Education & courses" },
   { id: "expertise", label: "Expertise" },
-  { id: "personal", label: "Beyond work" },
 ];
 
 export function AboutNavigation() {
