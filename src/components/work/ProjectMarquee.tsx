@@ -27,7 +27,7 @@ export function ProjectMarquee({ images }: { images: string[] }) {
                     src={src}
                     alt={duplicate ? "" : `Selected design work ${index + 1}`}
                     fill
-                    sizes="(max-width: 600px) 76vw, 420px"
+                    sizes="(max-width: 600px) 88vw, (max-width: 1167px) 48vw, 560px"
                     loading="eager"
                   />
                 </div>

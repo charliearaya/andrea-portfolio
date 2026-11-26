@@ -29,7 +29,7 @@
 .slide {
   position: relative;
   flex-shrink: 0;
-  width: clamp(260px, 36vw, 420px);
+  width: clamp(340px, 48vw, 560px);
   aspect-ratio: 16 / 10;
   border-radius: 0.75rem;
   overflow: hidden;
@@ -72,7 +72,7 @@
 
 @media (max-width: 600px) {
   .slide {
-    width: 76vw;
+    width: 88vw;
   }
 
   .sequence {
