@@ -7,7 +7,7 @@
 }
 
 .homePage {
-  --section-space: 9rem;
+  --section-space: 12rem;
   --label-space: 0.75rem;
   --heading-space: 2.5rem;
   --button-space: 2rem;
@@ -20,7 +20,7 @@
 
 @media (max-width: 720px) {
   .homePage {
-    --section-space: 5rem;
+    --section-space: 6.25rem;
     --heading-space: 1.5rem;
     --button-space: 1.5rem;
   }
