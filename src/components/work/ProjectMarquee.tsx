@@ -16,7 +16,7 @@ type Cover = {
 
 const covers: Record<string, Cover> = {
   "/images/projects/sas/cover_01.webp": {
-    ratio: 1.65,
+    ratio: 1.30,
     background: "#e9edf8",
     inset: "0",
     fit: "cover",
@@ -41,7 +41,7 @@ const covers: Record<string, Cover> = {
     alt: "Youse mobile experience",
   },
   "/images/projects/exparang/cover_02.webp": {
-    ratio: 1.78,
+    ratio: 1.45,
     background: "#f0ece9",
     inset: "0",
     fit: "cover",
