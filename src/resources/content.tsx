@@ -6,7 +6,7 @@ const person: Person = {
   lastName: "Schulz",
   name: `Andrea Schulz`,
   role: "Product Designer",
-  avatar: "/images/avatar_01.webp",
+  avatar: "/images/avatar_01.jpg",
   email: "andrea.isabelle.schulz@gmail.com",
   location: "Stockholm",
   languages: ["German · Native", "English · C1", "Swedish · B2"],
