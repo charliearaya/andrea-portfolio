@@ -44,7 +44,7 @@ export default function Home() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <header className={styles.hero}>
+      <header className={`${styles.hero} ${styles.homeHero}`}>
         <h1>Designing digital products from idea to delivery, and beyond.</h1>
         <p className={styles.lead}>
           Hi, I’m Andrea — a Product Designer combining UX, visual design and systems thinking
@@ -58,14 +58,13 @@ export default function Home() {
         </div>
       </header>
 
-      <section id="selected-work" className={styles.section}>
-        <div className={styles.sectionHeader}>
-          <h2>Selected work</h2>
+      <section id="selected-work" className={styles.marqueeSection} aria-label="Selected work">
+        <ProjectMarquee images={projectImages} />
+        <div className={styles.galleryLink}>
           <PortfolioButton href="/work" variant="tertiary">
             All projects
           </PortfolioButton>
         </div>
-        <ProjectMarquee images={projectImages} />
       </section>
 
       <AboutHero />

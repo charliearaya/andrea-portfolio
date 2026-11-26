@@ -79,3 +79,40 @@
     line-height: 1.6;
   }
 }
+
+.homeHero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-block: clamp(4rem, 10vw, 8rem) clamp(4rem, 8vw, 6.5rem);
+
+  h1 {
+    max-width: 19ch;
+    font-size: clamp(2.75rem, 6.8vw, 5.5rem);
+    line-height: 1.04;
+    margin: 0;
+  }
+
+  .lead {
+    max-width: 54ch;
+    margin-top: 1.5rem;
+    font-size: clamp(1rem, 1.8vw, 1.1875rem);
+  }
+
+  .actions {
+    justify-content: center;
+    margin-top: 2rem;
+  }
+}
+
+.marqueeSection {
+  padding-bottom: clamp(3.5rem, 8vw, 7rem);
+  scroll-margin-top: 6rem;
+}
+
+.galleryLink {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
