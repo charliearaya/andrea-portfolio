@@ -6,6 +6,7 @@ import { FaFigma, FaJira, FaSlack } from "react-icons/fa6";
 import { SiAnthropic, SiNotion } from "react-icons/si";
 import { BsOpenai } from "react-icons/bs";
 import { PortfolioButton } from "@/components/PortfolioButton";
+import { AboutNavigation } from "./AboutNavigation";
 import styles from "./About.module.scss";
 
 const tools = [
@@ -15,6 +16,39 @@ const tools = [
   { name: "Notion", Icon: SiNotion, color: "currentColor" },
   { name: "Jira", Icon: FaJira, color: "#2684ff" },
   { name: "Slack", Icon: FaSlack, color: "#b45cb3" },
+];
+
+const expertise = [
+  {
+    title: "Product Design",
+    description:
+      "End-to-end design, from discovery and problem framing to interaction design and production-ready solutions.",
+  },
+  {
+    title: "UI & Design Systems",
+    description:
+      "Accessible interfaces, scalable component libraries, design tokens and documentation.",
+  },
+  {
+    title: "Research & Validation",
+    description:
+      "User research, usability testing, A/B testing and data-informed design decisions.",
+  },
+  {
+    title: "Delivery & Collaboration",
+    description:
+      "Cross-functional collaboration, balancing user needs, business goals and technical constraints.",
+  },
+  {
+    title: "Visual & Brand Design",
+    description:
+      "A strong foundation in visual communication, typography, branding and visual consistency.",
+  },
+  {
+    title: "AI-Assisted Design",
+    description:
+      "Integrating AI into research, exploration, prototyping and iteration while maintaining human judgment.",
+  },
 ];
 
 export async function generateMetadata() {
@@ -44,7 +78,9 @@ export default function About() {
         }}
       />
 
-      <section aria-labelledby="about-intro">
+      <AboutNavigation />
+
+      <section id="introduction" aria-labelledby="about-intro">
         <header className={styles.hero}>
           <h1 id="about-intro">Curious by nature. A designer by choice.</h1>
           <p>
@@ -93,7 +129,7 @@ export default function About() {
         </div>
       </section>
 
-      <section aria-labelledby="experience-heading">
+      <section id="experience" aria-labelledby="experience-heading">
         <header className={styles.sectionHeading}>
           <h2 id="experience-heading">Work experience</h2>
           <p>
@@ -115,7 +151,7 @@ export default function About() {
         </div>
       </section>
 
-      <section aria-labelledby="education-heading">
+      <section id="education" aria-labelledby="education-heading">
         <header className={styles.sectionHeading}>
           <h2 id="education-heading">Education &amp; courses</h2>
         </header>
@@ -132,7 +168,21 @@ export default function About() {
         </div>
       </section>
 
-      <section className={styles.personal} aria-labelledby="personal-heading">
+      <section id="expertise" aria-labelledby="expertise-heading">
+        <header className={styles.sectionHeading}>
+          <h2 id="expertise-heading">Professional expertise</h2>
+        </header>
+        <div className={styles.expertise}>
+          {expertise.map(({ title, description }) => (
+            <article key={title}>
+              <h3>{title}</h3>
+              <p>{description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="personal" className={styles.personal} aria-labelledby="personal-heading">
         <header className={styles.sectionHeading}>
           <h2 id="personal-heading">A little more about me.</h2>
           <p>
