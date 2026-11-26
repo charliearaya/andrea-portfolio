@@ -33,11 +33,10 @@ export default function Home() {
         }}
       />
       <header className={styles.hero}>
-        <p className={styles.kicker}>Andrea Schulz · Product Designer · Stockholm</p>
-        <h1>I design digital products from idea to delivery, and beyond.</h1>
+        <h1>Designing digital products from idea to delivery, and beyond.</h1>
         <p className={styles.lead}>
-          Combining UX, visual design and systems thinking to make complex digital experiences
-          clear, useful and considered.
+          Hi, I’m Andrea — a Product Designer combining UX, visual design and systems thinking
+          to make complex digital experiences clear, useful and considered.
         </p>
         <div className={styles.actions}>
           <PortfolioButton href="#selected-work" variant="primary" icon="down">
