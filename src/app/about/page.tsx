@@ -97,8 +97,7 @@ export default function About() {
 
       <section aria-labelledby="experience-heading">
         <header className={styles.sectionHeading}>
-          <SectionLabel>Experience</SectionLabel>
-          <h2 id="experience-heading">My journey so far.</h2>
+          <h2 id="experience-heading">Work experience</h2>
           <p>
             From visual communication and early-stage startups to designing experiences for
             global travel platforms.
@@ -108,8 +107,8 @@ export default function About() {
           {about.work.experiences.map((experience, index) => (
             <article className={styles.entry} key={experience.company}>
               <div className={styles.entryIdentity}>
-                <h3>{experience.company}</h3>
-                <span>{experience.role}</span>
+                <h3>{experience.role}</h3>
+                <span>{experience.company}</span>
               </div>
               <span className={styles.date}>{experience.timeframe}</span>
               {index < 4 && <p>{experience.description}</p>}
