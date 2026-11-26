@@ -1,7 +1,6 @@
 import { Row, SmartLink, Text } from "@once-ui-system/core";
-import { display, person } from "@/resources";
+import { person } from "@/resources";
 import { SocialLinks } from "./PortfolioDetails";
-import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Footer.module.scss";
 
 export const Footer = () => {
@@ -27,13 +26,14 @@ export const Footer = () => {
           <Text paddingX="4">{person.name}</Text>
           <Text onBackground="neutral-weak">
             {/* Usage of this template requires attribution. Please don't remove the link to Once UI unless you have a Pro license. */}
-            / Build your portfolio with{" "}
+            / Adapted from{" "}
             <SmartLink href="https://once-ui.com/products/magic-portfolio">Once UI</SmartLink>
+            {" · "}
+            <SmartLink href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</SmartLink>
           </Text>
         </Text>
         <Row gap="16" vertical="center">
           <SocialLinks />
-          {display.themeSwitcher && <ThemeToggle />}
         </Row>
       </Row>
     </Row>

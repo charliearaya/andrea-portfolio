@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { person, routes } from "@/resources";
+import { display, person, routes } from "@/resources";
+import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Header.module.scss";
 
 export const HeaderNav = () => {
@@ -33,6 +34,7 @@ export const HeaderNav = () => {
         <a href={`mailto:${person.email}`}>
           Contact <span aria-hidden="true">↗</span>
         </a>
+        {display.themeSwitcher && <ThemeToggle />}
       </div>
     </nav>
   );
