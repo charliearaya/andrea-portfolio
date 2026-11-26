@@ -91,9 +91,14 @@
   font-weight: 600;
 }
 
-.role {
+.role,
+.company {
   font-size: 0.875rem;
   color: var(--neutral-on-background-weak);
+}
+
+.company {
+  font-size: 0.8125rem;
 }
 
 .action {

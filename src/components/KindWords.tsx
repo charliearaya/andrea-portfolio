@@ -9,6 +9,7 @@ const recommendations = [
       "One of her greatest strengths is how easy and enjoyable she makes collaboration. She communicates clearly and openly, is approachable, receptive to feedback, and brings a calm, solution-oriented attitude to the team.",
     author: "Dimitrios Petrou",
     role: "Tech Team Lead",
+    company: "Etraveli",
     avatar: null,
     initials: "DP",
   },
@@ -16,7 +17,8 @@ const recommendations = [
     quote:
       "Her deliverables were consistently clear, well organized, and ready for the team to work with, which made refinement and development much smoother. She understands business goals as well as technical constraints, and she explains her design decisions in a way that both sides can follow.",
     author: "Maria Kouiroukidou",
-    role: "Product Owner at Etraveli",
+    role: "Product Owner",
+    company: "Etraveli",
     avatar: "/images/recommendations/maria.webp",
     initials: "MK",
   },
@@ -24,7 +26,8 @@ const recommendations = [
     quote:
       "If you are looking for a designer with an eye for details and the ability to see the bigger picture, Andrea is an ambitious and thorough UI designer who thinks systematically and long-term from the start.",
     author: "Martin Lysell",
-    role: "Senior UI Designer at SAS",
+    role: "Senior UI Designer",
+    company: "SAS",
     avatar: "/images/recommendations/martin.webp",
     initials: "ML",
   },
@@ -33,6 +36,7 @@ const recommendations = [
       "Andrea is a talented UI designer with a strong sense of user needs and a passion for improving the overall experience. She brings thoughtful design decisions to every project and always aims to elevate the user experience to the next level.",
     author: "Ingrid Escriche-Ekström",
     role: "Senior UX & Product Designer",
+    company: "SAS",
     avatar: "/images/recommendations/ingrid.webp",
     initials: "IE",
   },
@@ -46,7 +50,7 @@ export function KindWords() {
         <h2 id="kind-words-heading">Good design is a team effort.</h2>
       </header>
       <div className={styles.grid}>
-        {recommendations.map(({ quote, author, role, avatar, initials }) => (
+        {recommendations.map(({ quote, author, role, company, avatar, initials }) => (
           <figure className={styles.card} key={author}>
             <blockquote>
               <p>“{quote}”</p>
@@ -69,6 +73,7 @@ export function KindWords() {
               <span className={styles.attribution}>
                 <span className={styles.author}>{author}</span>
                 <span className={styles.role}>{role}</span>
+                <span className={styles.company}>{company}</span>
               </span>
             </figcaption>
           </figure>
