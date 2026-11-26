@@ -48,7 +48,7 @@ export default function Home() {
       <header className={`${styles.hero} ${styles.homeHero}`}>
         <h1>Design that turns complexity into confidence.</h1>
         <p className={styles.lead}>
-          A selection of my product design work, combining UX, visual design and systems thinking
+          A selection of my product design work, combining UX, visual design craft and systems thinking
           across large-scale platforms and end-to-end user journeys.
         </p>
         <div className={styles.actions}>
