@@ -1,6 +1,6 @@
 import { Meta, Schema } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
-import { SelectedWork } from "@/components/work/SelectedWork";
+import { Projects } from "@/components/work/Projects";
 import styles from "../Portfolio.module.scss";
 
 export async function generateMetadata() {
@@ -15,7 +15,7 @@ export async function generateMetadata() {
 
 export default function Work() {
   return (
-    <div className={styles.page}>
+    <div className={styles.page} style={{ maxWidth: "800px" }}>
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -29,8 +29,7 @@ export default function Work() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <header className={styles.hero}>
-        <p className={styles.kicker}>Portfolio</p>
+      <header className={`${styles.hero} ${styles.homeHero}`}>
         <h1>Selected work.</h1>
         <p className={styles.lead}>
           Product design, digital experiences and design systems across established organisations
@@ -38,7 +37,7 @@ export default function Work() {
         </p>
       </header>
       <section className={styles.section} aria-label="Projects">
-        <SelectedWork />
+        <Projects />
       </section>
     </div>
   );
