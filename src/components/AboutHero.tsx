@@ -21,7 +21,7 @@ export function AboutHero() {
           A Product Designer with 6 years of experience and a background in visual design.
         </p>
         <p>
-          I believe good design creates confidence through clarity, intuitive interactions and
+          To me, design is about creating confidence through clarity, intuitive interactions and
           considered visual details. It helps people feel oriented, make informed decisions and
           trust the experiences they interact with.
         </p>
