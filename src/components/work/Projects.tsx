@@ -10,7 +10,7 @@ interface ProjectsProps {
 }
 
 export function Projects({ range, exclude, current, nextOnly }: Readonly<ProjectsProps>) {
-  const allProjects = getPosts(["src", "app", "work", "projects"])
+  const allProjects = getPosts()
     .filter((post) => !exclude?.includes(post.slug))
     .sort((a, b) => new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime());
 

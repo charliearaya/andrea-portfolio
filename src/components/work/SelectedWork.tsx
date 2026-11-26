@@ -29,7 +29,7 @@ const featuredDetails: Record<string, { image: string; category: string; title: 
 };
 
 export function SelectedWork({ featured = false }: { featured?: boolean }) {
-  const projects = getPosts(["src", "app", "work", "projects"]).sort(
+  const projects = getPosts().sort(
     (a, b) => new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime(),
   );
   const selected = featured
