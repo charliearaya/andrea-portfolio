@@ -21,9 +21,8 @@ export function AboutHero() {
           A Product Designer with 6 years of experience and a background in visual design.
         </p>
         <p>
-          To me, design is about creating confidence through clarity, intuitive interactions and
-          considered visual details. It helps people feel oriented, make informed decisions and
-          trust the experiences they interact with.
+          I enjoy making experiences feel clearer, more intuitive and thoughtfully considered,
+          helping people navigate with confidence and make informed decisions.
         </p>
         <p>
           That philosophy extends to how I work with others. I value shared understanding, open
