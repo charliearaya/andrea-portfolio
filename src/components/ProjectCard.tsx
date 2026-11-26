@@ -20,6 +20,7 @@ interface ProjectCardProps {
   description: string;
   ctaText?: string;
   autoScroll?: boolean;
+  showDetails?: boolean;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -31,6 +32,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   priority = false,
   autoScroll = false,
+  showDetails = true,
 }) => {
   const [canAutoScroll, setCanAutoScroll] = useState(!autoScroll || images.length < 2);
 
@@ -85,45 +87,47 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           alt: title,
         }))}
       />
-      <Flex
-        xs={{ direction: "column", horizontal: "center" }}
-        fillWidth
-        paddingX="s"
-        paddingTop="12"
-        paddingBottom="24"
-        gap="l"
-      >
-        {title && (
-          <Flex flex={5}>
-            <Heading as="h2" wrap="balance" variant="heading-strong-xl">
-              {title}
-            </Heading>
-          </Flex>
-        )}
-        {(description?.trim() || content?.trim()) && (
-          <Flex direction="column" flex={7} gap="16" xs={{ direction: "column", horizontal: "center" }}>
-            {description?.trim() && (
-              <Text variant="body-default-m" onBackground="neutral-weak">
-                {description}
-              </Text>
-            )}
-            <Flex gap="24" wrap>
-              {content?.trim() && (
-                <Badge
-                  id={`badge-${String(href).split("/").pop() ?? "project"}`}
-                  title={ctaText || "View project"}
-                  arrow
-                  href={href}
-                  effect={false}
-                  borderWidth={2}
-                  border="brand-alpha-strong"
-                  background="transparent"
-                />
-              )}
+      {showDetails && (
+        <Flex
+          xs={{ direction: "column", horizontal: "center" }}
+          fillWidth
+          paddingX="s"
+          paddingTop="12"
+          paddingBottom="24"
+          gap="l"
+        >
+          {title && (
+            <Flex flex={5}>
+              <Heading as="h2" wrap="balance" variant="heading-strong-xl">
+                {title}
+              </Heading>
             </Flex>
-          </Flex>
-        )}
-      </Flex>
+          )}
+          {(description?.trim() || content?.trim()) && (
+            <Flex direction="column" flex={7} gap="16" xs={{ direction: "column", horizontal: "center" }}>
+              {description?.trim() && (
+                <Text variant="body-default-m" onBackground="neutral-weak">
+                  {description}
+                </Text>
+              )}
+              <Flex gap="24" wrap>
+                {content?.trim() && (
+                  <Badge
+                    id={`badge-${String(href).split("/").pop() ?? "project"}`}
+                    title={ctaText || "View project"}
+                    arrow
+                    href={href}
+                    effect={false}
+                    borderWidth={2}
+                    border="brand-alpha-strong"
+                    background="transparent"
+                  />
+                )}
+              </Flex>
+            </Flex>
+          )}
+        </Flex>
+      )}
     </Column>
   );
 };

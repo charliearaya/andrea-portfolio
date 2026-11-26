@@ -3,7 +3,7 @@ import { PortfolioButton } from "@/components/PortfolioButton";
 import { about, baseURL, home, person } from "@/resources";
 import AboutHero from "@/components/AboutHero";
 import SkillsHero from "@/components/SkillsHero";
-import { SelectedWork } from "@/components/work/SelectedWork";
+import { ProjectCard } from "@/components/ProjectCard";
 import styles from "./Portfolio.module.scss";
 
 export async function generateMetadata() {
@@ -15,6 +15,18 @@ export async function generateMetadata() {
     image: home.image,
   });
 }
+
+const projectImages = [
+  "/images/projects/sas/cover_01.webp",
+  "/images/projects/flow/entry.jpg",
+  "/images/projects/youse/cover_01.webp",
+  "/images/projects/exparang/cover_02.webp",
+  "/images/projects/sas/cover_04.webp",
+  "/images/projects/float/cover_03.webp",
+  "/images/projects/sas/image_06.webp",
+  "/images/projects/mcm/cover_01.webp",
+  "/images/projects/sas/image_04.webp",
+];
 
 export default function Home() {
   return (
@@ -53,7 +65,16 @@ export default function Home() {
             All projects
           </PortfolioButton>
         </div>
-        <SelectedWork featured />
+        <ProjectCard
+          href="/work"
+          images={projectImages}
+          title="Selected product work"
+          description=""
+          content=""
+          priority
+          autoScroll
+          showDetails={false}
+        />
       </section>
 
       <AboutHero />
