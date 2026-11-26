@@ -4,7 +4,6 @@ import { about, baseURL, home, person } from "@/resources";
 import AboutHero from "@/components/AboutHero";
 import SkillsHero from "@/components/SkillsHero";
 import { ProjectMarquee } from "@/components/work/ProjectMarquee";
-import { SelectedWork } from "@/components/work/SelectedWork";
 import styles from "./Portfolio.module.scss";
 
 export async function generateMetadata() {
@@ -51,27 +50,13 @@ export default function Home() {
           Stockholm-based Product Designer combining UX, visual design and systems thinking
           to create clear, useful and considered digital experiences.
         </p>
-        <div className={styles.actions}>
-          <PortfolioButton href="#selected-work" variant="primary" icon="down">
-            Explore my work
-          </PortfolioButton>
-          <PortfolioButton href="/about">About me</PortfolioButton>
-        </div>
       </header>
 
       <section className={styles.marqueeSection} aria-label="Project gallery">
         <ProjectMarquee images={projectImages} />
-      </section>
-
-      <section id="selected-work" className={styles.featuredSection} aria-labelledby="featured-heading">
-        <header className={styles.featuredHeader}>
-          <p className={styles.sectionPill}>Selected projects</p>
-          <h2 id="featured-heading">From complex challenges to considered design.</h2>
-        </header>
-        <SelectedWork featured />
         <div className={styles.galleryLink}>
           <PortfolioButton href="/work" variant="tertiary">
-            All projects
+            View all projects
           </PortfolioButton>
         </div>
       </section>
