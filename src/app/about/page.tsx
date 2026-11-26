@@ -1,58 +1,45 @@
-import {
-  Avatar,
-  Button,
-  Column,
-  Heading,
-  Icon,
-  IconButton,
-  Media,
-  Tag,
-  Text,
-  Meta,
-  Schema,
-  Row,
-} from "@once-ui-system/core";
-import { baseURL, about, person, social } from "@/resources";
-import TableOfContents from "@/components/about/TableOfContents";
-import styles from "@/components/about/about.module.scss";
-import React from "react";
+import Image from "next/image";
+import { Meta, Schema } from "@once-ui-system/core";
+import { about, baseURL, person } from "@/resources";
+import { SectionLabel } from "@/components/PortfolioDetails";
+import styles from "./About.module.scss";
+
+const principles = [
+  {
+    title: "Understand before designing",
+    description:
+      "Ask questions, explore assumptions and take time to understand the people and problems behind a brief.",
+  },
+  {
+    title: "Make connections",
+    description:
+      "Look beyond individual screens to understand how design decisions affect the wider experience.",
+  },
+  {
+    title: "Create together",
+    description:
+      "Bring different perspectives into the process and make design decisions accessible to everyone involved.",
+  },
+  {
+    title: "Stay curious",
+    description:
+      "Explore new technologies and AI-assisted workflows while retaining creative ownership and critical judgment.",
+  },
+];
 
 export async function generateMetadata() {
   return Meta.generate({
     title: about.title,
     description: about.description,
-    baseURL: baseURL,
+    baseURL,
     image: `/api/og/generate?title=${encodeURIComponent(about.title)}`,
     path: about.path,
   });
 }
 
 export default function About() {
-  // TODO: Use HeadingNav & HeadingLink. Use Timeline somehow?
-  const structure = [
-    {
-      title: about.intro.title,
-      display: about.intro.display,
-      items: [],
-    },
-    {
-      title: about.work.title,
-      display: about.work.display,
-      items: about.work.experiences.map((experience) => experience.company),
-    },
-    {
-      title: about.studies.title,
-      display: about.studies.display,
-      items: about.studies.institutions.map((institution) => institution.name),
-    },
-    {
-      title: about.technical.title,
-      display: about.technical.display,
-      items: about.technical.skills.map((skill) => skill.title),
-    },
-  ];
   return (
-    <Column maxWidth="m">
+    <div className={styles.page}>
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -66,280 +53,106 @@ export default function About() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      {about.tableOfContent.display && (
-        <Column
-          left="0"
-          style={{ top: "50%", transform: "translateY(-50%)" }}
-          position="fixed"
-          paddingLeft="24"
-          gap="32"
-          s={{ hide: true }}
-        >
-          <TableOfContents structure={structure} about={about} />
-        </Column>
-      )}
-      <Row fillWidth s={{ direction: "column" }} horizontal="center">
-        {about.avatar.display && (
-          <Column
-            className={styles.avatar}
-            fitHeight
-            position="sticky"
-            s={{ position: "relative" }}
-            minWidth="160"
-            paddingX="l"
-            paddingBottom="xl"
-            gap="m"
-            flex={3}
-            horizontal="center"
-          >
-            <Avatar src={person.avatar} size="xl" />
-            <Row gap="8" vertical="center">
-              <Icon onBackground="accent-weak" name="globe" />
-              {person.location}
-            </Row>
-            {person.languages && person.languages.length > 0 && (
-              <Row wrap gap="8" horizontal="center">
-                {person.languages.map((language) => (
-                  <Tag key={language} size="l">
-                    {language}
-                  </Tag>
-                ))}
-              </Row>
-            )}
-          </Column>
-        )}
-        <Column className={styles.blockAlign} flex={9} maxWidth={40}>
-          <Column
-            id={about.intro.title}
-            fillWidth
-            minHeight="160"
-            vertical="center"
-            marginBottom="32"
-          >
-            {about.calendar.display && (
-              <Row
-                fitWidth
-                border="brand-alpha-medium"
-                background="brand-alpha-weak"
-                radius="full"
-                padding="4"
-                gap="8"
-                marginBottom="m"
-                vertical="center"
-                className={styles.blockAlign}
-                style={{
-                  backdropFilter: "blur(var(--static-space-1))",
-                }}
-              >
-                <Icon paddingLeft="12" name="calendar" onBackground="brand-weak" />
-                <Row paddingX="8">Schedule a call</Row>
-                <IconButton
-                  href={about.calendar.link}
-                  data-border="rounded"
-                  variant="secondary"
-                  icon="chevronRight"
-                />
-              </Row>
-            )}
-            <Heading className={styles.textAlign} variant="display-strong-xl">
-              {person.name}
-            </Heading>
-            <Text
-              className={styles.textAlign}
-              variant="display-default-xs"
-              onBackground="accent-weak"
-              style={{ fontWeight: 400 }}
-            >
-              {person.role}
-            </Text>
-            {social.length > 0 && (
-              <Row
-                className={styles.blockAlign}
-                paddingTop="20"
-                paddingBottom="8"
-                gap="8"
-                wrap
-                horizontal="center"
-                fitWidth
-                data-border="rounded"
-              >
-                {social
-                  .filter((item) => item.essential)
-                  .map(
-                    (item) =>
-                      item.link && (
-                        <React.Fragment key={item.name}>
-                          <Row s={{ hide: true }}>
-                            <Button
-                              key={item.name}
-                              href={item.link}
-                              prefixIcon={item.icon}
-                              label={item.name}
-                              size="s"
-                              weight="default"
-                              variant="secondary"
-                            />
-                          </Row>
-                          <Row hide s={{ hide: false }}>
-                            <IconButton
-                              size="l"
-                              key={`${item.name}-icon`}
-                              href={item.link}
-                              icon={item.icon}
-                              variant="secondary"
-                            />
-                          </Row>
-                        </React.Fragment>
-                      ),
-                  )}
-              </Row>
-            )}
-          </Column>
 
-          {about.intro.display && (
-            <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="xl">
-              {about.intro.description}
-            </Column>
-          )}
+      <section aria-labelledby="about-intro">
+        <header className={styles.hero}>
+          <SectionLabel>A little more about me</SectionLabel>
+          <h1 id="about-intro">Curious by nature. A designer by choice.</h1>
+        </header>
+        <div className={styles.intro}>
+          <div className={styles.portrait}>
+            <Image
+              src="/images/avatar_02.webp"
+              alt="Andrea Schulz"
+              fill
+              sizes="(max-width: 720px) 100vw, 420px"
+              priority
+            />
+          </div>
+          <div className={styles.copy}>
+            <h2>Hi, I’m Andrea.</h2>
+            <p>
+              My journey into product design started with a fascination for visual communication
+              and how design influences the way we perceive and interact with the world.
+            </p>
+            <p>
+              Over the years, that curiosity has grown beyond the visual layer into understanding
+              people, questioning assumptions and exploring how things work together.
+            </p>
+            <p>
+              Today, I enjoy working at the intersection of design, technology and human behaviour.
+            </p>
+            <div className={styles.details}>
+              <span>Based in Stockholm, Sweden</span>
+              <span>{person.languages?.join(" / ")}</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          {about.work.display && (
-            <>
-              <Heading as="h2" id={about.work.title} variant="display-strong-s" marginBottom="m">
-                {about.work.title}
-              </Heading>
-              <Column fillWidth gap="l" marginBottom="80">
-                {about.work.experiences.map((experience, index) => (
-                  <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth>
-                    <Row fillWidth horizontal="between" vertical="end" marginBottom="4">
-                      <Text id={experience.company} variant="heading-strong-l">
-                        {experience.role}
-                      </Text>
-                      <Text variant="heading-default-xs" onBackground="neutral-weak">
-                        {experience.timeframe}
-                      </Text>
-                    </Row>
-                    <Text variant="body-default-s" onBackground="accent-weak" marginBottom="s">
-                      {experience.company}
-                    </Text>
-                    <Text variant="body-default-m">
-                      {experience.description}
-                    </Text>
-                    {/* <Column as="ul" gap="16">
-                      {experience.achievements.map(
-                        (achievement: React.ReactNode, index: number) => (
-                          <Text
-                            as="li"
-                            variant="body-default-m"
-                            key={`${experience.company}-${index}`}
-                          >
-                            {achievement}
-                          </Text>
-                        ),
-                      )}
-                    </Column> */}
-                    {experience.images && experience.images.length > 0 && (
-                      <Row fillWidth gap="12" wrap>
-                        {experience.images.map((image, index) => (
-                          <Row
-                            key={image.alt}
-                            border="neutral-medium"
-                            radius="m"
-                            minWidth={image.width}
-                            height={image.height}
-                          >
-                            <Media
-                              enlarge
-                              radius="m"
-                              sizes={image.width.toString()}
-                              alt={image.alt}
-                              src={image.src}
-                            />
-                          </Row>
-                        ))}
-                      </Row>
-                    )}
-                  </Column>
-                ))}
-              </Column>
-            </>
-          )}
+      <section aria-labelledby="experience-heading">
+        <header className={styles.sectionHeading}>
+          <SectionLabel>Experience</SectionLabel>
+          <h2 id="experience-heading">My journey so far.</h2>
+          <p>
+            From visual communication and early-stage startups to designing experiences for
+            global travel platforms.
+          </p>
+        </header>
+        <div className={styles.list}>
+          {about.work.experiences.map((experience, index) => (
+            <article className={styles.entry} key={experience.company}>
+              <div className={styles.entryIdentity}>
+                <h3>{experience.company}</h3>
+                <span>{experience.role}</span>
+              </div>
+              <span className={styles.date}>{experience.timeframe}</span>
+              {index < 4 && <p>{experience.description}</p>}
+            </article>
+          ))}
+        </div>
+      </section>
 
-          {about.studies.display && (
-            <>
-              <Heading as="h2" id={about.studies.title} variant="display-strong-s" marginBottom="m">
-                {about.studies.title}
-              </Heading>
-              <Column fillWidth gap="l" marginBottom="80">
-                {about.studies.institutions.map((institution, index) => (
-                  <Column key={`${institution.name}-${index}`} fillWidth gap="4">
-                    <Text id={institution.name} variant="heading-strong-l">
-                      {institution.name}
-                    </Text>
-                    <Text variant="heading-default-xs" onBackground="neutral-weak">
-                      {institution.description}
-                    </Text>
-                  </Column>
-                ))}
-              </Column>
-            </>
-          )}
+      <section aria-labelledby="principles-heading">
+        <header className={styles.sectionHeading}>
+          <SectionLabel>How I work</SectionLabel>
+          <h2 id="principles-heading">Curiosity, collaboration and a willingness to learn.</h2>
+        </header>
+        <div className={styles.grid}>
+          {principles.map((principle) => (
+            <article className={styles.card} key={principle.title}>
+              <h3>{principle.title}</h3>
+              <p>{principle.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
 
-          {about.technical.display && (
-            <>
-              <Heading
-                as="h2"
-                id={about.technical.title}
-                variant="display-strong-s"
-                marginBottom="m"
-              >
-                {about.technical.title}
-              </Heading>
-              <Column fillWidth gap="l" marginBottom="80">
-                {about.technical.skills.map((skill, index) => (
-                  <Column key={`${skill}-${index}`} fillWidth gap="4">
-                    <Text id={skill.title} variant="heading-strong-l">
-                      {skill.title}
-                    </Text>
-                    <Text variant="body-default-m" onBackground="neutral-weak">
-                      {skill.description}
-                    </Text>
-                    {skill.tags && skill.tags.length > 0 && (
-                      <Row wrap gap="8" paddingTop="8">
-                        {skill.tags.map((tag, tagIndex) => (
-                          <Tag key={`${skill.title}-${tagIndex}`} size="l" prefixIcon={tag.icon}>
-                            {tag.name}
-                          </Tag>
-                        ))}
-                      </Row>
-                    )}
-                    {skill.images && skill.images.length > 0 && (
-                      <Row fillWidth paddingTop="m" gap="12" wrap>
-                        {skill.images.map((image, index) => (
-                          <Row
-                            key={image.alt}
-                            border="neutral-medium"
-                            radius="m"
-                            minWidth={image.width}
-                            height={image.height}
-                          >
-                            <Media
-                              enlarge
-                              radius="m"
-                              sizes={image.width.toString()}
-                              alt={image.alt}
-                              src={image.src}
-                            />
-                          </Row>
-                        ))}
-                      </Row>
-                    )}
-                  </Column>
-                ))}
-              </Column>
-            </>
-          )}
-        </Column>
-      </Row>
-    </Column>
+      <section aria-labelledby="education-heading">
+        <header className={styles.sectionHeading}>
+          <SectionLabel>Education</SectionLabel>
+          <h2 id="education-heading">Always learning.</h2>
+        </header>
+        <div className={styles.list}>
+          {about.studies.institutions.map((institution) => (
+            <article className={styles.education} key={institution.name}>
+              <h3>{institution.name}</h3>
+              <div>{institution.description}</div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.personal} aria-labelledby="personal-heading">
+        <header className={styles.sectionHeading}>
+          <SectionLabel>Beyond design</SectionLabel>
+          <h2 id="personal-heading">Finding inspiration outside the screen.</h2>
+          <p>
+            Originally from Germany and now living in Sweden, I enjoy exploring new perspectives,
+            spending time in nature and finding creative inspiration in everyday life.
+          </p>
+        </header>
+      </section>
+    </div>
   );
 }

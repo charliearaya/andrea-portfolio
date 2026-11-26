@@ -103,13 +103,18 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
+        company: "Etraveli Group",
+        timeframe: "2026",
+        role: "UX Designer",
+        description: "Designed post-booking travel experiences, translating user needs, business requirements and technical constraints into clear, intuitive solutions. Collaborated closely with product and engineering throughout exploration, refinement and design delivery.",
+        achievements: [],
+        images: [],
+      },
+      {
         company: "SAS · Scandinavian Airlines",
-        timeframe: "2022 - Present",
+        timeframe: "2022 - 2026",
         role: "UI Designer",
-        description: `Designed and evolved user interfaces across SAS digital products, 
-                      focusing on usability, accessibility, and brand consistency. Contributed to 
-                      the design system and collaborated closely with commercial, UX, and 
-                      engineering teams on revenue-critical experiences.`,
+        description: "Shaped digital experiences across the customer journey, balancing usability, accessibility and visual consistency. Contributed to the evolution of the SAS design system and the translation of a new brand identity into digital products.",
         achievements: [],
         images: [],
       },
@@ -136,7 +141,7 @@ const about: About = {
       },
       {
         company: "PotentialPark",
-        timeframe: "2020 - 2020",
+        timeframe: "2020",
         role: "UX/UI Consultant",
         achievements: [],
         images: [],
@@ -159,6 +164,10 @@ const about: About = {
     display: true, // set to false to hide this section
     title: "Education",
     institutions: [
+      {
+        name: "UX & Digital Product Design",
+        description: <>Berghs School of Communication<br />2026</>,
+      },
       {
         name: "UX/UI Design",
         description: <>IxDF - The Interaction Design Foundation<br />2020 - 2021</>
