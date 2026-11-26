@@ -27,7 +27,7 @@ export function AboutHero() {
           I also integrate AI into research, concept exploration and prototyping, with critical
           thinking and human judgment at the centre of my process.
         </p>
-        <PortfolioButton href="/about">More about me</PortfolioButton>
+        <PortfolioButton href="/about" variant="tertiary">More about me</PortfolioButton>
       </div>
     </section>
   );
