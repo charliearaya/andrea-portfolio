@@ -6,7 +6,7 @@ export function SkillsHero() {
     <section className={styles.section} aria-labelledby="expertise-heading">
       <div>
         <SectionLabel>Expertise</SectionLabel>
-        <h2 id="expertise-heading">From the bigger picture to the smallest detail.</h2>
+        <h2 id="expertise-heading">I bring different design disciplines together.</h2>
       </div>
       <ul className={styles.skills}>
         <li>Product design</li>
