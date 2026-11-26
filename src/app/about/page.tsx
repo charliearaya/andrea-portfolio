@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Meta, Schema } from "@once-ui-system/core";
-import { about, baseURL, person, socialLinks } from "@/resources";
+import { about, baseURL, person } from "@/resources";
+import { socialLinks } from "@/resources/content";
 import { FaFigma, FaJira, FaSlack } from "react-icons/fa6";
 import { SiAnthropic, SiNotion, SiOpenai } from "react-icons/si";
 import { PortfolioButton } from "@/components/PortfolioButton";
