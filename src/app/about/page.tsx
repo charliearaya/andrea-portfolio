@@ -5,7 +5,6 @@ import { socialLinks } from "@/resources/content";
 import { FaFigma, FaJira, FaSlack } from "react-icons/fa6";
 import { SiAnthropic, SiNotion, SiOpenai } from "react-icons/si";
 import { PortfolioButton } from "@/components/PortfolioButton";
-import { SectionLabel } from "@/components/PortfolioDetails";
 import styles from "./About.module.scss";
 
 const tools = [
@@ -46,7 +45,6 @@ export default function About() {
 
       <section aria-labelledby="about-intro">
         <header className={styles.hero}>
-          <SectionLabel>A little more about me</SectionLabel>
           <h1 id="about-intro">Curious by nature. A designer by choice.</h1>
           <p>
             A Product Designer with a background in visual design and a curiosity for how
@@ -68,7 +66,6 @@ export default function About() {
             <p>Design experience</p>
           </div>
           <div className={`${styles.card} ${styles.philosophyCard}`}>
-            <SectionLabel>My design philosophy</SectionLabel>
             <h2>Clarity. Curiosity. Collaboration.</h2>
             <p>
               I believe in asking the right questions, looking beyond the obvious and creating
@@ -133,7 +130,6 @@ export default function About() {
 
       <section className={styles.personal} aria-labelledby="personal-heading">
         <header className={styles.sectionHeading}>
-          <SectionLabel>Beyond design</SectionLabel>
           <h2 id="personal-heading">A little more about me.</h2>
           <p>
             Originally from Germany, I now call Sweden home. Outside of design, I have a passion
