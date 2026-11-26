@@ -1,11 +1,9 @@
 import Image from "next/image";
 import { Meta, Schema } from "@once-ui-system/core";
 import { about, baseURL, person } from "@/resources";
-import { socialLinks } from "@/resources/content";
 import { FaFigma, FaJira, FaSlack } from "react-icons/fa6";
 import { SiAnthropic, SiNotion } from "react-icons/si";
 import { BsOpenai } from "react-icons/bs";
-import { PortfolioButton } from "@/components/PortfolioButton";
 import { AboutNavigation } from "./AboutNavigation";
 import styles from "./About.module.scss";
 
@@ -78,8 +76,6 @@ export default function About() {
         }}
       />
 
-      <AboutNavigation />
-
       <section id="introduction" aria-labelledby="about-intro">
         <header className={styles.hero}>
           <h1 id="about-intro">Curious by nature. A designer by choice.</h1>
@@ -122,11 +118,7 @@ export default function About() {
             </ul>
           </div>
         </div>
-        <div className={styles.introAction}>
-          <PortfolioButton href={socialLinks.LinkedIn} variant="secondary">
-            LinkedIn
-          </PortfolioButton>
-        </div>
+        <AboutNavigation />
       </section>
 
       <section id="experience" aria-labelledby="experience-heading">
