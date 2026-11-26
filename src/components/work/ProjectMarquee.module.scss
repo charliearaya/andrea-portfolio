@@ -13,16 +13,13 @@
   overflow: hidden;
   width: 100%;
 
-  &:hover .track,
-  &[data-paused="true"] .track {
-    animation-play-state: paused;
-  }
+  touch-action: pan-y;
 }
 
 .track {
   display: flex;
   width: max-content;
-  animation: drift 105s linear infinite;
+  will-change: transform;
 }
 
 .sequence {
@@ -48,33 +45,43 @@
   overflow: hidden;
 }
 
-.control {
+.controls {
   display: flex;
-  align-items: center;
+  justify-content: flex-end;
   gap: 0.5rem;
-  margin: 0.75rem clamp(1rem, 3vw, 2rem) 0 auto;
-  padding: 0.5rem;
-  min-height: 44px;
-  border: 0;
+  margin: 0.75rem clamp(1rem, 3vw, 2rem) 0;
+}
+
+.control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--neutral-border-medium);
+  border-radius: 50%;
   background: transparent;
-  color: var(--neutral-on-background-weak);
-  font: inherit;
-  font-size: 0.75rem;
+  color: var(--neutral-on-background-strong);
   cursor: pointer;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  &:hover:not(:disabled) {
+    background: var(--neutral-alpha-weak);
+  }
 
   &:focus-visible {
     outline: 2px solid currentColor;
     outline-offset: 2px;
   }
-}
 
-@keyframes drift {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
+  &:disabled {
+    opacity: 0.4;
+    cursor: default;
   }
 }
 
@@ -82,21 +89,6 @@
   .gallery {
     --slide-height: clamp(220px, 65vw, 340px);
     --slide-gap: 12px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .viewport {
-    overflow-x: auto;
-  }
-
-  .track {
-    animation: none;
-  }
-
-  .sequence[aria-hidden="true"],
-  .control {
-    display: none;
   }
 }
 

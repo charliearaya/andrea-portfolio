@@ -1,7 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { useState, type CSSProperties } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { HiChevronLeft, HiChevronRight, HiPause, HiPlay } from "react-icons/hi2";
+import { nextOffset, wrapOffset } from "./marqueeNavigation.mjs";
 import styles from "./ProjectMarquee.module.scss";
 
 type Cover = {
@@ -94,11 +96,90 @@ const covers: Record<string, Cover> = {
 
 export function ProjectMarquee({ images }: { images: string[] }) {
   const [paused, setPaused] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const offset = useRef(0);
+  const target = useRef<number | null>(null);
+  const hovered = useRef(false);
+  const touchStart = useRef<number | null>(null);
+
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setReducedMotion(media.matches);
+    update();
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
+
+  useEffect(() => {
+    let frame = 0;
+    let previous = 0;
+
+    const tick = (now: number) => {
+      const track = trackRef.current;
+      const sequence = track?.firstElementChild;
+      const width = sequence?.getBoundingClientRect().width ?? 0;
+      const elapsed = previous ? Math.min(now - previous, 50) : 0;
+      previous = now;
+
+      if (track && width > 0) {
+        if (target.current !== null) {
+          const distance = target.current - offset.current;
+          if (reducedMotion || Math.abs(distance) < 1) {
+            offset.current = wrapOffset(target.current, width);
+            target.current = null;
+          } else {
+            offset.current += distance * (1 - Math.exp(-elapsed / 85));
+          }
+        } else if (!paused && !reducedMotion && !hovered.current) {
+          offset.current = wrapOffset(offset.current + (width * elapsed) / 105000, width);
+        }
+
+        track.style.transform = `translate3d(${-wrapOffset(offset.current, width)}px, 0, 0)`;
+      }
+
+      frame = requestAnimationFrame(tick);
+    };
+
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, [paused, reducedMotion]);
+
+  function step(direction: number) {
+    const sequence = trackRef.current?.firstElementChild;
+    if (!sequence) return;
+    const width = sequence.getBoundingClientRect().width;
+    const left = sequence.getBoundingClientRect().left;
+    const positions = Array.from(sequence.children, (slide) => slide.getBoundingClientRect().left - left);
+    const current = wrapOffset(target.current ?? offset.current, width);
+    offset.current = wrapOffset(offset.current, width);
+    const destination = nextOffset(current, positions, width, direction);
+    // Follow the requested direction even when crossing the loop boundary.
+    target.current = direction > 0 && destination < offset.current
+      ? destination + width
+      : direction < 0 && destination > offset.current
+        ? destination - width
+        : destination;
+    setPaused(true);
+  }
 
   return (
     <div className={styles.gallery}>
-      <div className={styles.viewport} data-paused={paused} aria-label="Selected project imagery">
-        <div className={styles.track}>
+      <div
+        className={styles.viewport}
+        aria-label="Selected project imagery"
+        onMouseEnter={() => { hovered.current = true; }}
+        onMouseLeave={() => { hovered.current = false; }}
+        onTouchStart={(event) => { touchStart.current = event.touches[0].clientX; }}
+        onTouchEnd={(event) => {
+          if (touchStart.current === null) return;
+          const distance = event.changedTouches[0].clientX - touchStart.current;
+          touchStart.current = null;
+          if (Math.abs(distance) > 40) step(distance < 0 ? 1 : -1);
+        }}
+        onTouchCancel={() => { touchStart.current = null; }}
+      >
+        <div className={styles.track} ref={trackRef}>
           {[false, true].map((duplicate) => (
             <div
               key={String(duplicate)}
@@ -155,15 +236,23 @@ export function ProjectMarquee({ images }: { images: string[] }) {
           ))}
         </div>
       </div>
-      <button
-        type="button"
-        className={styles.control}
-        aria-label={paused ? "Play project carousel" : "Pause project carousel"}
-        onClick={() => setPaused((value) => !value)}
-      >
-        <span aria-hidden="true">{paused ? "▷" : "Ⅱ"}</span>
-        {paused ? "Play" : "Pause"}
-      </button>
+      <div className={styles.controls} role="group" aria-label="Carousel controls">
+        <button type="button" className={styles.control} aria-label="Previous project image" onClick={() => step(-1)}>
+          <HiChevronLeft aria-hidden="true" />
+        </button>
+        <button
+          type="button"
+          className={styles.control}
+          aria-label={paused || reducedMotion ? "Play project carousel" : "Pause project carousel"}
+          disabled={reducedMotion}
+          onClick={() => setPaused((value) => !value)}
+        >
+          {paused || reducedMotion ? <HiPlay aria-hidden="true" /> : <HiPause aria-hidden="true" />}
+        </button>
+        <button type="button" className={styles.control} aria-label="Next project image" onClick={() => step(1)}>
+          <HiChevronRight aria-hidden="true" />
+        </button>
+      </div>
     </div>
   );
 }
