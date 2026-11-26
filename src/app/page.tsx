@@ -4,6 +4,7 @@ import { SectionLabel } from "@/components/PortfolioDetails";
 import { about, baseURL, home, person } from "@/resources";
 import AboutHero from "@/components/AboutHero";
 import SkillsHero from "@/components/SkillsHero";
+import { KindWords } from "@/components/KindWords";
 import { ProjectMarquee } from "@/components/work/ProjectMarquee";
 import styles from "./Portfolio.module.scss";
 
@@ -64,6 +65,7 @@ export default function Home() {
 
       <AboutHero />
       <SkillsHero />
+      <KindWords />
 
       <section className={styles.contact}>
         <SectionLabel>Contact</SectionLabel>
