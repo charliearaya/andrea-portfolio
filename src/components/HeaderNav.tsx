@@ -35,7 +35,7 @@ export const HeaderNav = () => {
           </Link>
         )}
         <a href={`mailto:${person.email}`}>
-          Contact <span aria-hidden="true">↗</span>
+          Contact
         </a>
         {display.themeSwitcher && <ThemeToggle />}
       </div>
