@@ -21,12 +21,18 @@ export function AboutHero() {
           A Product Designer with 6 years of experience and a background in visual design.
         </p>
         <p>
-          I work across research, UX, UI and design systems, collaborating with product and
-          engineering teams to solve complex problems and make informed trade-offs.
+          I believe good design creates confidence through clarity, intuitive interactions and
+          considered visual details. It helps people feel oriented, make informed decisions and
+          trust the experiences they interact with.
         </p>
         <p>
-          I also integrate AI into research, concept exploration and prototyping, with critical
-          thinking and human judgment at the centre of my process.
+          That philosophy extends to how I work with others. I value shared understanding, open
+          collaboration and finding the right balance between user needs, business goals and
+          technical possibilities.
+        </p>
+        <p>
+          Curious about how design continues to evolve, I actively explore how AI can enrich my
+          design process, while keeping critical thinking and human judgment at its core.
         </p>
         <PortfolioButton href="/about" variant="tertiary">
           More about me
