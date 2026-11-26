@@ -9,7 +9,7 @@ const person: Person = {
   avatar: "/images/avatar_01.webp",
   email: "andrea.isabelle.schulz@gmail.com",
   location: "Stockholm",
-  languages: ["German · C2", "English · C1", "Swedish · B1"],
+  languages: ["German · Native", "English · C1", "Swedish · B2"],
 };
 
 const newsletter: Newsletter = {
