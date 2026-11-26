@@ -50,7 +50,7 @@ const covers: Record<string, Cover> = {
   },
   "/images/projects/sas/cover_04.webp": {
     ratio: 0.86,
-    background: "#dce3f2",
+    background: "#2034ce",
     inset: "0",
     fit: "cover",
     position: "100% center",
