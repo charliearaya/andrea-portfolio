@@ -37,7 +37,7 @@
   margin: 0;
   padding: clamp(1.25rem, 3vw, 2rem);
   border-radius: 1rem;
-  background: var(--neutral-alpha-weak);
+  background: #f7f7f7;
   color: var(--neutral-on-background-strong);
 
   blockquote,
@@ -55,6 +55,10 @@
     flex-direction: column;
     gap: 0.25rem;
   }
+}
+
+:global([data-theme="dark"]) .card {
+  background: var(--neutral-alpha-weak);
 }
 
 .author {

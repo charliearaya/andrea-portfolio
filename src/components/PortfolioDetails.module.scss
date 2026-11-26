@@ -23,7 +23,8 @@
   height: 44px;
   flex-shrink: 0;
   border-radius: 50%;
-  background: var(--neutral-alpha-weak);
+  border: 1px solid currentColor;
+  background: transparent;
   color: var(--neutral-on-background-strong) !important;
   text-decoration: none;
   transition: background-color 160ms ease;
@@ -34,7 +35,7 @@
   }
 
   &:hover {
-    background: var(--neutral-alpha-medium);
+    background: var(--neutral-alpha-weak);
   }
 
   &:focus-visible {

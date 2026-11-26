@@ -2,10 +2,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.875rem;
-  min-height: 48px;
-  padding: 0.75rem 1.25rem;
-  border: 1px solid #111;
+  gap: 0.75rem;
+  min-height: 44px;
+  padding: 0.625rem 1.25rem;
+  border: 1px solid currentColor;
   border-radius: 999px;
   font-size: 0.875rem;
   font-weight: 550;
@@ -14,7 +14,7 @@
   transition: background-color 160ms ease, border-color 160ms ease;
 
   &:focus-visible {
-    outline: 2px solid var(--neutral-on-background-strong, #111);
+    outline: 2px solid currentColor;
     outline-offset: 4px;
   }
 }
@@ -22,48 +22,20 @@
 // Explicit anchor states override the global link colour.
 a.button.primary,
 a.button.primary:link,
-a.button.primary:visited {
-  background: #111;
-  color: #fff !important;
-
-  &:hover,
-  &:active {
-    background: #333;
-    border-color: #333;
-    color: #fff !important;
-  }
-}
-
+a.button.primary:visited,
 a.button.secondary,
 a.button.secondary:link,
-a.button.secondary:visited {
-  background: #fff;
-  color: #111 !important;
-
-  &:hover,
-  &:active {
-    background: #f0f0f0;
-    color: #111 !important;
-  }
-}
-
+a.button.secondary:visited,
 a.button.tertiary,
 a.button.tertiary:link,
 a.button.tertiary:visited {
-  min-height: 44px;
-  padding: 0.625rem 1.25rem;
-  gap: 0.75rem;
-  background: var(--neutral-alpha-weak);
-  border: 0;
-  border-radius: 999px;
+  background: transparent;
   color: var(--neutral-on-background-strong) !important;
-  font-size: 0.875rem;
-  font-weight: 550;
   text-decoration: none !important;
 
   &:hover,
   &:active {
-    background: var(--neutral-alpha-medium);
+    background: var(--neutral-alpha-weak);
     color: var(--neutral-on-background-strong) !important;
     text-decoration: none !important;
   }
@@ -75,10 +47,6 @@ a.button.tertiary:visited {
   font-size: 1.125em;
   line-height: 1;
   color: inherit !important;
-}
-
-:global([data-theme="dark"]) a.button.primary {
-  border-color: #a3a3a3;
 }
 
 @media (prefers-reduced-motion: reduce) {
