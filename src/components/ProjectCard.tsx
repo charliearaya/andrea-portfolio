@@ -6,10 +6,10 @@ import {
   Carousel,
   Column,
   Flex,
-  Heading,
   Text,
 } from "@once-ui-system/core";
 import { PortfolioButton } from "./PortfolioButton";
+import styles from "./ProjectCard.module.scss";
 
 interface ProjectCardProps {
   href: string;
@@ -98,9 +98,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         >
           {title && (
             <Flex flex={5}>
-              <Heading as="h2" wrap="balance" variant="heading-strong-xl">
+              <h2 className={styles.title}>
                 {title}
-              </Heading>
+              </h2>
             </Flex>
           )}
           {(description?.trim() || content?.trim()) && (

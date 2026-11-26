@@ -2,6 +2,22 @@
   --font-heading: var(--font-body);
   --font-label: var(--font-body);
 
+  /* Portfolio typography roles, independent of HTML heading levels. */
+  --portfolio-display-size: clamp(2.5rem, 6vw, 5rem);
+  --portfolio-display-leading: 1.04;
+  --portfolio-display-tracking: -0.058em;
+  --portfolio-h1-size: clamp(1.875rem, 4vw, 3rem);
+  --portfolio-h1-leading: 1.15;
+  --portfolio-h1-tracking: -0.045em;
+  --portfolio-h2-size: clamp(1.5rem, 3vw, 2rem);
+  --portfolio-h2-leading: 1.2;
+  --portfolio-h2-tracking: -0.035em;
+  --portfolio-h3-size: clamp(1.125rem, 2vw, 1.5rem);
+  --portfolio-h3-leading: 1.35;
+  --portfolio-h3-tracking: -0.025em;
+  --portfolio-heading-weight: 600;
+  --portfolio-label-size: 0.875rem;
+
   /*
   /* Override default variables here */
   /*

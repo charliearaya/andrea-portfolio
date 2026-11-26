@@ -24,10 +24,10 @@
 
   h2 {
     color: #fff;
-    font-size: clamp(2.75rem, 7vw, 5rem);
-    font-weight: 600;
-    line-height: 1.08;
-    letter-spacing: -0.055em;
+    font-size: var(--portfolio-h1-size);
+    line-height: var(--portfolio-h1-leading);
+    letter-spacing: var(--portfolio-h1-tracking);
+    font-weight: var(--portfolio-heading-weight);
     margin: 0;
   }
 

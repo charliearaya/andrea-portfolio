@@ -6,10 +6,10 @@
   gap: var(--heading-space, 2.5rem);
 
   h2 {
-    font-size: clamp(1.875rem, 4vw, 3rem);
-    font-weight: 600;
-    line-height: 1.15;
-    letter-spacing: -0.045em;
+    font-size: var(--portfolio-h1-size);
+    line-height: var(--portfolio-h1-leading);
+    letter-spacing: var(--portfolio-h1-tracking);
+    font-weight: var(--portfolio-heading-weight);
     margin: var(--label-space, 0.75rem) auto 0;
     max-width: 24ch;
     text-wrap: balance;

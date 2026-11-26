@@ -14,10 +14,10 @@
   h2 {
     max-width: 20ch;
     margin: 0;
-    font-size: clamp(1.875rem, 4vw, 3rem);
-    font-weight: 600;
-    line-height: 1.15;
-    letter-spacing: -0.045em;
+    font-size: var(--portfolio-h1-size);
+    line-height: var(--portfolio-h1-leading);
+    letter-spacing: var(--portfolio-h1-tracking);
+    font-weight: var(--portfolio-heading-weight);
     text-wrap: balance;
   }
 }

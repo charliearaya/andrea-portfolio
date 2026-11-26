@@ -57,10 +57,10 @@
 
 .title {
   margin: 0;
-  font-size: clamp(2.75rem, 7.2vw, 6rem);
-  line-height: 1.06;
-  letter-spacing: -0.055em;
-  font-weight: 650;
+  font-size: var(--portfolio-h1-size);
+  line-height: var(--portfolio-h1-leading);
+  letter-spacing: var(--portfolio-h1-tracking);
+  font-weight: var(--portfolio-heading-weight);
   max-width: 18ch;
   text-wrap: balance;
 }
@@ -127,9 +127,10 @@
 
   > :global(h2) {
     margin-top: 4rem;
-    font-size: clamp(1.9rem, 3.6vw, 3rem);
-    letter-spacing: -0.04em;
-    line-height: 1.15;
+    font-size: var(--portfolio-h2-size);
+    line-height: var(--portfolio-h2-leading);
+    letter-spacing: var(--portfolio-h2-tracking);
+    font-weight: var(--portfolio-heading-weight);
   }
 
   a {
