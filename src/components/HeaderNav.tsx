@@ -1,73 +1,35 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Line, Row, ToggleButton } from "@once-ui-system/core";
-
-import { routes, display, about, work, home } from "@/resources";
-import { ThemeToggle } from "./ThemeToggle";
+import { person, routes } from "@/resources";
 import styles from "./Header.module.scss";
 
 export const HeaderNav = () => {
   const pathname = usePathname() ?? "";
+  const workActive = pathname === "/work" || pathname.startsWith("/work/");
+  const aboutActive = pathname === "/about";
 
   return (
-    <Row gap="s" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
-      {routes["/"] && (
-        <ToggleButton size="l" prefixIcon="home" href="/" label={home.label} selected={pathname === "/"} />
-      )}
-      <Line background="neutral-alpha-medium" vert maxHeight="24" />
-      {routes["/about"] && (
-        <>
-          <Row s={{ hide: true }}>
-            <ToggleButton
-              size="l"
-              prefixIcon="person"
-              href="/about"
-              label={about.label}
-              className={styles["custom-toggle-button"]}
-              selected={pathname === "/about"}
-            />
-          </Row>
-          <Row hide s={{ hide: false }}>
-            <ToggleButton
-              size="l"
-              prefixIcon="person"
-              href="/about"
-              className={styles["custom-toggle-button"]}
-              selected={pathname === "/about"}
-            />
-          </Row>
-        </>
-      )}
-      {routes["/work"] && (
-        <>
-          <Row s={{ hide: true }}>
-            <ToggleButton
-              size="l"
-              prefixIcon="grid"
-              href="/work"
-              label={work.label}
-              className={styles["custom-toggle-button"]}
-              selected={pathname.startsWith("/work")}
-            />
-          </Row>
-          <Row hide s={{ hide: false }}>
-            <ToggleButton
-              size="l"
-              prefixIcon="grid"
-              href="/work"
-              className={styles["custom-toggle-button"]}
-              selected={pathname.startsWith("/work")}
-            />
-          </Row>
-        </>
-      )}
-      {display.themeSwitcher && (
-        <>
-          <Line background="neutral-alpha-medium" vert maxHeight="24" />
-          <ThemeToggle />
-        </>
-      )}
-    </Row>
+    <nav className={styles.nav} aria-label="Main navigation">
+      <Link href="/" className={styles.name} aria-current={pathname === "/" ? "page" : undefined}>
+        {person.name}
+      </Link>
+      <div className={styles.links}>
+        {routes["/work"] && (
+          <Link href="/work" aria-current={workActive ? "page" : undefined}>
+            Work
+          </Link>
+        )}
+        {routes["/about"] && (
+          <Link href="/about" aria-current={aboutActive ? "page" : undefined}>
+            About
+          </Link>
+        )}
+        <a href={`mailto:${person.email}`}>
+          Contact <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </nav>
   );
 };

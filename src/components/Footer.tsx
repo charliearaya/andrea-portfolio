@@ -1,5 +1,6 @@
 import { Row, IconButton, SmartLink, Text } from "@once-ui-system/core";
-import { person, social } from "@/resources";
+import { display, person, social } from "@/resources";
+import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Footer.module.scss";
 
 export const Footer = () => {
@@ -29,7 +30,7 @@ export const Footer = () => {
             <SmartLink href="https://once-ui.com/products/magic-portfolio">Once UI</SmartLink>
           </Text>
         </Text>
-        <Row gap="16">
+        <Row gap="16" vertical="center">
           {social.map(
             (item) =>
               item.link && (
@@ -43,9 +44,9 @@ export const Footer = () => {
                 />
               ),
           )}
+          {display.themeSwitcher && <ThemeToggle />}
         </Row>
       </Row>
-      <Row height="80" hide s={{ hide: false }} />
     </Row>
   );
 };
