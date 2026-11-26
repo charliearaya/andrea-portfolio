@@ -25,7 +25,7 @@ const covers: Record<string, Cover> = {
   },
   "/images/projects/flow/entry.jpg": {
     ratio: 0.75,
-    background: "#c6f432",
+    background: "#e7edcc",
     inset: "0",
     fit: "contain",
     position: "center",
@@ -34,7 +34,7 @@ const covers: Record<string, Cover> = {
   },
   "/images/projects/youse/cover_01.webp": {
     ratio: 0.9,
-    background: "#efeeec",
+    background: "#eeddd5",
     inset: "0",
     fit: "cover",
     position: "74% center",
@@ -42,7 +42,7 @@ const covers: Record<string, Cover> = {
   },
   "/images/projects/exparang/cover_02.webp": {
     ratio: 1.72,
-    background: "#f0ece9",
+    background: "#e9dcd6",
     inset: "4%",
     fit: "contain",
     position: "center",
@@ -50,7 +50,7 @@ const covers: Record<string, Cover> = {
   },
   "/images/projects/sas/cover_04.webp": {
     ratio: 0.86,
-    background: "#2439ca",
+    background: "#dce3f2",
     inset: "0",
     fit: "cover",
     position: "100% center",
@@ -59,7 +59,7 @@ const covers: Record<string, Cover> = {
   },
   "/images/projects/float/cover_03.webp": {
     ratio: 1.48,
-    background: "#ede6f5",
+    background: "#e7dfee",
     inset: "8%",
     fit: "contain",
     position: "center",
@@ -84,7 +84,7 @@ const covers: Record<string, Cover> = {
   },
   "/images/projects/sas/image_04.webp": {
     ratio: 1.05,
-    background: "#262a32",
+    background: "#e0e3e8",
     inset: "0",
     fit: "cover",
     position: "center",
@@ -121,18 +121,6 @@ export function ProjectMarquee({ images }: { images: string[] }) {
                     cover?.treatment === "eurobonus" ||
                     cover?.treatment === "travel" ? (
                       <div className={`${styles.composition} ${styles[cover.treatment]}`}>
-                        <div className={styles.coverLabel} aria-hidden="true">
-                          {cover.treatment === "flow" ? (
-                            <>
-                              <strong>Flow</strong>
-                              <span>AI for designers</span>
-                            </>
-                          ) : cover.treatment === "travel" ? (
-                            "Travel Extras"
-                          ) : (
-                            "EuroBonus Checkout"
-                          )}
-                        </div>
                         <div className={styles.crop}>
                           <Image
                             src={cover.treatment === "flow" ? "/images/projects/flow/completion.jpg" : src}

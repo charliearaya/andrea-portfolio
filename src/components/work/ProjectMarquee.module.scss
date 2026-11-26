@@ -106,17 +106,6 @@
   overflow: hidden;
 }
 
-.coverLabel {
-  position: absolute;
-  z-index: 2;
-  top: 6%;
-  left: 7%;
-  font-size: clamp(10px, 1.15vw, 14px);
-  font-weight: 550;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
 .crop {
   position: absolute;
   overflow: hidden;
@@ -130,7 +119,7 @@
 }
 
 .eurobonus {
-  background: #2034ce;
+  background: #dce3f2;
   color: white;
 
   .crop {
@@ -172,20 +161,7 @@
 
 .flow {
   color: #111110;
-  background: linear-gradient(145deg, #e1ff86 0%, #c6f432 47%, #b5eb24 100%);
-
-  .coverLabel {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    text-transform: none;
-    letter-spacing: -0.02em;
-
-    strong {
-      font-size: clamp(22px, 3vw, 34px);
-      line-height: 1;
-    }
-  }
+  background: #e7edcc;
 
   .crop {
     width: 52%;
