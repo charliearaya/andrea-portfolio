@@ -62,8 +62,8 @@ export default function Home() {
         </div>
       </section>
 
-      <AboutHero />
       <SkillsHero />
+      <AboutHero />
       <KindWords />
 
       <section className={styles.contact}>
