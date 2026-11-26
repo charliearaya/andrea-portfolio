@@ -168,8 +168,12 @@ export interface About extends BasePageConfig {
     title: string;
     /** List of institutions attended */
     institutions: Array<{
-      /** Institution name */
+      /** Qualification or course name */
       name: string;
+      /** Institution name */
+      school: string;
+      /** Timeframe of studies */
+      timeframe: string;
       /** Description of studies */
       description: React.ReactNode;
     }>;

@@ -167,19 +167,51 @@ const about: About = {
     institutions: [
       {
         name: "UX & Digital Product Design",
-        description: <>Berghs School of Communication<br />2026</>,
+        school: "Berghs School of Communication",
+        timeframe: "2026",
+        description: (
+          <>
+            Berghs School of Communication
+            <br />
+            2026
+          </>
+        ),
       },
       {
         name: "UX/UI Design",
-        description: <>IxDF - The Interaction Design Foundation<br />2020 - 2021</>
+        school: "IxDF - The Interaction Design Foundation",
+        timeframe: "2020 – 2021",
+        description: (
+          <>
+            IxDF - The Interaction Design Foundation
+            <br />
+            2020 – 2021
+          </>
+        ),
       },
       {
         name: "Graphic Design B.A.",
-        description: <>Faber-Castell Akademie<br />2017 - 2020</>,
+        school: "Faber-Castell Akademie",
+        timeframe: "2017 – 2020",
+        description: (
+          <>
+            Faber-Castell Akademie
+            <br />
+            2017 – 2020
+          </>
+        ),
       },
       {
         name: "Tourism Management",
-        description: <>IST University of Applied Sciences & IHK Germany<br />2013 - 2015</>,
+        school: "IST University of Applied Sciences & IHK Germany",
+        timeframe: "2013 – 2015",
+        description: (
+          <>
+            IST University of Applied Sciences &amp; IHK Germany
+            <br />
+            2013 – 2015
+          </>
+        ),
       },
     ],
   },

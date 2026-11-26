@@ -116,13 +116,16 @@ export default function About() {
 
       <section aria-labelledby="education-heading">
         <header className={styles.sectionHeading}>
-          <h2 id="education-heading">Education &amp; continuous learning</h2>
+          <h2 id="education-heading">Education &amp; courses</h2>
         </header>
         <div className={styles.list}>
           {about.studies.institutions.map((institution) => (
-            <article className={styles.education} key={institution.name}>
-              <h3>{institution.name}</h3>
-              <div>{institution.description}</div>
+            <article className={styles.entry} key={institution.name}>
+              <div className={styles.entryIdentity}>
+                <h3>{institution.name}</h3>
+                <span>{institution.school}</span>
+              </div>
+              <span className={styles.date}>{institution.timeframe}</span>
             </article>
           ))}
         </div>
