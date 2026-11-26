@@ -17,7 +17,7 @@ export function AboutHero() {
         <p className={styles.label}>About me</p>
         <h2 id="about-heading">Hi, I’m Andrea.</h2>
         <p className={styles.lead}>
-          A Product Designer with 5+ years of experience and a background in visual design.
+          A Product Designer with 6 years of experience and a background in visual design.
         </p>
         <p>
           I work across research, UX, UI and design systems, collaborating with product and
