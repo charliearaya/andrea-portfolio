@@ -116,3 +116,40 @@
   justify-content: center;
   margin-top: 0.5rem;
 }
+
+.featuredSection {
+  padding-block: clamp(1rem, 3vw, 2rem) clamp(4rem, 9vw, 8rem);
+  scroll-margin-top: 6rem;
+
+  .galleryLink {
+    margin-top: 2.5rem;
+  }
+}
+
+.featuredHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  margin-bottom: clamp(2.5rem, 6vw, 5rem);
+
+  h2 {
+    max-width: 23ch;
+    margin: 0;
+    font-size: clamp(2rem, 5.5vw, 4rem);
+    font-weight: 600;
+    line-height: 1.06;
+    letter-spacing: -0.055em;
+    text-wrap: balance;
+  }
+}
+
+.sectionPill {
+  margin: 0;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  background: var(--neutral-alpha-weak);
+  font-size: 0.875rem;
+  font-weight: 500;
+}

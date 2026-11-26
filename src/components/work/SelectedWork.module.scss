@@ -74,3 +74,38 @@
     gap: 2rem;
   }
 }
+
+.featured {
+  gap: 1.75rem 1.5rem;
+
+  .project {
+    color: var(--neutral-on-background-strong) !important;
+  }
+
+  .cover {
+    aspect-ratio: 1.29;
+    border-radius: 1rem;
+
+    img {
+      object-fit: contain;
+    }
+  }
+
+  .info {
+    padding-top: 1.125rem;
+
+    h3 {
+      font-size: clamp(1.125rem, 2vw, 1.25rem);
+      font-weight: 550;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+  }
+
+  .arrow {
+    display: none;
+  }
+}
