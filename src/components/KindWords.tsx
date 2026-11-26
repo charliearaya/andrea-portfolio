@@ -72,8 +72,9 @@ export function KindWords() {
               )}
               <span className={styles.attribution}>
                 <span className={styles.author}>{author}</span>
-                <span className={styles.role}>{role}</span>
-                <span className={styles.company}>{company}</span>
+                <span className={styles.role}>
+                  {role} · {company}
+                </span>
               </span>
             </figcaption>
           </figure>
