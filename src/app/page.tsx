@@ -30,7 +30,7 @@ const projectImages = [
 
 export default function Home() {
   return (
-    <div className={styles.page}>
+    <div className={`${styles.page} ${styles.homePage}`}>
       <Schema
         as="webPage"
         baseURL={baseURL}

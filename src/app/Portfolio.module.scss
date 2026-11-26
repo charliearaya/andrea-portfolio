@@ -6,6 +6,26 @@
   padding-inline: clamp(0px, 2vw, 24px);
 }
 
+.homePage {
+  --section-space: 9rem;
+  --label-space: 0.75rem;
+  --heading-space: 2.5rem;
+  --button-space: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-space);
+  padding-bottom: var(--section-space);
+}
+
+@media (max-width: 720px) {
+  .homePage {
+    --section-space: 5rem;
+    --heading-space: 1.5rem;
+    --button-space: 1.5rem;
+  }
+}
+
 .hero {
   padding-block: clamp(3.5rem, 9vw, 8rem) clamp(3rem, 7vw, 6rem);
 
@@ -85,7 +105,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding-block: clamp(4rem, 10vw, 8rem) clamp(2.5rem, 5vw, 4rem);
+  padding-block: clamp(4rem, 10vw, 8rem) 0;
 
   h1 {
     max-width: 19ch;
@@ -102,12 +122,11 @@
 
   .actions {
     justify-content: center;
-    margin-top: 2rem;
+    margin-top: var(--button-space, 2rem);
   }
 }
 
 .marqueeSection {
-  padding-bottom: clamp(1.5rem, 3vw, 2rem);
   scroll-margin-top: 6rem;
 }
 

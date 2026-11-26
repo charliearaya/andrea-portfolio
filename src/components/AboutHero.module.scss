@@ -3,7 +3,6 @@
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
   align-items: center;
   gap: clamp(2rem, 7vw, 6rem);
-  padding-block: clamp(2rem, 5vw, 4rem) clamp(2rem, 5vw, 4rem);
 }
 
 .portrait {
@@ -24,7 +23,7 @@
     letter-spacing: -0.05em;
     font-weight: 600;
     line-height: 1.1;
-    margin: 0.75rem 0 1.25rem;
+    margin: var(--label-space, 0.75rem) 0 var(--heading-space, 2.5rem);
   }
 
   p {
@@ -32,6 +31,10 @@
     line-height: 1.7;
     color: var(--neutral-on-background-weak);
     margin: 0 0 1rem;
+  }
+
+  > a {
+    margin-top: calc(var(--button-space, 2rem) - 1rem);
   }
 
   .label {
