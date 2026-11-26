@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { PortfolioButton } from "./PortfolioButton";
 import styles from "./AboutHero.module.scss";
 
 export function AboutHero() {
@@ -27,7 +27,7 @@ export function AboutHero() {
           I also integrate AI into research, concept exploration and prototyping, with critical
           thinking and human judgment at the centre of my process.
         </p>
-        <Link href="/about" className={styles.link}>More about me <span>↗</span></Link>
+        <PortfolioButton href="/about">More about me</PortfolioButton>
       </div>
     </section>
   );

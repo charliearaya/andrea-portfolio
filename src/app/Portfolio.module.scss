@@ -38,31 +38,8 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 1.25rem;
-  margin-top: 1.75rem;
-}
-
-.primary,
-.secondary {
-  display: inline-flex;
-  align-items: center;
   gap: 0.75rem;
-  font-size: 0.875rem;
-  font-weight: 550;
-  text-decoration: none;
-  color: inherit;
-}
-
-.primary {
-  padding: 0.875rem 1.25rem;
-  background: var(--neutral-on-background-strong);
-  color: var(--page-background);
-  border-radius: 999px;
-}
-
-.secondary {
-  padding-block: 0.375rem;
-  border-bottom: 1px solid currentColor;
+  margin-top: 1.75rem;
 }
 
 .section {

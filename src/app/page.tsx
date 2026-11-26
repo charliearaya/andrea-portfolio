@@ -1,5 +1,5 @@
 import { Meta, Schema } from "@once-ui-system/core";
-import Link from "next/link";
+import { PortfolioButton } from "@/components/PortfolioButton";
 import { about, baseURL, home, person } from "@/resources";
 import AboutHero from "@/components/AboutHero";
 import SkillsHero from "@/components/SkillsHero";
@@ -40,15 +40,17 @@ export default function Home() {
           clear, useful and considered.
         </p>
         <div className={styles.actions}>
-          <a className={styles.primary} href="#selected-work">Explore my work <span>↓</span></a>
-          <Link className={styles.secondary} href="/about">About me <span>↗</span></Link>
+          <PortfolioButton href="#selected-work" variant="primary" icon="down">
+            Explore my work
+          </PortfolioButton>
+          <PortfolioButton href="/about">About me</PortfolioButton>
         </div>
       </header>
 
       <section id="selected-work" className={styles.section}>
         <div className={styles.sectionHeader}>
           <h2>Selected work</h2>
-          <Link className={styles.secondary} href="/work">All projects <span>↗</span></Link>
+          <PortfolioButton href="/work">All projects</PortfolioButton>
         </div>
         <SelectedWork featured />
       </section>
@@ -61,8 +63,12 @@ export default function Home() {
         <h2>Let’s connect.</h2>
         <p>I’m open to new opportunities and conversations about design.</p>
         <div className={styles.actions}>
-          <a className={styles.primary} href={`mailto:${person.email}`}>Email me <span>↗</span></a>
-          <a className={styles.secondary} href="https://www.linkedin.com/in/andreaschulz-uxui/">LinkedIn <span>↗</span></a>
+          <PortfolioButton href={`mailto:${person.email}`} variant="primary">
+            Email me
+          </PortfolioButton>
+          <PortfolioButton href="https://www.linkedin.com/in/andreaschulz-uxui/">
+            LinkedIn
+          </PortfolioButton>
         </div>
       </section>
     </div>
