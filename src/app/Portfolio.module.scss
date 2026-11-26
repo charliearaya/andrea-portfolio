@@ -126,6 +126,10 @@
   }
 }
 
+.workHero {
+  padding-block: clamp(2rem, 4vw, 3.5rem) clamp(2.5rem, 5vw, 4rem);
+}
+
 .marqueeSection {
   scroll-margin-top: 6rem;
 }

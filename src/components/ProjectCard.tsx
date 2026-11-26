@@ -3,13 +3,13 @@
 import { useEffect, useState } from "react";
 
 import {
-  Badge,
   Carousel,
   Column,
   Flex,
   Heading,
   Text,
 } from "@once-ui-system/core";
+import { PortfolioButton } from "./PortfolioButton";
 
 interface ProjectCardProps {
   href: string;
@@ -112,16 +112,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               )}
               <Flex gap="24" wrap>
                 {content?.trim() && (
-                  <Badge
-                    id={`badge-${String(href).split("/").pop() ?? "project"}`}
-                    title={ctaText || "View project"}
-                    arrow
-                    href={href}
-                    effect={false}
-                    borderWidth={2}
-                    border="brand-alpha-strong"
-                    background="transparent"
-                  />
+                  <PortfolioButton href={href} variant="secondary">
+                    {ctaText || "View project"}
+                  </PortfolioButton>
                 )}
               </Flex>
             </Flex>

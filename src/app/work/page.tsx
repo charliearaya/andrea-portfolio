@@ -29,7 +29,7 @@ export default function Work() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <header className={`${styles.hero} ${styles.homeHero}`}>
+      <header className={`${styles.hero} ${styles.homeHero} ${styles.workHero}`}>
         <h1>Selected work.</h1>
         <p className={styles.lead}>
           Product design, digital experiences and design systems across established organisations
