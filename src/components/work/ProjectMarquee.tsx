@@ -50,7 +50,7 @@ const covers: Record<string, Cover> = {
     position: "center",
     alt: "Exparang desktop and mobile experience",
   },
-  "/images/eurobonus.jpg": {
+  "/images/projects/sas/eurobonus.jpg": {
     ratio: 824 / 1102,
     background: "#2034ce",
     inset: "0",

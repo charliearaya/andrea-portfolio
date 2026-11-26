@@ -3,14 +3,15 @@ import { Meta, Schema } from "@once-ui-system/core";
 import { about, baseURL, person } from "@/resources";
 import { socialLinks } from "@/resources/content";
 import { FaFigma, FaJira, FaSlack } from "react-icons/fa6";
-import { SiAnthropic, SiNotion, SiOpenai } from "react-icons/si";
+import { SiAnthropic, SiNotion } from "react-icons/si";
+import { BsOpenai } from "react-icons/bs";
 import { PortfolioButton } from "@/components/PortfolioButton";
 import styles from "./About.module.scss";
 
 const tools = [
   { name: "Figma", Icon: FaFigma, color: "#a259ff" },
   { name: "Claude", Icon: SiAnthropic, color: "#d97757" },
-  { name: "ChatGPT", Icon: SiOpenai, color: "currentColor" },
+  { name: "ChatGPT", Icon: BsOpenai, color: "currentColor" },
   { name: "Notion", Icon: SiNotion, color: "currentColor" },
   { name: "Jira", Icon: FaJira, color: "#2684ff" },
   { name: "Slack", Icon: FaSlack, color: "#b45cb3" },
