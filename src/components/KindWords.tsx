@@ -10,7 +10,7 @@ const recommendations = [
     author: "Dimitrios Petrou",
     role: "Tech Team Lead",
     company: "Etraveli",
-    avatar: null,
+    avatar: "/images/recommendations/dimitrios.webp",
     initials: "DP",
   },
   {
