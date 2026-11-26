@@ -99,3 +99,106 @@
     display: none;
   }
 }
+
+.composition {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.coverLabel {
+  position: absolute;
+  z-index: 2;
+  top: 6%;
+  left: 7%;
+  font-size: clamp(10px, 1.15vw, 14px);
+  font-weight: 550;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.crop {
+  position: absolute;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    max-width: none;
+    height: auto;
+    display: block;
+  }
+}
+
+.eurobonus {
+  background: #2034ce;
+  color: white;
+
+  .crop {
+    width: 100%;
+    height: 87%;
+    right: 0;
+    bottom: 0;
+    // Keep the original phone and hand, excluding the white announcement.
+    clip-path: polygon(36% 0, 67% 0, 74% 4%, 80% 23%, 87% 25%, 94% 32%, 100% 46%, 100% 100%, 74% 100%, 59% 89%, 50% 76%, 30% 67%, 22% 58%, 12% 54%, 8% 48%, 9% 40%, 1% 34%, 0 27%, 12% 24%, 16% 13%, 22% 5%);
+
+    img {
+      width: 273%;
+      right: 0;
+      top: 0;
+    }
+  }
+}
+
+.travel {
+  background: #dce7f5;
+  color: #142fa4;
+
+  .crop {
+    left: 13%;
+    top: 23%;
+    width: 105%;
+    aspect-ratio: 733 / 464;
+    border-radius: 12px;
+    transform: rotate(-5deg);
+    box-shadow: 0 12px 36px #243d6b26;
+
+    img {
+      width: 133.7%;
+      left: -9.14%;
+      top: -6.9%;
+    }
+  }
+}
+
+.flow {
+  color: #111110;
+  background: linear-gradient(145deg, #e1ff86 0%, #c6f432 47%, #b5eb24 100%);
+
+  .coverLabel {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-transform: none;
+    letter-spacing: -0.02em;
+
+    strong {
+      font-size: clamp(22px, 3vw, 34px);
+      line-height: 1;
+    }
+  }
+
+  .crop {
+    width: 52%;
+    aspect-ratio: 290 / 602;
+    left: 24%;
+    bottom: 6%;
+    border-radius: 13% / 6%;
+    box-shadow: 0 14px 24px #33440040;
+
+    img {
+      width: 529.66%;
+      left: -406.9%;
+      top: -14.12%;
+    }
+  }
+}

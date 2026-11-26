@@ -11,6 +11,7 @@ type Cover = {
   fit: "cover" | "contain";
   position: string;
   alt: string;
+  treatment?: "eurobonus" | "travel" | "flow";
 };
 
 const covers: Record<string, Cover> = {
@@ -23,12 +24,13 @@ const covers: Record<string, Cover> = {
     alt: "SAS Blueprint design system",
   },
   "/images/projects/flow/entry.jpg": {
-    ratio: 1.08,
+    ratio: 0.75,
     background: "#c6f432",
-    inset: "8%",
+    inset: "0",
     fit: "contain",
     position: "center",
-    alt: "Flow AI design assistant",
+    alt: "Flow AI design assistant mobile interface",
+    treatment: "flow",
   },
   "/images/projects/youse/cover_01.webp": {
     ratio: 0.9,
@@ -53,6 +55,7 @@ const covers: Record<string, Cover> = {
     fit: "cover",
     position: "100% center",
     alt: "SAS EuroBonus checkout on mobile",
+    treatment: "eurobonus",
   },
   "/images/projects/float/cover_03.webp": {
     ratio: 1.48,
@@ -69,6 +72,7 @@ const covers: Record<string, Cover> = {
     fit: "contain",
     position: "center",
     alt: "SAS Travel Extras experience",
+    treatment: "travel",
   },
   "/images/projects/mcm/cover_01.webp": {
     ratio: 1.38,
@@ -113,6 +117,34 @@ export function ProjectMarquee({ images }: { images: string[] }) {
                       "--cover-inset": cover?.inset ?? "0",
                     } as CSSProperties}
                   >
+                    {cover?.treatment === "flow" ||
+                    cover?.treatment === "eurobonus" ||
+                    cover?.treatment === "travel" ? (
+                      <div className={`${styles.composition} ${styles[cover.treatment]}`}>
+                        <div className={styles.coverLabel} aria-hidden="true">
+                          {cover.treatment === "flow" ? (
+                            <>
+                              <strong>Flow</strong>
+                              <span>AI for designers</span>
+                            </>
+                          ) : cover.treatment === "travel" ? (
+                            "Travel Extras"
+                          ) : (
+                            "EuroBonus Checkout"
+                          )}
+                        </div>
+                        <div className={styles.crop}>
+                          <Image
+                            src={cover.treatment === "flow" ? "/images/projects/flow/completion.jpg" : src}
+                            alt={duplicate ? "" : cover.alt}
+                            width={cover.treatment === "flow" ? 1536 : cover.treatment === "travel" ? 980 : 1200}
+                            height={cover.treatment === "flow" ? 960 : cover.treatment === "travel" ? 551 : 674}
+                            quality={95}
+                            loading="eager"
+                          />
+                        </div>
+                      </div>
+                    ) : (
                     <div className={styles.artwork}>
                       <Image
                         src={src}
@@ -127,6 +159,7 @@ export function ProjectMarquee({ images }: { images: string[] }) {
                         }}
                       />
                     </div>
+                    )}
                   </div>
                 );
               })}
