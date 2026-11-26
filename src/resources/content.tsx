@@ -104,7 +104,7 @@ const about: About = {
     experiences: [
       {
         company: "Etraveli Group",
-        timeframe: "2026",
+        timeframe: "Jun – Nov 2026",
         role: "UX Designer",
         description: "Designed post-booking travel experiences, translating user needs, business requirements and technical constraints into clear, intuitive solutions. Collaborated closely with product and engineering throughout exploration, refinement and design delivery.",
         achievements: [],
@@ -112,7 +112,7 @@ const about: About = {
       },
       {
         company: "SAS · Scandinavian Airlines",
-        timeframe: "2022 - 2026",
+        timeframe: "2022 – Feb 2026",
         role: "UI Designer",
         description: "Shaped digital experiences across the customer journey, balancing usability, accessibility and visual consistency. Contributed to the evolution of the SAS design system and the translation of a new brand identity into digital products.",
         achievements: [],
