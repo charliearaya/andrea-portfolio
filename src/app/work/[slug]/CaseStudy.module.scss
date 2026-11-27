@@ -627,9 +627,9 @@
   > :global(p) {
     max-width: 38ch;
     margin: 0 auto;
-    font-size: var(--portfolio-h1-size);
-    line-height: var(--portfolio-h1-leading);
-    letter-spacing: var(--portfolio-h1-tracking);
+    font-size: var(--portfolio-h2-size);
+    line-height: var(--portfolio-h2-leading);
+    letter-spacing: var(--portfolio-h2-tracking);
     font-weight: 700;
     color: #171715;
     text-wrap: balance;
