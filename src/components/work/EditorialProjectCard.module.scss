@@ -75,6 +75,14 @@ a.link:visited {
 /* Keep next-project navigation compact and independent of headline length. */
 .nextGallery {
   width: 100%;
-  max-width: 480px;
+  max-width: 992px;
   margin-inline: auto;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  align-items: start;
+
+  @media (max-width: 720px) {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 480px;
+  }
 }

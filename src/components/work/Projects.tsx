@@ -21,7 +21,9 @@ export function Projects({ range, exclude, current, nextOnly, editorial }: Reado
   
   if (nextOnly) {
     const currentIndex = allProjects.findIndex((post) => post.slug === current);
-    displayedProjects = [allProjects[(currentIndex + 1) % allProjects.length]];
+    displayedProjects = Array.from({ length: Math.min(2, Math.max(0, allProjects.length - 1)) }, (_, index) =>
+      allProjects[(currentIndex + index + 1) % allProjects.length]
+    );
   } else if (range) {
     displayedProjects = allProjects.slice(range[0] - 1, range[1] ?? allProjects.length);
   }

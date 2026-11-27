@@ -139,7 +139,7 @@ export default async function Project({
       </div>
       <div className={styles.next}>
         <Column fillWidth gap="40" horizontal="center">
-          <Heading as="h2" variant="heading-strong-xl">Next project</Heading>
+          <Heading as="h2" variant="heading-strong-xl">Next projects</Heading>
           <Projects current={post.slug} nextOnly editorial />
         </Column>
       </div>
