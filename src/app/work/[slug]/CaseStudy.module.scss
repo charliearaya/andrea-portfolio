@@ -601,19 +601,37 @@
   }
 }
 
-/* Standalone design question, using the shared heading scale. */
+/* Full-bleed Flow design question with a centered editorial heading. */
 .page .article :global(.case-design-question) {
-  max-width: 65ch;
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  box-sizing: border-box;
   margin: var(--case-story-gap) auto 0;
+  padding-block: var(--case-story-gap);
   text-align: center;
 
+  &::before {
+    content: "";
+    position: absolute;
+    inset-block: 0;
+    left: 50%;
+    width: 100vw;
+    width: 100dvw;
+    transform: translateX(-50%);
+    background: #c6f432;
+    z-index: -1;
+    pointer-events: none;
+  }
+
   > :global(p) {
-    margin: 0;
-    font-size: var(--portfolio-h2-size);
-    line-height: var(--portfolio-h2-leading);
-    letter-spacing: var(--portfolio-h2-tracking);
+    max-width: 38ch;
+    margin: 0 auto;
+    font-size: var(--portfolio-h1-size);
+    line-height: var(--portfolio-h1-leading);
+    letter-spacing: var(--portfolio-h1-tracking);
     font-weight: 700;
-    color: var(--case-ink);
+    color: #171715;
     text-wrap: balance;
   }
 }
