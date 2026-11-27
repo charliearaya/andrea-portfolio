@@ -12,9 +12,9 @@ type Tool = {
 
 const coreTools: Tool[] = [
   { name: "Figma", Icon: FaFigma, color: "#a259ff" },
-  { name: "FigJam", color: "#9747ff" },
   { name: "Claude", Icon: SiAnthropic, color: "#d97757" },
   { name: "ChatGPT", Icon: BsOpenai },
+  { name: "FigJam", color: "#9747ff" },
   { name: "Jira", Icon: FaJira, color: "#2684ff" },
 ];
 
