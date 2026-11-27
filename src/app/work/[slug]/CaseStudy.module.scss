@@ -168,6 +168,16 @@
     }
   }
 
+  &[data-project="float"] .cover {
+    height: auto;
+    background: transparent;
+
+    img {
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
   --case-paper: #fafafa;
   --case-ink: #303030;
   --case-copy: #505050;
