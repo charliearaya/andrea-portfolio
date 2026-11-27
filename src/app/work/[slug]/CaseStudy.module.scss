@@ -478,13 +478,32 @@
     color: var(--case-copy);
   }
 
+  :global(p:not([class*="label"]):not(.case-label)) {
+    margin-block: 0 1.5rem;
+  }
+
+  :global(ul),
+  :global(ol) {
+    padding-inline-start: 1.5rem;
+    margin-block: 0 1.5rem;
+  }
+
+  :global(ul) {
+    list-style: disc outside;
+  }
+
+  :global(ol) {
+    list-style: decimal outside;
+  }
+
   :global(p + ul),
   :global(p + ol) {
-    margin-top: var(--case-paragraph-list-gap);
+    margin-top: 0;
   }
 
   :global(ul > li),
   :global(ol > li) {
+    display: list-item;
     margin-block: 0;
   }
 

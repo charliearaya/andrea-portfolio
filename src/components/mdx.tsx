@@ -24,7 +24,6 @@ import {
   Text,
   InlineCode,
   CodeBlock,
-  TextProps,
   MediaProps,
   Accordion,
   AccordionGroup,
@@ -120,18 +119,8 @@ function createHeading(as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") {
   return CustomHeading;
 }
 
-function createParagraph({ children }: TextProps) {
-  return (
-    <Text
-      style={{ lineHeight: "175%" }}
-      variant="body-default-m"
-      onBackground="neutral-medium"
-      marginTop="8"
-      marginBottom="12"
-    >
-      {children}
-    </Text>
-  );
+function createParagraph(props: React.ComponentProps<"p">) {
+  return <p {...props} />;
 }
 
 function createInlineCode({ children }: { children: ReactNode }) {
@@ -168,15 +157,14 @@ function createCodeBlock(props: any) {
 }
 
 function createList(as: "ul" | "ol") {
-  return ({ children }: { children: ReactNode }) => <List as={as} role="list">{children}</List>;
+  return (props: React.ComponentProps<"ul">) => {
+    const Tag = as;
+    return <Tag {...props} />;
+  };
 }
 
-function createListItem({ children }: { children: ReactNode }) {
-  return (
-    <ListItem role="listitem" marginTop="4" marginBottom="8" style={{ lineHeight: "175%" }}>
-      {children}
-    </ListItem>
-  );
+function createListItem(props: React.ComponentProps<"li">) {
+  return <li {...props} />;
 }
 
 function createHR() {
