@@ -25,6 +25,14 @@ const supportingTools: Tool[] = [
   { name: "Lyssna", logo: "https://www.google.com/s2/favicons?domain=lyssna.com&sz=64" },
   { name: "Zeroheight", logo: "https://www.google.com/s2/favicons?domain=zeroheight.com&sz=64" },
   { name: "Lovable", logo: "https://lovable.dev/favicon.svg" },
+  {
+    name: "Google Workspace",
+    logo: "https://www.google.com/s2/favicons?domain=workspace.google.com&sz=64",
+  },
+  {
+    name: "Adobe Creative Cloud",
+    logo: "https://www.google.com/s2/favicons?domain=creativecloud.adobe.com&sz=64",
+  },
   { name: "Notion", Icon: SiNotion },
   { name: "Slack", Icon: FaSlack, color: "#b45cb3" },
 ];
@@ -36,7 +44,14 @@ function ToolTile({ tool }: { tool: Tool }) {
       {!logo && <span className={styles.srOnly}>{name}</span>}
       {logo ? (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={logo} alt={name} width={24} height={24} style={{ objectFit: "contain" }} referrerPolicy="no-referrer" />
+        <img
+          src={logo}
+          alt={name}
+          width={24}
+          height={24}
+          style={{ objectFit: "contain" }}
+          referrerPolicy="no-referrer"
+        />
       ) : Icon ? (
         <Icon aria-hidden="true" style={{ color }} />
       ) : (
@@ -81,7 +96,7 @@ export function ToolkitMarquee() {
         </div>
       </div>
       <div className={styles.heading}>
-        <h2>Tools I work with</h2>
+        <h2>My evolving toolkit</h2>
         <label htmlFor="pause-toolkit" className={styles.control}>
           <span className={styles.pauseText}>Pause</span>
           <span className={styles.playText}>Play</span>
