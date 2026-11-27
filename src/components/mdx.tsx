@@ -3,6 +3,12 @@ import React, { ReactNode } from "react";
 import { slugify as transliterate } from "transliteration";
 import {
   CaseFigure,
+  CaseSplit,
+  CaseCopy,
+  CaseVisual,
+  CaseGallery,
+  CaseWide,
+  CaseStory,
   EditorialSection,
   Evidence,
   Feature,
@@ -184,6 +190,12 @@ function createHR() {
 
 const components = {
   CaseFigure,
+  CaseSplit,
+  CaseCopy,
+  CaseVisual,
+  CaseGallery,
+  CaseWide,
+  CaseStory,
   EditorialSection,
   Evidence,
   Feature,

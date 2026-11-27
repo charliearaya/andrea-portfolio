@@ -108,3 +108,37 @@ export function CaseFigure({
     </figure>
   );
 }
+
+export function CaseSplit({
+  reverse = false,
+  children,
+}: {
+  reverse?: boolean;
+  children: ReactNode;
+}) {
+  return (
+    <div className={reverse ? "case-feature case-split case-split-reverse" : "case-feature case-split"}>
+      {children}
+    </div>
+  );
+}
+
+export function CaseCopy({ children }: { children: ReactNode }) {
+  return <div className="case-split-copy">{children}</div>;
+}
+
+export function CaseVisual({ children }: { children: ReactNode }) {
+  return <div className="case-split-media">{children}</div>;
+}
+
+export function CaseGallery({ children }: { children: ReactNode }) {
+  return <div className={styles.gallery}>{children}</div>;
+}
+
+export function CaseWide({ children }: { children: ReactNode }) {
+  return <div className={styles.wide}>{children}</div>;
+}
+
+export function CaseStory({ children }: { children: ReactNode }) {
+  return <div className={styles.story}>{children}</div>;
+}
