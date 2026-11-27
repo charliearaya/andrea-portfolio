@@ -1,4 +1,9 @@
 .slide {
+  &:has(> .contentStack) {
+    background: transparent;
+    box-shadow: inset 0 0 0 1px var(--case-line, #e5e5e5);
+  }
+
   position: relative;
   width: 100%;
   margin: 0;
