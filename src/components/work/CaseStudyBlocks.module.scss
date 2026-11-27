@@ -161,3 +161,33 @@
     gap: 1.25rem;
   }
 }
+
+:global([data-project="sas"]) {
+  .section {
+    padding-block: 0;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr);
+    gap: clamp(1.5rem, 4vw, 3rem);
+  }
+
+  .label {
+    font-size: var(--portfolio-label-size);
+    font-weight: 400;
+    letter-spacing: normal;
+    text-transform: none;
+    margin-bottom: 0.75rem;
+  }
+
+  .heading {
+    font-size: var(--portfolio-h2-size);
+    line-height: var(--portfolio-h2-leading);
+    letter-spacing: var(--portfolio-h2-tracking);
+    font-weight: var(--portfolio-heading-weight);
+  }
+
+  @media (max-width: 720px) {
+    .section {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.25rem;
+    }
+  }
+}

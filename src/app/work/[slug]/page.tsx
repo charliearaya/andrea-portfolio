@@ -180,7 +180,7 @@ export default async function Project({
       <div className={styles.next}>
         <Column fillWidth gap="40" horizontal="center">
           <Heading as="h2" variant="heading-strong-xl">Next project</Heading>
-          <Projects current={post.slug} nextOnly />
+          <Projects current={post.slug} nextOnly editorial={post.slug === "sas"} />
         </Column>
       </div>
       <ScrollToHash />
