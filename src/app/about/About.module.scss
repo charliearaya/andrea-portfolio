@@ -237,8 +237,8 @@
 
 .expertise {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2.5rem 3rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
   max-width: 900px;
   margin-inline: auto;
 
@@ -306,9 +306,16 @@
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 900px) {
+  .expertise {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 540px) {
   .expertise {
     grid-template-columns: 1fr;
-    gap: 1.75rem;
+    gap: 1.5rem;
   }
 }
