@@ -195,6 +195,10 @@
     );
   }
 
+  :global(.sas-chapter:last-child) {
+    background: var(--case-gradient-start);
+  }
+
   :global(.sas-feature) {
     display: flex;
     flex-direction: column;
