@@ -12,19 +12,31 @@ export function ExpertiseIllustration({ index }: { index: number }) {
       <svg viewBox="0 0 160 125" aria-hidden="true" focusable="false">
         {index === 0 && (
           <>
-            <circle className={styles.left} cx="55" cy="62" r="35" fill={sand} />
-            <path className={styles.right} d="M55 27 L128 62 L55 97 Z" fill={charcoal} />
-            <path className={styles.left} d="M55 27 A35 35 0 0 1 55 97 Z" fill={ink} />
-            <circle className={styles.right} cx="112" cy="62" r="9" fill="#F5E9DD" />
+            <circle className={styles.problem} cx="43" cy="62" r="33" fill={sand} />
+            <rect
+              className={styles.refine}
+              x="67"
+              y="42"
+              width="45"
+              height="40"
+              rx="9"
+              fill={charcoal}
+            />
+            <path
+              className={styles.problem}
+              d="M43 29 A33 33 0 0 1 43 95 Z"
+              fill={ink}
+            />
+            <circle className={styles.solution} cx="136" cy="62" r="10" fill={rose} />
           </>
         )}
         {index === 1 && (
           <>
-            <rect className={styles.upperLeft} x="35" y="16" width="42" height="42" fill={charcoal} />
-            <rect className={styles.upperRight} x="83" y="16" width="42" height="42" fill={rose} />
-            <rect className={styles.lowerLeft} x="35" y="64" width="42" height="42" fill={stone} />
+            <rect className={styles.upperLeft} x="35" y="16" width="42" height="42" fill={charcoal} rx="5" />
+            <rect className={styles.upperRight} x="83" y="16" width="42" height="42" fill={rose} rx="5" />
+            <rect className={styles.lowerLeft} x="35" y="64" width="42" height="42" fill={stone} rx="5" />
             <circle className={styles.lowerRight} cx="104" cy="85" r="21" fill={sand} />
-            <rect className={styles.turn} x="60" y="41" width="40" height="40" fill={ink} />
+            <rect className={styles.turn} x="60" y="41" width="40" height="40" fill={ink} rx="5" />
           </>
         )}
         {index === 2 && (
@@ -32,10 +44,10 @@ export function ExpertiseIllustration({ index }: { index: number }) {
             <g className={styles.scan}>
               <circle cx="68" cy="51" r="34" fill={stone} />
               <circle cx="68" cy="51" r="20" fill="var(--illustration-background)" />
-              <path d="M87 73 L116 102" stroke={ink} strokeWidth="19" />
-              <rect x="59" y="34" width="11" height="34" fill={charcoal} />
-              <rect x="75" y="44" width="10" height="24" fill={rose} />
-              <rect x="43" y="49" width="10" height="19" fill={sand} />
+              <path d="M87 73 L116 102" stroke={ink} strokeWidth="19" strokeLinecap="round" />
+              <rect x="59" y="34" width="11" height="34" fill={charcoal} rx="5" />
+              <rect x="75" y="44" width="10" height="24" fill={rose} rx="5" />
+              <rect x="43" y="49" width="10" height="19" fill={sand} rx="5" />
             </g>
           </>
         )}
@@ -51,9 +63,9 @@ export function ExpertiseIllustration({ index }: { index: number }) {
         {index === 4 && (
           <>
             <g className={styles.tilt}>
-              <path d="M28 103 L66 18 H86 L52 103 Z" fill={charcoal} />
-              <path d="M66 18 H86 L123 103 H98 Z" fill={rose} />
-              <rect x="48" y="66" width="55" height="16" fill={stone} />
+              <path d="M31 103 Q27 103 29 98 L64 22 Q66 18 71 18 H86 L52 103 Z" fill={charcoal} />
+              <path d="M66 18 H81 Q86 18 88 23 L121 98 Q123 103 119 103 H98 Z" fill={rose} />
+              <rect x="48" y="66" width="55" height="16" fill={stone} rx="5" />
               <path d="M62 66 H94 L101 82 H55 Z" fill={ink} />
             </g>
             <circle className={styles.up} cx="126" cy="31" r="13" fill={sand} />
@@ -62,13 +74,13 @@ export function ExpertiseIllustration({ index }: { index: number }) {
         {index === 5 && (
           <>
             <g className={styles.turn}>
-              <path d="M75 12 L88 48 L125 62 L88 76 L75 112 L62 76 L25 62 L62 48 Z" fill={rose} />
+              <path d="M71 23 Q75 12 79 23 L88 48 L114 58 Q125 62 114 66 L88 76 L79 101 Q75 112 71 101 L62 76 L36 66 Q25 62 36 58 L62 48 Z" fill={rose} />
               <circle cx="75" cy="62" r="22" fill={charcoal} />
               <path d="M75 40 L88 62 L75 84 L62 62 Z" fill={ink} />
             </g>
             <path
               className={styles.pulse}
-              d="M125 13 L131 26 L144 32 L131 38 L125 51 L119 38 L106 32 L119 26 Z"
+              d="M123 18 Q125 13 127 18 L131 26 L139 30 Q144 32 139 34 L131 38 L127 46 Q125 51 123 46 L119 38 L111 34 Q106 32 111 30 L119 26 Z"
               fill={sand}
             />
           </>
