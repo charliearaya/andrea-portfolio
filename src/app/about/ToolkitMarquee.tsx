@@ -8,6 +8,7 @@ type Tool = {
   name: string;
   Icon?: IconType;
   color?: string;
+  logo?: string;
 };
 
 const coreTools: Tool[] = [
@@ -21,19 +22,22 @@ const coreTools: Tool[] = [
 const supportingTools: Tool[] = [
   { name: "Miro", Icon: SiMiro, color: "#b89b00" },
   { name: "Hotjar", Icon: SiHotjar, color: "#ff3c00" },
-  { name: "Lyssna" },
-  { name: "Zeroheight" },
-  { name: "Lovable" },
+  { name: "Lyssna", logo: "https://www.google.com/s2/favicons?domain=lyssna.com&sz=64" },
+  { name: "Zeroheight", logo: "https://www.google.com/s2/favicons?domain=zeroheight.com&sz=64" },
+  { name: "Lovable", logo: "https://lovable.dev/favicon.svg" },
   { name: "Notion", Icon: SiNotion },
   { name: "Slack", Icon: FaSlack, color: "#b45cb3" },
 ];
 
 function ToolTile({ tool }: { tool: Tool }) {
-  const { name, Icon, color } = tool;
+  const { name, Icon, color, logo } = tool;
   return (
     <li className={styles.tile} title={name}>
-      <span className={styles.srOnly}>{name}</span>
-      {Icon ? (
+      {!logo && <span className={styles.srOnly}>{name}</span>}
+      {logo ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={logo} alt={name} width={24} height={24} style={{ objectFit: "contain" }} referrerPolicy="no-referrer" />
+      ) : Icon ? (
         <Icon aria-hidden="true" style={{ color }} />
       ) : (
         <span aria-hidden="true" className={styles.wordmark} style={{ color }}>
