@@ -23,6 +23,8 @@ const supportingTools: Tool[] = [
   { name: "Miro", Icon: SiMiro, color: "#b89b00" },
   { name: "Hotjar", Icon: SiHotjar, color: "#ff3c00" },
   { name: "Lyssna", logo: "https://www.google.com/s2/favicons?domain=lyssna.com&sz=64" },
+  { name: "Lookback", logo: "https://www.google.com/s2/favicons?domain=lookback.com&sz=64" },
+  { name: "Maze", logo: "https://www.google.com/s2/favicons?domain=maze.co&sz=64" },
   { name: "Zeroheight", logo: "https://www.google.com/s2/favicons?domain=zeroheight.com&sz=64" },
   { name: "Lovable", logo: "https://lovable.dev/favicon.svg" },
   {
