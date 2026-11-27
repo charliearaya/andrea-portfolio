@@ -193,7 +193,8 @@
     background: transparent;
   }
 
-  :global(.case-chapter:nth-child(odd)) {
+  :global(.case-chapter:nth-child(odd)),
+  &[data-project="sas"] :global(.case-chapter[aria-label="Selected work"]) {
     position: relative;
     isolation: isolate;
 
