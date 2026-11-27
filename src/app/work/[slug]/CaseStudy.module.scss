@@ -147,40 +147,64 @@
 }
 
 .page[data-project="sas"] {
-  .hero {
-    background: var(--page-background);
-    color: var(--neutral-on-background-strong);
-    padding: clamp(2rem, 5vw, 4rem) 0 2rem;
-  }
-
-  .heroTop {
-    color: var(--portfolio-secondary-text);
-    margin-bottom: 2.5rem;
-  }
-
-  .eyebrow,
-  .lead {
-    color: var(--portfolio-secondary-text);
-  }
-
-  .title {
-    max-width: 24ch;
-  }
+  background: transparent;
+  color: var(--neutral-on-background-strong);
 
   .cover {
     overflow: hidden;
     border-radius: 0.75rem;
   }
+
+  .content {
+    background: var(--case-paper);
+    border-radius: 0.75rem;
+  }
 }
 
-.heroMetadata {
+.backLink {
+  padding-block: 1.5rem;
+
+  a {
+    color: var(--portfolio-secondary-text);
+    font-size: 0.875rem;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.imageFirstIntro {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(2rem, 6vw, 6rem);
   max-width: 1050px;
-  margin: 2rem auto 0;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--neutral-border-medium);
+  margin-inline: auto;
+  padding-block: clamp(3rem, 7vw, 6rem);
+
+  .title {
+    max-width: 24ch;
+  }
+
+  .lead {
+    color: var(--portfolio-secondary-text);
+    font-size: clamp(1rem, 1.8vw, 1.1875rem);
+  }
+}
+
+.projectName {
+  color: var(--portfolio-secondary-text);
+  font-size: 0.9375rem;
+  margin: 0 0 1rem;
+}
+
+.introDetails {
+  display: grid;
+  gap: 1.25rem;
+  margin: 0;
+  padding-top: 0.125rem;
 
   dt {
     font-size: 0.8125rem;
@@ -191,12 +215,18 @@
   dd {
     margin: 0;
     font-size: 0.9375rem;
-    font-weight: 550;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
   }
 }
 
-@media (max-width: 540px) {
-  .heroMetadata {
+@media (max-width: 720px) {
+  .imageFirstIntro {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .introDetails {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

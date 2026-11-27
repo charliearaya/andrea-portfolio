@@ -86,55 +86,91 @@ export default async function Project({
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <header className={styles.hero}>
-        <div className={styles.heroInner}>
-          <div className={styles.heroTop}>
+      {post.slug === "sas" ? (
+        <>
+          <div className={styles.backLink}>
             <Link href="/work">← Selected work</Link>
-            <span>{post.metadata.projectDetails?.timeline || post.metadata.subheading}</span>
           </div>
-          <p className={styles.eyebrow}>{post.metadata.title}</p>
-          <h1 className={styles.title}>
-            {post.slug === "sas"
-              ? "One brand. A more connected digital experience."
-              : post.metadata.description || post.metadata.title}
-          </h1>
-          <p className={styles.lead}>
-            {post.slug === "sas"
-              ? "Translating a new brand identity into a cohesive digital experience, from shared design system foundations to customer-facing travel services."
-              : post.metadata.summary}
-          </p>
-        </div>
-        {post.slug === "sas" && post.metadata.projectDetails && (
-          <dl className={styles.heroMetadata}>
-            <div>
-              <dt>Client</dt>
-              <dd>Scandinavian Airlines</dd>
+          {post.metadata.images.length > 0 && (
+            <div className={styles.cover}>
+              <Image
+                src={post.metadata.images[0]}
+                alt={`${post.metadata.title} project cover`}
+                width={1600}
+                height={1000}
+                sizes="(max-width: 768px) 100vw, 1200px"
+                priority
+              />
             </div>
-            <div>
-              <dt>Role</dt>
-              <dd>{post.metadata.projectDetails.role}</dd>
+          )}
+          <header className={styles.imageFirstIntro}>
+            <div className={styles.introStory}>
+              <p className={styles.projectName}>SAS – Scandinavian Airlines</p>
+              <h1 className={styles.title}>One brand. A more connected digital experience.</h1>
+              <p className={styles.lead}>
+                Translating a new brand identity into a cohesive digital experience, from shared
+                design system foundations to customer-facing travel services.
+              </p>
             </div>
-            <div>
-              <dt>Period</dt>
-              <dd>{post.metadata.projectDetails.timeline}</dd>
+            {post.metadata.projectDetails && (
+              <dl className={styles.introDetails}>
+                <div>
+                  <dt>Client</dt>
+                  <dd>Scandinavian Airlines</dd>
+                </div>
+                <div>
+                  <dt>Period</dt>
+                  <dd>{post.metadata.projectDetails.timeline}</dd>
+                </div>
+                <div>
+                  <dt>Role</dt>
+                  <dd>{post.metadata.projectDetails.role}</dd>
+                </div>
+                <div>
+                  <dt>Scope</dt>
+                  <dd>{post.metadata.projectDetails.scope}</dd>
+                </div>
+                <div>
+                  <dt>Collaboration</dt>
+                  <dd>{post.metadata.projectDetails.team}</dd>
+                </div>
+              </dl>
+            )}
+          </header>
+        </>
+      ) : (
+        <>
+          <header className={styles.hero}>
+            <div className={styles.heroInner}>
+              <div className={styles.heroTop}>
+                <Link href="/work">← Selected work</Link>
+                <span>{post.metadata.projectDetails?.timeline || post.metadata.subheading}</span>
+              </div>
+              <p className={styles.eyebrow}>{post.metadata.title}</p>
+              <h1 className={styles.title}>
+                {post.metadata.description || post.metadata.title}
+              </h1>
+              <p className={styles.lead}>
+                {post.metadata.summary}
+              </p>
             </div>
-          </dl>
-        )}
-      </header>
-      {post.metadata.images.length > 0 && (
-        <div className={styles.cover}>
-          <Image
-            src={post.metadata.images[0]}
-            alt={`${post.metadata.title} project cover`}
-            width={1600}
-            height={1000}
-            sizes="(max-width: 768px) 100vw, 1200px"
-            priority
-          />
-        </div>
+          </header>
+          {post.metadata.images.length > 0 && (
+            <div className={styles.cover}>
+              <Image
+                src={post.metadata.images[0]}
+                alt={`${post.metadata.title} project cover`}
+                width={1600}
+                height={1000}
+                sizes="(max-width: 768px) 100vw, 1200px"
+                priority
+              />
+            </div>
+          )}
+        </>
       )}
       <div className={styles.content}>
-        {post.metadata.projectDetails && (
+        {post.slug !== "sas" && post.metadata.projectDetails && (
           <ProjectSummary details={post.metadata.projectDetails} />
         )}
         <article className={styles.article}>
