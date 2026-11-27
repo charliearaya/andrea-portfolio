@@ -600,3 +600,20 @@
     height: auto;
   }
 }
+
+/* Standalone design question, using the shared heading scale. */
+.page .article :global(.case-design-question) {
+  max-width: 65ch;
+  margin: var(--case-story-gap) auto 0;
+  text-align: center;
+
+  > :global(p) {
+    margin: 0;
+    font-size: var(--portfolio-h2-size);
+    line-height: var(--portfolio-h2-leading);
+    letter-spacing: var(--portfolio-h2-tracking);
+    font-weight: 700;
+    color: var(--case-ink);
+    text-wrap: balance;
+  }
+}
