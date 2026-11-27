@@ -166,6 +166,7 @@
   }
 
   --case-paper: #f7f7f7;
+  --case-gradient-start: #e5ecf8;
   --case-ink: #202020;
   --case-muted: #595959;
   --case-line: #dedede;
@@ -186,8 +187,12 @@
     background: transparent;
   }
 
-  :global(.sas-chapter:nth-child(even)) {
-    background: var(--case-paper);
+  :global(.sas-chapter:nth-child(2)) {
+    background: linear-gradient(
+      to bottom,
+      var(--case-gradient-start) 0%,
+      transparent 100%
+    );
   }
 
   :global(.sas-feature) {
@@ -287,6 +292,7 @@
 
 :global([data-theme="dark"]) .page[data-project="sas"] {
   --case-paper: #292929;
+  --case-gradient-start: #263247;
   --case-ink: #f2f2f2;
   --case-muted: #bdbdbd;
   --case-line: #454545;

@@ -7,14 +7,14 @@ export function EditorialSection({
   title,
   children,
 }: {
-  label: string;
+  label?: string;
   title: string;
   children: ReactNode;
 }) {
   return (
     <section className={styles.section}>
       <div>
-        <p className={styles.label}>{label}</p>
+        {label && <p className={styles.label}>{label}</p>}
         <h2 className={styles.heading}>{title}</h2>
       </div>
       <div className={styles.copy}>{children}</div>
