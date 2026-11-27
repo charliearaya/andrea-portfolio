@@ -644,7 +644,8 @@
 /* Compact process marker at the Flow product concept transition. */
 .page[data-project="flow"] .article :global(.case-process-marker) {
   width: min(100%, 340px);
-  margin: 0 0 var(--case-media-gap);
+  margin: 0 auto var(--case-media-gap);
+  text-align: center;
   color: var(--case-muted);
 
   svg {
