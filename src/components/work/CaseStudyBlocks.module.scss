@@ -160,8 +160,8 @@
 :global([data-project]) {
   .section {
     padding-block: 0;
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr);
-    gap: clamp(1.5rem, 4vw, 3rem);
+    grid-template-columns: var(--case-editorial-columns, repeat(2, minmax(0, 1fr)));
+    gap: var(--case-column-gap, 3rem);
   }
 
   .label {
