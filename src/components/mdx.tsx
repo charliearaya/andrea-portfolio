@@ -1,5 +1,6 @@
 import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
 import React, { ReactNode } from "react";
+import { CaseCarousel } from "./work/CaseCarousel";
 import { slugify as transliterate } from "transliteration";
 import {
   CaseFigure,
@@ -41,7 +42,6 @@ import {
   List,
   ListItem,
   Line,
-  Carousel,
   Badge,
 } from "@once-ui-system/core";
 
@@ -234,7 +234,7 @@ const components = {
   Icon,
   Media,
   SmartLink,
-  Carousel,
+  Carousel: CaseCarousel,
   Badge,
   List,
   ListItem

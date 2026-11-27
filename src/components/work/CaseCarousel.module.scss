@@ -1,0 +1,47 @@
+.slide {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: var(--neutral-alpha-weak);
+  touch-action: pan-y pinch-zoom;
+}
+
+.image {
+  object-fit: contain;
+}
+
+.counter {
+  color: var(--neutral-on-background-medium);
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--neutral-border-medium);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--neutral-on-background-strong);
+  font-size: 1.125rem;
+  cursor: pointer;
+
+  &:hover:not(:disabled) {
+    background: var(--neutral-alpha-weak);
+  }
+
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+
+  &:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
+}
