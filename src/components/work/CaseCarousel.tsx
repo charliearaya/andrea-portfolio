@@ -55,8 +55,19 @@ export function CaseCarousel({
             className={styles.image}
           />
         ) : (
-          <div className={styles.contentSlide} aria-live="polite">
-            {item.content}
+          <div className={styles.contentStack} aria-live="polite">
+            {items.map((entry, slideIndex) =>
+              "content" in entry ? (
+                <div
+                  key={slideIndex}
+                  className={styles.contentSlide}
+                  aria-hidden={slideIndex !== current}
+                  inert={slideIndex !== current}
+                >
+                  {entry.content}
+                </div>
+              ) : null
+            )}
           </div>
         )}
       </figure>

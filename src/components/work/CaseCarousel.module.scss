@@ -51,3 +51,19 @@
   min-height: 420px;
   box-sizing: border-box;
 }
+
+/* Reserve the tallest content slide's height at every viewport width. */
+.contentStack {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+
+  > .contentSlide {
+    grid-area: 1 / 1;
+    min-width: 0;
+  }
+
+  > .contentSlide[aria-hidden="true"] {
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
