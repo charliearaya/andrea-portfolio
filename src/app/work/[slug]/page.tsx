@@ -115,35 +115,20 @@ export default async function Project({
         </div>
         <dl className={styles.introDetails}>
           <div>
-            <dt>{post.slug === "flow" || post.slug === "brides-unite" || post.slug === "youse" ? "Project" : "Client"}</dt>
+            <dt>{["flow", "brides-unite", "youse"].includes(post.slug) ? "Project" : "Client"}</dt>
             <dd>{post.slug === "sas" ? "Scandinavian Airlines" : post.metadata.title}</dd>
           </div>
           <div>
-            <dt>Period</dt>
-            <dd>{post.metadata.projectDetails?.timeline || post.metadata.subheading.split(/[·•]/)[0].trim() || post.metadata.publishedAt}</dd>
+            <dt>Year</dt>
+            <dd>{post.metadata.projectDetails?.timeline || post.metadata.publishedAt.slice(0, 4)}</dd>
           </div>
-          {post.metadata.projectDetails?.role && (
-            <div>
-              <dt>Role</dt>
-              <dd>{post.metadata.projectDetails.role}</dd>
-            </div>
-          )}
           <div>
-            <dt>Scope</dt>
-            <dd>{post.metadata.projectDetails?.scope || post.metadata.subheading.split(/[·•]/).slice(1).join(" · ").trim()}</dd>
+            <dt>Role</dt>
+            <dd>
+              {post.metadata.projectDetails?.role ||
+                post.metadata.subheading.split(/[·•]/).slice(1).join(" · ").trim()}
+            </dd>
           </div>
-          {post.metadata.projectDetails?.team && (
-            <div>
-              <dt>Collaboration</dt>
-              <dd>{post.metadata.projectDetails.team}</dd>
-            </div>
-          )}
-          {post.slug === "flow" && post.metadata.projectDetails?.context && (
-            <div>
-              <dt>Context</dt>
-              <dd>{post.metadata.projectDetails.context}</dd>
-            </div>
-          )}
         </dl>
       </header>
       <div className={styles.content}>

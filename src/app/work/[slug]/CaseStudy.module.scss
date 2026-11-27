@@ -346,3 +346,79 @@
     margin: 0 0 0.75rem;
   }
 }
+
+/* Shared reading measure and optional paired project examples. */
+.page :global(.case-chapter) {
+  > :global(p),
+  > :global(ul),
+  > :global(ol) {
+    width: 100%;
+    max-width: 65ch;
+    margin-inline: auto;
+  }
+
+  > :global(.case-label) {
+    margin-inline: auto;
+  }
+}
+
+.page :global(.case-feature) {
+  > :global(p),
+  > :global(ul),
+  > :global(ol) {
+    max-width: 65ch;
+  }
+}
+
+.page :global(.case-split) {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  align-items: start;
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.page :global(.case-split-reverse) {
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+
+  :global(.case-split-copy) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  :global(.case-split-media) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+.page :global(.case-split-copy) {
+  min-width: 0;
+  max-width: 65ch;
+
+  h3 {
+    font-size: var(--portfolio-h3-size);
+    line-height: var(--portfolio-h3-leading);
+    letter-spacing: var(--portfolio-h3-tracking);
+    font-weight: var(--portfolio-heading-weight);
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+.page :global(.case-split-media) {
+  min-width: 0;
+  width: 100%;
+}
+
+@media (max-width: 720px) {
+  .page :global(.case-split),
+  .page :global(.case-split-reverse) {
+    grid-template-columns: minmax(0, 1fr);
+
+    :global(.case-split-copy),
+    :global(.case-split-media) {
+      grid-column: auto;
+      grid-row: auto;
+    }
+  }
+}

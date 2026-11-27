@@ -186,3 +186,10 @@
     }
   }
 }
+
+:global([data-project]) {
+  .copy,
+  .featureCopy {
+    max-width: 65ch;
+  }
+}
