@@ -28,7 +28,7 @@ export function Projects({ range, exclude, current, nextOnly, editorial }: Reado
 
   if (editorial) {
     return (
-      <div className={styles.gallery}>
+      <div className={nextOnly ? `${styles.gallery} ${styles.nextGallery}` : styles.gallery}>
         {displayedProjects.map((post, index) => (
           <EditorialProjectCard
             key={post.slug}
