@@ -38,6 +38,33 @@ export function FlowDevelopCarousel() {
   return (
     <CaseCarousel items={[
       {
+        title: "From problem space to solution space",
+        content: (
+          <div className={styles.artifact}>
+            <h3>From problem space to solution space</h3>
+            <div className={styles.processOverview}>
+              <svg viewBox="0 0 480 150" role="img" aria-label="Discover and Define completed, Develop current, Deliver upcoming">
+                <path d="M10 62L125 10L240 62L125 114Z" fill="#D5C9E5" stroke="#A697BA"/>
+                <path d="M125 10V114" stroke="#A697BA"/>
+                <path d="M240 62L355 10V114Z" fill="#C6F432" stroke="#819F20"/>
+                <path d="M355 10L470 62L355 114Z" fill="none" stroke="#A697BA"/>
+                <g fontSize="13" textAnchor="middle" dominantBaseline="middle" fill="#303030">
+                  <text x="82" y="62" fontWeight="600">Discover</text>
+                  <text x="167" y="62" fontWeight="600">Define</text>
+                  <text x="311" y="62" fontWeight="700">Develop</text>
+                  <text x="398" y="62">Deliver</text>
+                </g>
+                <path d="M15 121V126H235V121" stroke="#78658D" fill="none"/>
+                <g fontSize="12" textAnchor="middle" fill="#50465C">
+                  <text x="125" y="144">Problem space · Completed</text>
+                  <text x="355" y="144">Solution space</text>
+                </g>
+              </svg>
+            </div>
+          </div>
+        )
+      },
+      {
         title: "Crazy 8s",
         content: (
           <div className={styles.artifact}>
