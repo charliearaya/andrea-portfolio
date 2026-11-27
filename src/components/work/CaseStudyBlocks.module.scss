@@ -220,6 +220,24 @@
   margin-block: 1.5rem;
 }
 
+.gallery .figure {
+  box-sizing: border-box;
+  aspect-ratio: 8 / 5;
+  display: grid;
+  place-items: center;
+  padding: clamp(0.75rem, 2vw, 1.25rem);
+  background: var(--neutral-alpha-weak);
+  border-radius: 1rem;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-fit: contain;
+  }
+}
+
 .wide {
   width: 100%;
   margin-block: 1.5rem;
@@ -235,6 +253,10 @@
       border-radius: 1rem;
     }
   }
+}
+
+.gallery .figure img {
+  border-radius: 0;
 }
 
 @media (max-width: 720px) {
