@@ -31,3 +31,18 @@
 - The recommended size for <Button> and <IconButton> is `m`, only diverge when the UI is either spacious or very compact.
 - Only use responsive spacings (gaps, margins and paddings) when distances need collapse on smaller screens. Most of the time, for general UI elements (cards, groups, etc.), static spacings are enough. Responsive spacings are reserved mostly for large layout elements, like the content area of the page, where 40px looks good on desktop but feels enormous on mobile.
 - Adding `align="center"` to a <Row> or <Column> will make ALL nested text elements align to center. It can have uninteded effects when adding them to top-level layout elements. To center the inner element, use the `horizontal="center"` prop, which will add the `justify-content` property correctly, NOT the `text-align` property.
+
+## Portfolio Case Study Grid — Mandatory
+
+All case studies must use the same shared editorial grid. Project-specific content may change the composition, but must not redefine its alignment, container width, gutters, or typography.
+
+- Use a centered, maximum 1200px outer container with 56px desktop inner margins and 32px column gutters. Reduce gutters and padding responsively on smaller screens.
+- Use a 12-column conceptual grid: editorial headings occupy five columns and narrative copy occupies seven. Intro and chapter headings and copy must start on identical grid lines.
+- Full-width imagery spans the content grid; full-bleed section backgrounds may extend to the viewport but must never move the inner content.
+- Use shared layout components and tokens for intro, editorial sections, paired text and imagery, galleries, wide figures, and narrow story blocks. Keep long copy at a maximum of 65ch. Stack columns on mobile without horizontal overflow.
+- Use 96px desktop chapter padding (48px on mobile), 24px paragraph separation, 32px text-to-related-image spacing, and generous separation between distinct project stories. Keep related content grouped.
+- Paragraphs and lists share one body typography role; headings, metadata and captions use their respective shared roles. Avoid decorative dividers between stories; a subtle divider above intro metadata is allowed.
+- Migrate older Markdown layouts to the shared patterns rather than adding project-specific CSS alignment fixes. Exceptions for art direction or section background are allowed only when they preserve the grid and are explicitly documented.
+- Before considering a layout change complete, verify a successful preview build and compare alignment across at least two different projects at matching desktop and mobile viewport widths. Report any checks that could not be performed.
+
+These portfolio-specific rules take precedence over generic component defaults when those defaults would introduce inconsistent editorial alignment.
