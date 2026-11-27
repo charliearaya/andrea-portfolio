@@ -15,6 +15,9 @@
   --portfolio-h3-size: clamp(1.125rem, 2vw, 1.5rem);
   --portfolio-h3-leading: 1.35;
   --portfolio-h3-tracking: -0.025em;
+  --portfolio-h4-size: clamp(1rem, 1.7vw, 1.25rem);
+  --portfolio-h4-leading: 1.35;
+  --portfolio-h4-tracking: -0.02em;
   --portfolio-heading-weight: 600;
   --portfolio-label-size: 0.875rem;
   --portfolio-secondary-text: var(--neutral-on-background-weak);

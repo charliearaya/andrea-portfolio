@@ -75,9 +75,9 @@ a.link:visited {
 /* Keep next-project navigation compact and independent of headline length. */
 .nextGallery {
   a.link h2 {
-    font-size: var(--portfolio-h3-size);
-    line-height: var(--portfolio-h3-leading);
-    letter-spacing: var(--portfolio-h3-tracking);
+    font-size: var(--portfolio-h4-size);
+    line-height: var(--portfolio-h4-leading);
+    letter-spacing: var(--portfolio-h4-tracking);
   }
 
   width: 100%;
