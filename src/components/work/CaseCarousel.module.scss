@@ -45,3 +45,9 @@
     cursor: default;
   }
 }
+
+.contentSlide {
+  padding: clamp(1rem, 3vw, 2rem);
+  min-height: 420px;
+  box-sizing: border-box;
+}

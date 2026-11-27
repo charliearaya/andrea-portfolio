@@ -2,13 +2,13 @@
 
 import { Column, Row } from "@once-ui-system/core";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useRef, useState, type ReactNode } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { nextSlide, swipeDirection } from "./caseCarouselNavigation.mjs";
 import styles from "./CaseCarousel.module.scss";
 
 type CaseCarouselProps = {
-  items: { slide: string; alt?: string }[];
+  items: ({ slide: string; alt?: string } | { content: ReactNode; title: string })[];
   aspectRatio?: string;
   sizes?: string;
 };
@@ -23,14 +23,15 @@ export function CaseCarousel({
   if (!items.length) return null;
 
   const current = Math.min(index, items.length - 1);
+  const item = items[current];
   const move = (direction: number) =>
     setIndex((previous) => nextSlide(previous, direction, items.length));
 
   return (
-    <Column fillWidth gap="12" role="region" aria-label="Project image gallery">
+    <Column fillWidth gap="12" role="region" aria-label="Project gallery">
       <figure
         className={styles.slide}
-        style={{ aspectRatio }}
+        style={"slide" in item ? { aspectRatio } : undefined}
         onTouchStart={(event) => {
           const touch = event.touches[0];
           start.current = { x: touch.clientX, y: touch.clientY };
@@ -45,13 +46,19 @@ export function CaseCarousel({
           if (direction) move(direction);
         }}
       >
-        <Image
-          src={items[current].slide}
-          alt={items[current].alt ?? ""}
-          fill
-          sizes={sizes}
-          className={styles.image}
-        />
+        {"slide" in item ? (
+          <Image
+            src={item.slide}
+            alt={item.alt ?? ""}
+            fill
+            sizes={sizes}
+            className={styles.image}
+          />
+        ) : (
+          <div className={styles.contentSlide} aria-live="polite">
+            {item.content}
+          </div>
+        )}
       </figure>
       {items.length > 1 && (
         <Row fillWidth horizontal="between" vertical="center">
@@ -59,10 +66,10 @@ export function CaseCarousel({
             {String(current + 1).padStart(2, "0")} / {String(items.length).padStart(2, "0")}
           </span>
           <Row gap="8">
-            <button type="button" className={styles.button} aria-label="Previous image" onClick={() => move(-1)} disabled={current === 0}>
+            <button type="button" className={styles.button} aria-label="Previous slide" onClick={() => move(-1)} disabled={current === 0}>
               <FiChevronLeft aria-hidden="true" />
             </button>
-            <button type="button" className={styles.button} aria-label="Next image" onClick={() => move(1)} disabled={current === items.length - 1}>
+            <button type="button" className={styles.button} aria-label="Next slide" onClick={() => move(1)} disabled={current === items.length - 1}>
               <FiChevronRight aria-hidden="true" />
             </button>
           </Row>
