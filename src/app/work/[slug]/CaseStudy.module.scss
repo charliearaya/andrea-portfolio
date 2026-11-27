@@ -624,8 +624,8 @@
     pointer-events: none;
   }
 
-  > :global(p) {
-    max-width: 38ch;
+  > :global(h2) {
+    max-width: 48ch;
     margin: 0 auto;
     font-size: var(--portfolio-h2-size);
     line-height: var(--portfolio-h2-leading);
