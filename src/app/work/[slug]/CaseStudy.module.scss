@@ -458,3 +458,38 @@
     color: var(--case-ink);
   }
 }
+
+/* One body typography role for editorial paragraphs and lists. */
+.page .article {
+  --case-body-size: 1rem;
+  --case-body-leading: 1.75;
+  --case-paragraph-list-gap: 1.5rem;
+  --case-list-item-gap: 0.75rem;
+
+  :global(p:not([class*="label"]):not(.case-label)),
+  :global(ul),
+  :global(ol),
+  :global(li) {
+    font-family: var(--font-body), sans-serif;
+    font-size: var(--case-body-size);
+    font-weight: 400;
+    line-height: var(--case-body-leading);
+    letter-spacing: normal;
+    color: var(--case-copy);
+  }
+
+  :global(p + ul),
+  :global(p + ol) {
+    margin-top: var(--case-paragraph-list-gap);
+  }
+
+  :global(ul > li),
+  :global(ol > li) {
+    margin-block: 0;
+  }
+
+  :global(ul > li + li),
+  :global(ol > li + li) {
+    margin-top: var(--case-list-item-gap);
+  }
+}
