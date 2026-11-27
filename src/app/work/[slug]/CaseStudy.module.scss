@@ -591,3 +591,16 @@
     margin-block: var(--case-media-gap) 0;
   }
 }
+
+/* Portrait walkthrough media should not fill the entire visual column. */
+.page[data-project="youse"] :global(.case-split-media) {
+  width: 100%;
+  max-width: 300px;
+  justify-self: center;
+
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+}
