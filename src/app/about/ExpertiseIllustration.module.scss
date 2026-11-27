@@ -1,0 +1,76 @@
+.illustration {
+  --illustration-background: #f7f7f7;
+  display: grid;
+  place-items: center;
+  height: clamp(124px, 16vw, 180px);
+  background: var(--illustration-background);
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+
+  svg {
+    width: 152px;
+    height: 119px;
+    max-width: 80%;
+    max-height: 80%;
+  }
+}
+
+:global([data-theme="dark"]) .illustration {
+  --illustration-background: #292929;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .illustration svg > *,
+  .illustration svg g {
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  article:hover .illustration {
+    .left {
+      transform: translateX(6px);
+    }
+
+    .right {
+      transform: translateX(-6px);
+    }
+
+    .upperLeft {
+      transform: translate(4px, 4px);
+    }
+
+    .upperRight {
+      transform: translate(-4px, 4px);
+    }
+
+    .lowerLeft {
+      transform: translate(4px, -4px);
+    }
+
+    .lowerRight {
+      transform: translate(-4px, -4px);
+    }
+
+    .turn {
+      transform: rotate(45deg);
+    }
+
+    .scan {
+      transform: translate(8px, -4px) rotate(-8deg);
+    }
+
+    .up {
+      transform: translateY(-6px);
+    }
+
+    .pulse {
+      transform: scale(1.16);
+    }
+
+    .tilt {
+      transform: rotate(-7deg);
+    }
+  }
+}

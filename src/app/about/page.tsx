@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Meta, Schema } from "@once-ui-system/core";
 import { about, baseURL, person } from "@/resources";
 import { HiOutlinePaintBrush, HiOutlineArrowPath, HiOutlineSquares2X2, HiOutlineUserGroup } from "react-icons/hi2";
+import { ExpertiseIllustration } from "./ExpertiseIllustration";
 import { ToolkitMarquee } from "./ToolkitMarquee";
 import { AboutNavigation } from "./AboutNavigation";
 import styles from "./About.module.scss";
@@ -176,8 +177,9 @@ export default function About() {
           <h2 id="expertise-heading">Professional expertise</h2>
         </header>
         <div className={styles.expertise}>
-          {professionalExpertise.map(({ title, description }) => (
+          {professionalExpertise.map(({ title, description }, index) => (
             <article key={title}>
+              <ExpertiseIllustration index={index} />
               <h3>{title}</h3>
               <p>{description}</p>
             </article>
