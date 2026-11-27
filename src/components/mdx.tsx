@@ -1,7 +1,7 @@
 import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
 import React, { ReactNode } from "react";
 import { CaseCarousel } from "./work/CaseCarousel";
-import { FlowResearchSummary, FlowResearchCarousel } from "./work/FlowResearch";
+import { FlowResearchSummary, FlowResearchCarousel, FlowDevelopCarousel } from "./work/FlowResearch";
 import { slugify as transliterate } from "transliteration";
 import {
   CaseFigure,
@@ -180,6 +180,7 @@ function createHR() {
 const components = {
   FlowResearchSummary,
   FlowResearchCarousel,
+  FlowDevelopCarousel,
   CaseFigure,
   CaseSplit,
   CaseCopy,

@@ -69,3 +69,17 @@
 .voices blockquote::before { content: "“"; position: absolute; left: .75rem; top: .35rem; font-size: 2.5rem; line-height: 1; color: #79638e; }
 .voices cite { color: #635b6b; }
 @media (max-width: 400px) { .methodGrid, .themeMap { grid-template-columns: minmax(0, 1fr); } }
+
+.developStat { display: flex; align-items: baseline; gap: .75rem; margin-bottom: 1rem; }
+.developStat strong { font-size: var(--portfolio-h1-size); line-height: 1; color: var(--case-ink); }
+.sketchGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .5rem; }
+.sketchGrid svg { width: 100%; background: #f6f3fa; border-radius: 6px; }
+.diagramLabel { display: block; font-size: .75rem; color: var(--case-muted); margin: .75rem 0 1rem; }
+.conceptTags { display: flex; flex-wrap: wrap; gap: .5rem; }
+.conceptTags span { background: #e8e3ef; color: #303030; padding: .5rem .75rem; border-radius: .5rem; font-size: .875rem; }
+.developDiagram { display: block; width: 100%; height: auto; margin: 1rem 0; }
+.storyGrid, .prototypeFlow { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .75rem; }
+.storyGrid > div, .prototypeFlow > div { background: #f6f3fa; color: #303030; border-radius: .75rem; padding: .875rem; font-size: .875rem; }
+.storyGrid svg, .prototypeFlow svg { width: 100%; display: block; margin-bottom: .5rem; }
+.storyGrid h4, .prototypeFlow h4 { color: #303030; margin: .5rem 0; }
+@media (max-width: 400px) { .sketchGrid { grid-template-columns: repeat(2,minmax(0,1fr)); } .storyGrid, .prototypeFlow { grid-template-columns: minmax(0,1fr); } }
