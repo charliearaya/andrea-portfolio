@@ -174,8 +174,10 @@
   --case-muted: #707070;
   --case-line: #e5e5e5;
   --case-gutter: clamp(1.5rem, 4.5vw, 3.5rem);
-  --case-column-gap: clamp(1.5rem, 3vw, 2.5rem);
-  --case-editorial-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  --case-column-gap: clamp(1.5rem, 3vw, 2rem);
+  --case-editorial-columns: minmax(0, 5fr) minmax(0, 7fr);
+  --case-reading-width: 65ch;
+  --case-media-gap: 2rem;
 
   .content {
     background: transparent;
@@ -400,13 +402,13 @@
 
 .page :global(.case-split) {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  grid-template-columns: var(--case-editorial-columns);
   align-items: start;
-  gap: clamp(1.5rem, 4vw, 3rem);
+  gap: var(--case-column-gap);
 }
 
 .page :global(.case-split-reverse) {
-  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
 
   :global(.case-split-copy) {
     grid-column: 2;
@@ -511,5 +513,21 @@
   :global(ul > li + li),
   :global(ol > li + li) {
     margin-top: var(--case-list-item-gap);
+  }
+}
+
+/* Reading measure is enforced even for older, unwrapped MDX prose. */
+.page .article :global(.case-chapter) {
+  > :global(p:not(.case-label)),
+  > :global(ul),
+  > :global(ol) {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: var(--case-reading-width);
+    margin-inline: 0 auto;
+  }
+
+  > :global(br) {
+    display: none;
   }
 }
