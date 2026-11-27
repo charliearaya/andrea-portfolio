@@ -12,7 +12,7 @@ export function EditorialSection({
   children: ReactNode;
 }) {
   return (
-    <section className={styles.section}>
+    <section className={`${styles.section} case-editorial`}>
       <div>
         {label && <p className={styles.label}>{label}</p>}
         <h2 className={styles.heading}>{title}</h2>
@@ -136,7 +136,7 @@ export function CaseGallery({ children }: { children: ReactNode }) {
 }
 
 export function CaseWide({ children }: { children: ReactNode }) {
-  return <div className={styles.wide}>{children}</div>;
+  return <div className={`${styles.wide} case-wide`}>{children}</div>;
 }
 
 export function CaseStory({ children }: { children: ReactNode }) {

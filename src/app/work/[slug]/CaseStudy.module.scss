@@ -556,23 +556,19 @@
   }
 }
 
-/* Distinct stories use the same rhythm regardless of layout direction. */
-.page[data-project="float"] :global(.case-chapter) {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
 
-  > :global(.case-split) {
-    margin-top: 0;
-  }
-
-  > :global(.case-split) + :global(.case-split),
-  > :global(.case-split) + section,
-  > div + section {
+/* Shared rhythm for editorial and split stories, independent of project. */
+.page :global(.case-chapter) {
+  > :global(.case-editorial):not(:first-child),
+  > :global(.case-split):not(:first-child) {
     margin-top: var(--case-story-gap);
   }
 
-  > section + div {
+  > :global(.case-split):first-child {
+    margin-top: 0;
+  }
+
+  > :global(.case-editorial) + :global(.case-wide) {
     margin-block: var(--case-media-gap) 0;
   }
 }

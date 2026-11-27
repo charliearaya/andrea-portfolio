@@ -264,3 +264,8 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* Avoid extra paragraph spacing at the end of an editorial story. */
+:global([data-project]) .copy > :last-child {
+  margin-bottom: 0;
+}
