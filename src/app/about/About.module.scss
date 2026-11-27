@@ -50,8 +50,8 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr) minmax(0, 1.5fr);
   grid-template-areas:
-    "portrait experience philosophy"
-    "portrait tools tools";
+    "portrait experience tools"
+    "portrait expertise expertise";
   gap: 1rem;
   max-width: 1000px;
   margin-inline: auto;
@@ -78,17 +78,31 @@
 }
 
 .years {
-  font-size: var(--portfolio-h1-size);
-  line-height: var(--portfolio-h1-leading);
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  line-height: 1;
   letter-spacing: var(--portfolio-h1-tracking);
   font-weight: var(--portfolio-heading-weight);
 }
 
-.philosophyCard {
-  grid-area: philosophy;
+.expertiseCard {
+  grid-area: expertise;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem 2rem;
+  min-width: 0;
+}
+
+.expertiseItem {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  align-items: flex-start;
+  gap: 0.5rem;
+
+  svg {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 0.25rem;
+  }
 }
 
 .toolsCard {
@@ -178,12 +192,8 @@
 
 .experienceCard .years {
   color: var(--neutral-on-background-strong);
-  line-height: var(--portfolio-h1-leading);
+  line-height: 1;
   margin-bottom: 0.5rem;
-}
-
-.philosophyCard h2 {
-  margin: 0;
 }
 
 :global([data-theme="dark"]) .card {
@@ -204,8 +214,8 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-areas:
       "portrait experience"
-      "philosophy philosophy"
-      "tools tools";
+      "tools tools"
+      "expertise expertise";
   }
 
   .portrait {
@@ -223,28 +233,6 @@
 
 .page > section {
   scroll-margin-top: 6rem;
-}
-
-.expertise {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2.5rem 3rem;
-  max-width: 900px;
-  margin-inline: auto;
-
-  h3 {
-    font-size: var(--portfolio-h3-size);
-    line-height: var(--portfolio-h3-leading);
-    letter-spacing: var(--portfolio-h3-tracking);
-    font-weight: var(--portfolio-heading-weight);
-    margin: 0 0 0.75rem;
-  }
-
-  p {
-    color: var(--portfolio-secondary-text);
-    line-height: 1.65;
-    margin: 0;
-  }
 }
 
 .jumpLinks {
@@ -272,8 +260,25 @@
     scroll-margin-top: 8rem;
   }
 
-  .expertise {
+  .expertiseCard {
+    gap: 1.5rem;
+  }
+}
+
+.expertiseCard .expertiseItem h2 {
+  font-size: 1rem;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.expertiseCard .expertiseItem p {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 400px) {
+  .expertiseCard {
     grid-template-columns: 1fr;
-    gap: 1.75rem;
   }
 }

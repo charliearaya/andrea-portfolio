@@ -1,40 +1,31 @@
 import Image from "next/image";
 import { Meta, Schema } from "@once-ui-system/core";
 import { about, baseURL, person } from "@/resources";
+import { HiOutlinePaintBrush, HiOutlineArrowPath, HiOutlineSquares2X2, HiOutlineUserGroup } from "react-icons/hi2";
 import { ToolkitMarquee } from "./ToolkitMarquee";
 import { AboutNavigation } from "./AboutNavigation";
 import styles from "./About.module.scss";
 
 const expertise = [
   {
-    title: "Product Design",
-    description:
-      "End-to-end design, from discovery and problem framing to interaction design and production-ready solutions.",
+    title: "Creative foundations",
+    description: "Visual design, branding & UI craft",
+    Icon: HiOutlinePaintBrush,
   },
   {
-    title: "UI & Design Systems",
-    description:
-      "Accessible interfaces, scalable component libraries, design tokens and documentation.",
+    title: "End-to-end design",
+    description: "Research, interaction design & validation",
+    Icon: HiOutlineArrowPath,
   },
   {
-    title: "Research & Validation",
-    description:
-      "User research, usability testing, A/B testing and data-informed design decisions.",
+    title: "Designing at scale",
+    description: "Design systems, accessibility & scalability",
+    Icon: HiOutlineSquares2X2,
   },
   {
-    title: "Delivery & Collaboration",
-    description:
-      "Cross-functional collaboration, balancing user needs, business goals and technical constraints.",
-  },
-  {
-    title: "Visual & Brand Design",
-    description:
-      "A strong foundation in visual communication, typography, branding and visual consistency.",
-  },
-  {
-    title: "AI-Assisted Design",
-    description:
-      "Integrating AI into research, exploration, prototyping and iteration while maintaining human judgment.",
+    title: "Connecting perspectives",
+    description: "User needs, business goals & technology",
+    Icon: HiOutlineUserGroup,
   },
 ];
 
@@ -85,19 +76,24 @@ export default function About() {
             />
           </div>
           <div className={`${styles.card} ${styles.experienceCard}`}>
-            <p className={styles.years}>6+ years</p>
-            <p>Design experience</p>
-          </div>
-          <div className={`${styles.card} ${styles.philosophyCard}`}>
-            <h2>Clarity. Curiosity. Collaboration.</h2>
-            <p>
-              I believe in asking the right questions, looking beyond the obvious and creating
-              shared understanding. I value thoughtful design, open collaboration and continuous
-              learning.
-            </p>
+            <p className={styles.years}>6+</p>
+            <p>Years of design experience</p>
           </div>
           <div className={`${styles.card} ${styles.toolsCard}`}>
             <ToolkitMarquee />
+          </div>
+          <div
+            className={`${styles.card} ${styles.expertiseCard}`}
+            role="group"
+            aria-label="Professional expertise"
+          >
+            {expertise.map(({ title, description, Icon }) => (
+              <div className={styles.expertiseItem} key={title}>
+                <Icon aria-hidden="true" />
+                <h2>{title}</h2>
+                <p>{description}</p>
+              </div>
+            ))}
           </div>
         </div>
         <AboutNavigation />
@@ -137,20 +133,6 @@ export default function About() {
                 <span>{institution.school}</span>
               </div>
               <span className={styles.date}>{institution.timeframe}</span>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="expertise" aria-labelledby="expertise-heading">
-        <header className={styles.sectionHeading}>
-          <h2 id="expertise-heading">Professional expertise</h2>
-        </header>
-        <div className={styles.expertise}>
-          {expertise.map(({ title, description }) => (
-            <article key={title}>
-              <h3>{title}</h3>
-              <p>{description}</p>
             </article>
           ))}
         </div>
