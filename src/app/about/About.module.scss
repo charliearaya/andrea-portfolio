@@ -235,6 +235,28 @@
   scroll-margin-top: 6rem;
 }
 
+.expertise {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.5rem 3rem;
+  max-width: 900px;
+  margin-inline: auto;
+
+  h3 {
+    font-size: var(--portfolio-h3-size);
+    line-height: var(--portfolio-h3-leading);
+    letter-spacing: var(--portfolio-h3-tracking);
+    font-weight: var(--portfolio-heading-weight);
+    margin: 0 0 0.75rem;
+  }
+
+  p {
+    color: var(--portfolio-secondary-text);
+    line-height: 1.65;
+    margin: 0;
+  }
+}
+
 .jumpLinks {
   display: flex;
   flex-wrap: wrap;
@@ -281,5 +303,12 @@
 @media (max-width: 400px) {
   .expertiseCard {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .expertise {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
   }
 }

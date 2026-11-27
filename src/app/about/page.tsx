@@ -29,6 +29,39 @@ const expertise = [
   },
 ];
 
+const professionalExpertise = [
+  {
+    title: "Product Design",
+    description:
+      "End-to-end design, from discovery and problem framing to interaction design and production-ready solutions.",
+  },
+  {
+    title: "UI & Design Systems",
+    description:
+      "Accessible interfaces, scalable component libraries, design tokens and documentation.",
+  },
+  {
+    title: "Research & Validation",
+    description:
+      "User research, usability testing, A/B testing and data-informed design decisions.",
+  },
+  {
+    title: "Delivery & Collaboration",
+    description:
+      "Cross-functional collaboration, balancing user needs, business goals and technical constraints.",
+  },
+  {
+    title: "Visual & Brand Design",
+    description:
+      "A strong foundation in visual communication, typography, branding and visual consistency.",
+  },
+  {
+    title: "AI-Assisted Design",
+    description:
+      "Integrating AI into research, exploration, prototyping and iteration while maintaining human judgment.",
+  },
+];
+
 export async function generateMetadata() {
   return Meta.generate({
     title: about.title,
@@ -133,6 +166,20 @@ export default function About() {
                 <span>{institution.school}</span>
               </div>
               <span className={styles.date}>{institution.timeframe}</span>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="expertise" aria-labelledby="expertise-heading">
+        <header className={styles.sectionHeading}>
+          <h2 id="expertise-heading">Professional expertise</h2>
+        </header>
+        <div className={styles.expertise}>
+          {professionalExpertise.map(({ title, description }) => (
+            <article key={title}>
+              <h3>{title}</h3>
+              <p>{description}</p>
             </article>
           ))}
         </div>
