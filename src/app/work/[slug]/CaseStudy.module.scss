@@ -187,7 +187,26 @@
     background: transparent;
   }
 
-  :global(.sas-chapter:nth-child(2)) {
+  :global(.sas-chapter:nth-child(2)),
+  :global(.sas-chapter:last-child) {
+    position: relative;
+    isolation: isolate;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset-block: 0;
+      left: 50%;
+      width: 100vw;
+      width: 100dvw;
+      transform: translateX(-50%);
+      z-index: -1;
+      pointer-events: none;
+      clip-path: inset(0 max(0px, calc((100dvw - 100vw) / 2)));
+    }
+  }
+
+  :global(.sas-chapter:nth-child(2))::before {
     background: linear-gradient(
       to bottom,
       var(--case-gradient-start) 0%,
@@ -195,7 +214,7 @@
     );
   }
 
-  :global(.sas-chapter:last-child) {
+  :global(.sas-chapter:last-child)::before {
     background: var(--case-gradient-start);
   }
 
