@@ -15,7 +15,7 @@ export async function generateMetadata() {
 
 export default function Work() {
   return (
-    <div className={styles.page} style={{ maxWidth: "800px" }}>
+    <div className={styles.page} style={{ maxWidth: "1000px" }}>
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -37,7 +37,7 @@ export default function Work() {
         </p>
       </header>
       <section className={styles.section} aria-label="Projects">
-        <Projects />
+        <Projects editorial />
       </section>
     </div>
   );

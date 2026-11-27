@@ -94,10 +94,32 @@ export default async function Project({
           </div>
           <p className={styles.eyebrow}>{post.metadata.title}</p>
           <h1 className={styles.title}>
-            {post.metadata.description || post.metadata.title}
+            {post.slug === "sas"
+              ? "One brand. A more connected digital experience."
+              : post.metadata.description || post.metadata.title}
           </h1>
-          <p className={styles.lead}>{post.metadata.summary}</p>
+          <p className={styles.lead}>
+            {post.slug === "sas"
+              ? "Translating a new brand identity into a cohesive digital experience, from shared design system foundations to customer-facing travel services."
+              : post.metadata.summary}
+          </p>
         </div>
+        {post.slug === "sas" && post.metadata.projectDetails && (
+          <dl className={styles.heroMetadata}>
+            <div>
+              <dt>Client</dt>
+              <dd>Scandinavian Airlines</dd>
+            </div>
+            <div>
+              <dt>Role</dt>
+              <dd>{post.metadata.projectDetails.role}</dd>
+            </div>
+            <div>
+              <dt>Period</dt>
+              <dd>{post.metadata.projectDetails.timeline}</dd>
+            </div>
+          </dl>
+        )}
       </header>
       {post.metadata.images.length > 0 && (
         <div className={styles.cover}>
