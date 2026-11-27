@@ -215,6 +215,29 @@
     }
   }
 
+  &[data-project="float"] :global(.case-chapter:not(:last-child))::before {
+    display: none;
+  }
+
+  &[data-project="float"] :global(.case-chapter:last-child) {
+    position: relative;
+    isolation: isolate;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset-block: 0;
+      left: 50%;
+      width: 100vw;
+      width: 100dvw;
+      transform: translateX(-50%);
+      z-index: -1;
+      pointer-events: none;
+      background: var(--case-paper);
+      clip-path: inset(0 max(0px, calc((100dvw - 100vw) / 2)));
+    }
+  }
+
   &[data-project="sas"] :global(.case-chapter[aria-label="Design system"])::before {
     background: var(--neutral-background, transparent);
     display: none;
