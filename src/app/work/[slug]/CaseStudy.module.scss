@@ -189,7 +189,7 @@
     background: transparent;
   }
 
-  :global(.case-chapter:nth-child(even)) {
+  :global(.case-chapter:nth-child(odd)) {
     position: relative;
     isolation: isolate;
 
