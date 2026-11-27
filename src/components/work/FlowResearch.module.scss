@@ -33,3 +33,39 @@
 .core { background: #c6f432; text-align: center; font-weight: 600; margin-top: 1rem; }
 .tags { display: flex; flex-wrap: wrap; gap: .5rem .75rem; font-size: .75rem; line-height: 1.4; }
 @media (max-width: 720px) { .bento { grid-template-columns: minmax(0, 1fr); } }
+
+.methodGrid, .themeMap {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.method, .themeMap > div {
+  padding: 1rem;
+  border-radius: 12px;
+  background: #f6f3fa;
+  color: #303030;
+  font-size: .875rem;
+  line-height: 1.5;
+}
+.method:nth-child(2), .themeMap > div:nth-child(2n) { background: #e8e3ef; }
+.method:nth-child(4), .themeMap > div:last-child { background: #e5f6ad; }
+.methodTop { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.methodTop svg, .themeMap svg { font-size: 1.5rem; color: #58446e; }
+.methodTop span { font-size: .75rem; color: #635b6b; }
+.method h4, .themeMap h4, .personaTraits h4 { color: #303030; margin: .5rem 0; font-weight: var(--portfolio-heading-weight); }
+.themeMap > div:last-child { grid-column: 1 / -1; }
+.personaHeader { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+.portrait { width: clamp(84px, 22%, 128px); height: auto; flex-shrink: 0; }
+.personaHeader h3 { margin: 0 0 .35rem; }
+.personaHeader span { display: block; font-size: .875rem; line-height: 1.5; }
+.personaLabel { margin-top: .5rem; color: var(--case-muted); }
+.personaTraits { display: grid; gap: .75rem; }
+.personaTraits > div { display: flex; gap: .75rem; align-items: flex-start; padding: .875rem; border-radius: 12px; background: #f6f3fa; color: #303030; font-size: .875rem; line-height: 1.5; }
+.personaTraits svg { flex-shrink: 0; margin-top: .25rem; font-size: 1.25rem; color: #58446e; }
+.personaTraits h4 { margin-top: 0; }
+.personaHeader + blockquote { background: #c6f432; color: #171715; padding: 1rem; border-radius: 12px; font-weight: 600; }
+.voices { display: grid; gap: .75rem; }
+.voices blockquote { position: relative; background: #f6f3fa; color: #303030; border-radius: 12px; margin: 0; padding: 1rem 1rem 1rem 2.5rem; }
+.voices blockquote::before { content: "“"; position: absolute; left: .75rem; top: .35rem; font-size: 2.5rem; line-height: 1; color: #79638e; }
+.voices cite { color: #635b6b; }
+@media (max-width: 400px) { .methodGrid, .themeMap { grid-template-columns: minmax(0, 1fr); } }
