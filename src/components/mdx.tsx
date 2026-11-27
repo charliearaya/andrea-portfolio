@@ -156,11 +156,12 @@ function createCodeBlock(props: any) {
   return <pre {...props} />;
 }
 
-function createList(as: "ul" | "ol") {
-  return (props: React.ComponentProps<"ul">) => {
-    const Tag = as;
-    return <Tag {...props} />;
-  };
+function UnorderedList(props: React.ComponentProps<"ul">) {
+  return <ul {...props} />;
+}
+
+function OrderedList(props: React.ComponentProps<"ol">) {
+  return <ol {...props} />;
 }
 
 function createListItem(props: React.ComponentProps<"li">) {
@@ -201,8 +202,8 @@ const components = {
   a: CustomLink as any,
   code: createInlineCode as any,
   pre: createCodeBlock as any,
-  ol: createList("ol") as any,
-  ul: createList("ul") as any,
+  ol: OrderedList as any,
+  ul: UnorderedList as any,
   li: createListItem as any,
   hr: createHR as any,
   Heading,
