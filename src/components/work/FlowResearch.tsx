@@ -80,7 +80,7 @@ export function FlowDevelopCarousel() {
         title: "Storyboarding",
         content: (
           <div className={styles.artifact}>
-            <h3>Exploring the experience</h3>
+            <h3>Storyboard concept</h3>
             <div className={styles.storyGrid}>
               {[
                 ["Define intent", "Describe the design task", "task"],
