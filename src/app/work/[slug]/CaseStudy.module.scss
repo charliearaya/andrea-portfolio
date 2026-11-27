@@ -208,6 +208,11 @@
     }
   }
 
+  &[data-project="sas"] :global(.case-chapter[aria-label="Design system"])::before {
+    background: var(--neutral-background, transparent);
+    display: none;
+  }
+
   :global(.case-feature) {
     display: flex;
     flex-direction: column;
