@@ -13,13 +13,9 @@ export function ExpertiseIllustration({ index }: { index: number }) {
         {index === 0 && (
           <>
             <circle className={styles.problem} cx="43" cy="62" r="33" fill={sand} />
-            <rect
+            <path
               className={styles.refine}
-              x="67"
-              y="42"
-              width="45"
-              height="40"
-              rx="9"
+              d="M67 32 Q67 27 72 30 L118 58 Q124 62 118 66 L72 94 Q67 97 67 92 Z"
               fill={charcoal}
             />
             <path
