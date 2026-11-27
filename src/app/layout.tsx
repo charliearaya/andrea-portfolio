@@ -55,7 +55,7 @@ export default async function RootLayout({
               (function() {
                 try {
                   const root = document.documentElement;
-                  const defaultTheme = 'system';
+                  
                   
                   // Set defaults from config
                   const config = ${JSON.stringify({
@@ -78,15 +78,16 @@ export default async function RootLayout({
                   
                   // Resolve theme
                   const resolveTheme = (themeValue) => {
-                    if (!themeValue || themeValue === 'system') {
+                    if (themeValue !== 'light' && themeValue !== 'dark') {
                       return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
                     }
                     return themeValue;
                   };
                   
                   // Apply saved theme
-                  const savedTheme = localStorage.getItem('data-theme');
+                  const savedTheme = localStorage.getItem('portfolio-theme-preference') ?? localStorage.getItem('data-theme');
                   const resolvedTheme = resolveTheme(savedTheme);
+                  localStorage.setItem('portfolio-theme-preference', savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : 'system');
                   root.setAttribute('data-theme', resolvedTheme);
                   
                   // Apply any saved style overrides

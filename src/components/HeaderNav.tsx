@@ -4,8 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { display, person, routes } from "@/resources";
-import { ThemeToggle } from "./ThemeToggle";
+import { person, routes } from "@/resources";
 import styles from "./Header.module.scss";
 
 export const HeaderNav = () => {
@@ -70,7 +69,6 @@ export const HeaderNav = () => {
         <Link onClick={() => setMenuOpen(false)} href="/contact" aria-current={pathname === "/contact" ? "page" : undefined}>
           Contact
         </Link>
-        {display.themeSwitcher && <ThemeToggle />}
       </div>
     </nav>
   );

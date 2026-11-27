@@ -1,9 +1,10 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { person } from "@/resources";
+import { display, person } from "@/resources";
 import { FaLinkedin } from "react-icons/fa6";
 import { HiOutlineEnvelope } from "react-icons/hi2";
+import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Footer.module.scss";
 
 export const Footer = () => {
@@ -41,6 +42,7 @@ export const Footer = () => {
             <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>
           </span>
           <span>Stockholm, Sweden</span>
+          {display.themeSwitcher && <ThemeToggle />}
         </div>
       </div>
     </footer>

@@ -1,10 +1,40 @@
-.button {
-  display: flex;
+.selector {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  
-  svg {
-    width: 1em;
-    height: 1em;
+  gap: 0.125rem;
+  padding: 0.1875rem;
+  border: 1px solid #4a4a4a;
+  border-radius: 999px;
+
+  button {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: #bdbdbd;
+    cursor: pointer;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    &:hover {
+      color: #fff;
+    }
+
+    &[aria-pressed="true"] {
+      background: #383838;
+      color: #fff;
+    }
+
+    &:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+    }
   }
 }
