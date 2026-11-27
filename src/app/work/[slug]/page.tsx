@@ -102,34 +102,35 @@ export default async function Project({
       )}
       <header className={styles.imageFirstIntro}>
         <div className={styles.introStory}>
-          <h1 className={styles.title}>
-            {post.slug === "sas"
-              ? "One brand. A more connected digital experience."
-              : post.metadata.description || post.metadata.title}
-          </h1>
-          <p className={styles.lead}>
-            {post.slug === "sas"
-              ? "Translating a new brand identity into a cohesive digital experience, from shared design system foundations to customer-facing travel services."
-              : post.metadata.summary}
+          <p className={styles.projectName}>
+            {post.metadata.projectName || post.metadata.title}
           </p>
+          <h1 className={styles.title}>
+            {post.metadata.introHeadline || post.metadata.description || post.metadata.title}
+          </h1>
         </div>
-        <dl className={styles.introDetails}>
-          <div>
-            <dt>{["flow", "brides-unite", "youse"].includes(post.slug) ? "Project" : "Client"}</dt>
-            <dd>{post.slug === "sas" ? "Scandinavian Airlines" : post.metadata.title}</dd>
-          </div>
-          <div>
-            <dt>Year</dt>
-            <dd>{post.metadata.projectDetails?.timeline || post.metadata.publishedAt.slice(0, 4)}</dd>
-          </div>
-          <div>
-            <dt>Role</dt>
-            <dd>
-              {post.metadata.projectDetails?.role ||
-                post.metadata.subheading.split(/[·•]/).slice(1).join(" · ").trim()}
-            </dd>
-          </div>
-        </dl>
+        <div className={styles.introNarrative}>
+          {(post.metadata.intro || [post.metadata.summary]).map((paragraph, index) => (
+            <p key={index} className={styles.lead}>{paragraph}</p>
+          ))}
+          <dl className={styles.introDetails}>
+            <div>
+              <dt>{["flow", "brides-unite", "youse"].includes(post.slug) ? "Project" : "Client"}</dt>
+              <dd>{post.metadata.clientName || post.metadata.title}</dd>
+            </div>
+            <div>
+              <dt>Role</dt>
+              <dd>
+                {post.metadata.projectDetails?.role ||
+                  post.metadata.subheading.split(/[·•]/).slice(1).join(" · ").trim()}
+              </dd>
+            </div>
+            <div>
+              <dt>Year</dt>
+              <dd>{post.metadata.projectDetails?.timeline || post.metadata.publishedAt.slice(0, 4)}</dd>
+            </div>
+          </dl>
+        </div>
       </header>
       <div className={styles.content}>
         <article className={styles.article}>

@@ -246,7 +246,7 @@
 
 .imageFirstIntro {
   display: grid;
-  grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: start;
   gap: clamp(2rem, 6vw, 6rem);
   max-width: 1050px;
@@ -258,8 +258,15 @@
   }
 
   .lead {
-    color: var(--portfolio-secondary-text);
+    color: var(--case-ink);
     font-size: clamp(1rem, 1.8vw, 1.1875rem);
+    line-height: 1.65;
+    max-width: 65ch;
+    margin: 0;
+
+    + .lead {
+      margin-top: 1.25rem;
+    }
   }
 }
 
@@ -269,11 +276,17 @@
   margin: 0 0 1rem;
 }
 
+.introNarrative {
+  min-width: 0;
+}
+
 .introDetails {
   display: grid;
-  gap: 1.25rem;
-  margin: 0;
-  padding-top: 0.125rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem 2rem;
+  margin: 3rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--case-line);
 
   dt {
     font-size: 0.8125rem;

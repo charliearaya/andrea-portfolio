@@ -6,6 +6,10 @@ import type { ProjectDetails } from "@/components/work/ProjectSummary";
 type Metadata = {
   title: string;
   subtitle?: string;
+  projectName?: string;
+  clientName?: string;
+  introHeadline?: string;
+  intro?: string[];
   publishedAt: string;
   summary: string;
   description: string;
@@ -38,6 +42,10 @@ function readMDXFile(filePath: string) {
   const metadata: Metadata = {
     title: data.title || "",
     subtitle: data.subtitle || "",
+    projectName: data.projectName,
+    clientName: data.clientName,
+    introHeadline: data.introHeadline,
+    intro: data.intro,
     publishedAt: data.publishedAt,
     summary: data.summary || "",
     description: data.description || "",
