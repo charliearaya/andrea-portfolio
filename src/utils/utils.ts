@@ -68,5 +68,11 @@ function getMDXData(dir: string) {
 
 export function getPosts(customPath = ["", "", "", ""]) {
   const postsDir = path.join(process.cwd(), ...customPath);
-  return getMDXData(postsDir);
+  const posts = getMDXData(postsDir);
+  // Temporary production-only exclusion while the Flow case study is being revised.
+  // Remove this exclusion when portfolio-v2 is released.
+  if (postsDir === path.join(process.cwd(), "src", "app", "work", "projects")) {
+    return posts.filter((post) => post.slug !== "flow");
+  }
+  return posts;
 }
